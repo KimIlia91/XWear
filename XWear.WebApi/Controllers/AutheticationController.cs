@@ -21,26 +21,11 @@ public class AutheticationController : ApiController
     [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
-        var command = new RegisterCommand(
-            request.FirstName,
-            request.LastName,
-            request.Email,
-            request.Phone,
-            request.Password,
-            request.ConfirmPassword);
-
+        var command = Mapper.Map<RegisterCommand>(request);
         var authResult = await Mediator.Send(command);
         return authResult.Match(
-            authResult => Ok(MapAuthResult(authResult)),
+            authResult => Ok(Mapper.Map<AuthenticationResponse>(authResult)),
             errors => Problem(errors));
-    }
-
-    private AuthenticationResponse? MapAuthResult(AuthenticationResult authResult)
-    {
-        return new AuthenticationResponse(
-           authResult.Email,
-           authResult.AccessToken,
-           authResult.RefreshToken);
     }
 
     /// <summary>
@@ -52,10 +37,10 @@ public class AutheticationController : ApiController
     [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> Login(LoginRequest request)
     {
-        var query = new LoginQuery(request.Email, request.Password);
+        var query = Mapper.Map<LoginQuery>(request);
         var authResult = await Mediator.Send(query);
         return authResult.Match(
-         authResult => Ok(MapAuthResult(authResult)),
+         authResult => Ok(Mapper.Map<AuthenticationResponse>(authResult)),
          errors => Problem(errors));
     }
 }

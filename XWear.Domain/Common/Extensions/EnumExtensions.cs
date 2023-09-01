@@ -23,7 +23,7 @@ public static class EnumExtensions
         return enumerationValue.ToString();
     }
 
-    public static string GetDescriptionOrNull(this Enum enumValue)
+    public static string? GetDescriptionOrNull(this Enum enumValue)
     {
         return enumValue == null ? null : GetDescription(enumValue);
     }
