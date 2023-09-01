@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
 using MediatR;
-using XWear.Application.Authentication.Common;
+using XWear.Application.Features.Authentication.Common;
 
-namespace XWear.Application.Authentication.Queries.Login;
+namespace XWear.Application.Features.Authentication.Queries.Login;
 
 public record LoginQuery(
     string Email,

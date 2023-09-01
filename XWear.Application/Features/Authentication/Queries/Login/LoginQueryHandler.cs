@@ -3,16 +3,16 @@ using MediatR;
 using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
 using XWear.Application.Common.Interfaces;
-using XWear.Application.Authentication.Common;
+using XWear.Application.Features.Authentication.Common;
 
-namespace XWear.Application.Authentication.Commands.Register;
+namespace XWear.Application.Features.Authentication.Queries.Login;
 
-public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
+public class LoginQueryHandler : IRequestHandler<LoginQuery, ErrorOr<AuthenticationResult>>
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserRepository _userRepository;
 
-    public RegisterCommandHandler(
+    public LoginQueryHandler(
         IUserRepository userRepository,
         IJwtTokenGenerator jwtTokenGenerator)
     {
@@ -21,22 +21,16 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
     }
 
     public async Task<ErrorOr<AuthenticationResult>> Handle(
-        RegisterCommand command,
+    LoginQuery query,
         CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if (_userRepository.GetUserByEmail(command.Email) is not null)
-            return Errors.User.DuplicateEmail;
+        if (_userRepository.GetUserByEmail(query.Email) is not User user)
+            return Errors.Authentication.InvalidCredentinals;
 
-        var user = new User
-        {
-            FirstName = command.FirstName,
-            LastName = command.LastName,
-            Email = command.Email,
-            Password = command.Password
-        };
+        if (user.Password != query.Password)
+            return Errors.Authentication.InvalidCredentinals;
 
-        _userRepository.Add(user);
         var token = _jwtTokenGenerator.GenerateToken(user);
         return new AuthenticationResult(user.Email, token, token);
     }

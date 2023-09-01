@@ -1,4 +1,4 @@
-﻿namespace XWear.Application.Authentication.Common
+﻿namespace XWear.Application.Features.Authentication.Common
 {
     public record AuthenticationResult(
         string Email,

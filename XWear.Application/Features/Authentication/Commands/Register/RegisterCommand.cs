@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
 using MediatR;
-using XWear.Application.Authentication.Common;
+using XWear.Application.Features.Authentication.Common;
 
-namespace XWear.Application.Authentication.Commands.Register;
+namespace XWear.Application.Features.Authentication.Commands.Register;
 
 public record RegisterCommand(
     string FirstName,
