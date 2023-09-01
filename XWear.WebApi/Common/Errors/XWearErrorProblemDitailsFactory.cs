@@ -91,9 +91,7 @@ namespace XWear.WebApi.Common.Errors
             var errors = httpContext?.Items[HttpContextItemKeys.Errors] as List<Error>;
 
             if (errors is not null)
-            {
                 problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
-            }
         }
     }
 }
