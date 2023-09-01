@@ -34,9 +34,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Common\Resources\ErrorResources.ru-RU.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Common\Resources\SuccessResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SuccessResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\Resources\SuccessResources.ru-RU.resx">
+      <Generator></Generator>
     </EmbeddedResource>
   </ItemGroup>
 

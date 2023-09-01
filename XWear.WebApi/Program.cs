@@ -38,7 +38,8 @@ namespace XWear.WebApi
             app.UseExceptionHandler("/error");
             app.MapControllers();
             app.UseHttpsRedirection();
-            app.UseAuthorization();
+            app.UseAuthorization()
+               .UseCustomLocalization();
             app.Run();
         }
     }

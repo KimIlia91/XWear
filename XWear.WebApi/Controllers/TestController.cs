@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using XWear.Application.Common.Resources;
 
 namespace XWear.WebApi.Controllers;
 
@@ -16,6 +17,6 @@ public class TestController : ApiController
     [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
     public IActionResult IsItWork()
     {
-        return Ok("It's work!");
+        return Ok(SuccessResources.TestLocalization);
     }
 }
