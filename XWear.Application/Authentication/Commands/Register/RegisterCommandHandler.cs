@@ -21,7 +21,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
     }
 
     public async Task<ErrorOr<AuthenticationResult>> Handle(
-    RegisterCommand command,
+        RegisterCommand command,
         CancellationToken cancellationToken)
     {
         if (_userRepository.GetUserByEmail(command.Email) is not null)
