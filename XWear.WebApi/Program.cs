@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using XWear.Application;
 using XWear.Infrastructure;
+using XWear.WebApi.Common.Errors;
 
 namespace XWear.WebApi
 {
@@ -14,6 +16,7 @@ namespace XWear.WebApi
 
             builder.Services.AddAuthorization();
             builder.Services.AddControllers();
+            builder.Services.AddSingleton<ProblemDetailsFactory, XWearErrorProblemDitailsFactory>();
             builder.Services.AddSwaggerGen();
             var app = builder.Build();
             if (app.Environment.IsDevelopment())
@@ -22,6 +25,7 @@ namespace XWear.WebApi
                 app.UseSwaggerUI();
             }
 
+            app.UseExceptionHandler("/error");
             app.MapControllers();
             app.UseHttpsRedirection();
             app.UseAuthorization();

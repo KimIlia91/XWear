@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using System.Text;
+using XWear.Domain.Entities;
+using System.Security.Claims;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 using XWear.Application.Common.Interfaces;
-using XWear.Domain.Entities;
 using XWear.Infrastructure.Authentication.Settings;
 
 namespace XWear.Infrastructure.Authentication
@@ -29,11 +29,11 @@ namespace XWear.Infrastructure.Authentication
 
             var claims = new[]
             {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-            new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
-            new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-        };
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+                new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
 
             var securiryToken = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,

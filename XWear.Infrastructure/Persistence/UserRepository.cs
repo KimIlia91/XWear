@@ -9,13 +9,16 @@ namespace XWear.Infrastructure.Persistence
 
         public UserRepository()
         {
-            _users.Add(new User
+            if (_users.SingleOrDefault(u => u.Email == "testuser@test.com") is null)
             {
-                FirstName = "Данияр",
-                LastName = "Даниярович",
-                Email = "testuser@test.com",
-                Password = "TestUser123!",
-            });
+                _users.Add(new User
+                {
+                    FirstName = "Данияр",
+                    LastName = "Даниярович",
+                    Email = "testuser@test.com",
+                    Password = "TestUser123!",
+                });
+            }
         }
 
         public void Add(User user)

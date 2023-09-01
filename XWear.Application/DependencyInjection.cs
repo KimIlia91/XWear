@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using XWear.Application.Common.Interfaces;
-using XWear.Application.Services.Authentication;
+using System.Reflection;
 
 namespace XWear.Application
 {
@@ -8,7 +7,11 @@ namespace XWear.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddMediatR(cfg => 
+            {
+                cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            });
+
             return services;
         }
     }
