@@ -5,6 +5,7 @@ using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
 using XWear.Infrastructure;
 using XWear.WebApi.Common.Errors;
+using XWear.WebApi.Configurations.CorsConfig;
 using XWear.WebApi.Configurations.Localization;
 using XWear.WebApi.Configurations.Swagger;
 
@@ -23,6 +24,7 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddSingleton<ProblemDetailsFactory, XWearErrorProblemDitailsFactory>();
         builder.Services
+            .AddCorsPolicy("CorsPolicy", builder.Configuration)
             .AddCustomSwaggerGen("v1", Assembly.GetExecutingAssembly())
             .AddCustomLocalization(LanguagesEnum.En.GetDescription(), LanguagesEnum.Ru.GetDescription());
 
@@ -34,11 +36,14 @@ public class Program
             app.UseSwaggerUI();
         }
 
+        app.UseHsts(); 
         app.UseExceptionHandler("/error");
         app.MapControllers();
-        app.UseHttpsRedirection();
-        app.UseAuthorization()
+
+        app.UseCors("CorsPolicy")
+           .UseAuthorization()
            .UseCustomLocalization();
+
         app.Run();
     }
 }
