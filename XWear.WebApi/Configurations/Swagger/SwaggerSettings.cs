@@ -14,7 +14,7 @@ namespace XWear.WebApi.Configurations.Swagger
 
             return services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc(name, new OpenApiInfo { Title = "High technology park Api", Version = "v1" });
+                c.SwaggerDoc(name, new OpenApiInfo { Title = "XWear API", Version = "v1" });
                 c.DescribeAllParametersInCamelCase();
                 c.OperationFilter<AcceptLanguageHeaderParameter>();
 
