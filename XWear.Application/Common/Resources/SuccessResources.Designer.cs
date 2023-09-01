@@ -59,5 +59,14 @@ namespace XWear.Application.Common.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s work!.
+        /// </summary>
+        internal static string TestLocalization {
+            get {
+                return ResourceManager.GetString("TestLocalization", resourceCulture);
+            }
+        }
     }
 }

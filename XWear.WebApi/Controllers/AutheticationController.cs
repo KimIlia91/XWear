@@ -6,9 +6,17 @@ using XWear.Application.Authentication.Common;
 
 namespace XWear.WebApi.Controllers;
 
+/// <summary>
+/// Контроллер для аутентификации и авторизации.
+/// </summary>
 [Route("api/auth")]
 public class AutheticationController : ApiController
 {
+    /// <summary>
+    /// Регистрация нового пользователя.
+    /// </summary>
+    /// <param name="request">Запрос на регистрацию пользователя.</param>
+    /// <returns>Результат аутентификации.</returns>
     [HttpPost("register")]
     [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> Register(RegisterRequest request)
@@ -35,6 +43,11 @@ public class AutheticationController : ApiController
            authResult.RefreshToken);
     }
 
+    /// <summary>
+    /// Вход пользователя в систему.
+    /// </summary>
+    /// <param name="request">Запрос на вход в систему.</param>
+    /// <returns>Результат аутентификации.</returns>
     [HttpPost("login")]
     [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> Login(LoginRequest request)

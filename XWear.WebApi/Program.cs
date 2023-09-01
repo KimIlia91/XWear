@@ -1,7 +1,13 @@
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 using XWear.Application;
+using XWear.Domain.Common.Enums;
 using XWear.Infrastructure;
 using XWear.WebApi.Common.Errors;
+using XWear.WebApi.Configurations.Localization;
+using XWear.WebApi.Configurations.Swagger;
+using XWear.Domain.Common.Extensions;
 
 namespace XWear.WebApi
 {
@@ -17,8 +23,12 @@ namespace XWear.WebApi
             builder.Services.AddAuthorization();
             builder.Services.AddControllers();
             builder.Services.AddSingleton<ProblemDetailsFactory, XWearErrorProblemDitailsFactory>();
-            builder.Services.AddSwaggerGen();
+            builder.Services
+                .AddCustomSwaggerGen("v1", Assembly.GetExecutingAssembly())
+                .AddCustomLocalization(LanguagesEnum.En.GetDescription(), LanguagesEnum.Ru.GetDescription());
+
             var app = builder.Build();
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
