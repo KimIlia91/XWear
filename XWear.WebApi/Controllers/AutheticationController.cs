@@ -10,6 +10,7 @@ namespace XWear.WebApi.Controllers;
 public class AutheticationController : ApiController
 {
     [HttpPost("register")]
+    [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
         var command = new RegisterCommand(
@@ -29,13 +30,13 @@ public class AutheticationController : ApiController
     private AuthenticationResponse? MapAuthResult(AuthenticationResult authResult)
     {
         return new AuthenticationResponse(
-           authResult.Id,
            authResult.Email,
-           authResult.Token,
+           authResult.AccessToken,
            authResult.RefreshToken);
     }
 
     [HttpPost("login")]
+    [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
     public async Task<IActionResult> Login(LoginRequest request)
     {
         var query = new LoginQuery(request.Email, request.Password);
