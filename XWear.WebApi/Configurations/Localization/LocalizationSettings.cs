@@ -4,8 +4,18 @@ using System.Globalization;
 
 namespace XWear.WebApi.Configurations.Localization
 {
+    /// <summary>
+    /// Локализация расширение
+    /// </summary>
     public static class LocalizationSettings
     {
+        /// <summary>
+        /// Добавление локализации метод расширения
+        /// </summary>
+        /// <param name="services">Интерфейс сервсиа</param>
+        /// <param name="defaultCulture">Язык по умолчанию</param>
+        /// <param name="supportedCultures">Список поддерживаемых языков</param>
+        /// <returns></returns>
         public static IServiceCollection AddCustomLocalization(this IServiceCollection services, string defaultCulture,
            params string[] supportedCultures)
         {
@@ -23,6 +33,11 @@ namespace XWear.WebApi.Configurations.Localization
             return services;
         }
 
+        /// <summary>
+        /// Подключить использование локализации
+        /// </summary>
+        /// <param name="app">Билдер интерфейс</param>
+        /// <returns></returns>
         public static IApplicationBuilder UseCustomLocalization(this IApplicationBuilder app)
         {
             var requestLocalizationOptions =

@@ -1,7 +1,6 @@
-﻿namespace XWear.WebApi.Common.Http
+﻿namespace XWear.WebApi.Common.Http;
+
+public class HttpContextItemKeys
 {
-    public class HttpContextItemKeys
-    {
-        public const string Errors = "errors";
-    }
+    public const string Errors = "errors";
 }

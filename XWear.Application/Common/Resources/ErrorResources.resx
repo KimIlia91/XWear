@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InvalidEmailFormat" xml:space="preserve">
+    <value>Invalid email format</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Required field</value>
+  </data>
   <data name="ServerError" xml:space="preserve">
     <value>An error occurred while processing your request</value>
   </data>

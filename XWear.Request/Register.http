@@ -1,10 +1,11 @@
-POST https://5zht445t-7210.inc1.devtunnels.ms/auth/register
+POST https://5zht445t-7210.inc1.devtunnels.ms/api/auth/register
 Content-Type: application/json
 
 {
 	"firstName": "test",
 	"lastName": "user",
 	"email": "testuser1@test.com",
+	"phone": "+996705123456",
 	"password": "TestUser123!",
 	"confirmPassword": "TestUser123!"
 }
