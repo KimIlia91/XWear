@@ -1,8 +1,9 @@
 POST https://5zht445t-7210.inc1.devtunnels.ms/api/auth/register
 Content-Type: application/json
+Accept-Language: ru-RU
 
 {
-	"firstName": "test",
+	"firstName": "",
 	"lastName": "user",
 	"email": "testuser1@test.com",
 	"phone": "+996705123456",

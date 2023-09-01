@@ -1,6 +1,8 @@
 ﻿using ErrorOr;
 using MediatR;
 using FluentValidation;
+using FluentValidation.Results;
+using System.Reflection;
 
 namespace XWear.Application.Common.Behaviors;
 
@@ -11,24 +13,39 @@ public class ValidationBehavior<TRequest, TResponse>
 {
     private readonly IValidator<TRequest>? _validator;
 
-    public ValidationBehavior(IValidator<TRequest>? validator = null) => (_validator) = (validator);
+    public ValidationBehavior(IValidator<TRequest>? validator = null) => _validator = validator;
 
     public async Task<TResponse> Handle(
         TRequest request, 
         RequestHandlerDelegate<TResponse> next, 
         CancellationToken cancellationToken)
     {
-        if (_validator is null) return await next();
+        if (_validator == null) return await next();
 
         var validationResult = await _validator.ValidateAsync(request, cancellationToken);
 
         if (validationResult.IsValid) return await next();
 
-        var errors = validationResult.Errors
-            .ConvertAll(validatorFailure => Error.Validation(
-                validatorFailure.PropertyName, 
-                validatorFailure.ErrorMessage));
+        return TryCreateResponseFromErrors(validationResult.Errors, out var response)
+            ? response
+            : throw new ValidationException(validationResult.Errors);
+    }
 
-        return (dynamic)errors;
+    private static bool TryCreateResponseFromErrors(
+        List<ValidationFailure> validationFailures, 
+        out TResponse response)
+    {
+        List<Error> errors = validationFailures.ConvertAll(x => Error.Validation(
+                code: x.PropertyName,
+                description: x.ErrorMessage));
+
+        response = (TResponse?)typeof(TResponse)
+            .GetMethod(
+                name: nameof(ErrorOr<object>.From),
+                bindingAttr: BindingFlags.Static | BindingFlags.Public,
+                types: new[] { typeof(List<Error>) })?
+            .Invoke(null, new[] { errors })!;
+
+        return response is not null;
     }
 }
