@@ -1,0 +1,9 @@
+POST https://b01w9hl7-7210.inc1.devtunnels.ms/auth/register
+Content-Type: application/json
+
+{
+	"firstName": "test",
+	"lastName": "user",
+	"email": "testuser1@test.com",
+	"password": "TestUser123!"
+}

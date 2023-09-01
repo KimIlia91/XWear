@@ -1,3 +1,5 @@
+using XWear.Application;
+using XWear.Infrastructure;
 
 namespace XWear.WebApi
 {
@@ -6,6 +8,10 @@ namespace XWear.WebApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services
+                .AddApplication()
+                .AddInfrastructure(builder.Configuration);
+
             builder.Services.AddAuthorization();
             builder.Services.AddControllers();
             builder.Services.AddSwaggerGen();
@@ -15,6 +21,7 @@ namespace XWear.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
             app.MapControllers();
             app.UseHttpsRedirection();
             app.UseAuthorization();
