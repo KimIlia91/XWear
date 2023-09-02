@@ -68,5 +68,14 @@ namespace XWear.Application.Common.Resources {
                 return ResourceManager.GetString("TestLocalization", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User updated successfully.
+        /// </summary>
+        public static string UserUpdated {
+            get {
+                return ResourceManager.GetString("UserUpdated", resourceCulture);
+            }
+        }
     }
 }

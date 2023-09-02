@@ -21,6 +21,7 @@ namespace XWear.Infrastructure
             services.AddAuth(configuration);
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             return services;
         }

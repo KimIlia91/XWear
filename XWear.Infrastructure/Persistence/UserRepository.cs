@@ -16,6 +16,7 @@ namespace XWear.Infrastructure.Persistence
                     FirstName = "Данияр",
                     LastName = "Даниярович",
                     Email = "testuser@test.com",
+                    Phone = "+996709123123",
                     Password = "TestUser123!",
                 });
             }
@@ -29,6 +30,11 @@ namespace XWear.Infrastructure.Persistence
         public User? GetUserByEmail(string email)
         {
             return _users.SingleOrDefault(u => u.Email == email);
+        }
+
+        public User? GetUserById(Guid id)
+        {
+            return _users.SingleOrDefault(u => u.Id == id);
         }
     }
 }

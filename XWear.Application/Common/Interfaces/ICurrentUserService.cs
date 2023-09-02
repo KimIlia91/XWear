@@ -1,0 +1,9 @@
+﻿namespace XWear.Application.Common.Interfaces
+{
+    public interface ICurrentUserService
+    {
+        Guid UserId { get; }
+
+        Guid? NullableUserId { get; }
+    }
+}

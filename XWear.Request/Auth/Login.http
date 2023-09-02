@@ -1,0 +1,8 @@
+POST https://5zht445t-7210.inc1.devtunnels.ms/api/auth/login
+Content-Type: application/json
+Accept-Language: ru-RU
+
+{
+	"email": "testuser@test.com",
+	"password": "TestUser123!"
+}

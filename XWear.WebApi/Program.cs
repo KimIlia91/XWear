@@ -16,9 +16,10 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddHttpContextAccessor();
         builder.Services
-            .AddApplication()
-            .AddInfrastructure(builder.Configuration);
+            .AddInfrastructure(builder.Configuration)
+            .AddApplication();
 
         builder.Services.AddAuthorization();
         builder.Services.AddControllers();

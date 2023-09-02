@@ -12,7 +12,6 @@ namespace XWear.WebApi.Controllers;
 /// Базовый контроллер
 /// </summary>
 [ApiController]
-[Authorize]
 [Route("api/[controller]")]
 public class ApiController : ControllerBase
 {

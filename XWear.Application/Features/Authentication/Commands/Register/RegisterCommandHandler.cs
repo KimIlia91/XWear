@@ -28,6 +28,9 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
         if (_userRepository.GetUserByEmail(command.Email) is not null)
             return Errors.User.DuplicateEmail;
 
+        if (!string.Equals(command.Password, command.ConfirmPassword))
+            return Errors.User.DuplicateEmail;
+
         var user = new User
         {
             FirstName = command.FirstName,

@@ -120,4 +120,7 @@
   <data name="TestLocalization" xml:space="preserve">
     <value>It's work!</value>
   </data>
+  <data name="UserUpdated" xml:space="preserve">
+    <value>User updated successfully</value>
+  </data>
 </root>

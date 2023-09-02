@@ -8,6 +8,7 @@ namespace XWear.WebApi.Controllers;
 /// Контроллер для проверки.
 /// </summary>
 [Route("api/isItWork")]
+[Authorize]
 public class TestController : ApiController
 {
     /// <summary>
