@@ -3,7 +3,7 @@ Content-Type: application/json
 Accept-Language: ru-RU
 
 {
-	"firstName": "",
+	"firstName": "test",
 	"lastName": "user",
 	"email": "testuser1@test.com",
 	"phone": "+996705123456",

@@ -1,4 +1,5 @@
 ﻿using ErrorOr;
+using XWear.Domain.Common.Resources;
 
 namespace XWear.Domain.Common.Errors
 {
@@ -7,8 +8,8 @@ namespace XWear.Domain.Common.Errors
         public static class Authentication
         {
             public static Error InvalidCredentinals => Error.Validation(
-                code: "User.InvalidCred",
-                description: "Invalid credentinals.");
+                code: PropertyResources.UserInvalidCredentinals,
+                description: ErrorResources.UserInvalidCredentinals);
         }
     }
 }
