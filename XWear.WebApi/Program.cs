@@ -36,11 +36,12 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        app.UseHsts(); 
         app.UseExceptionHandler("/error");
+        app.UseHttpsRedirection();
         app.MapControllers();
 
         app.UseCors("CorsPolicy")
+           .UseAuthentication()
            .UseAuthorization()
            .UseCustomLocalization();
 
