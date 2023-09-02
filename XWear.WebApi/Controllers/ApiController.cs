@@ -33,6 +33,7 @@ public class ApiController : ControllerBase
     /// </summary>
     /// <param name="errors"></param>
     /// <returns></returns>
+    [Route("/error")]
     protected IActionResult Problem(List<Error> errors)
     {
         if (errors.Count is 0) return Problem();
