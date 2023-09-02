@@ -30,7 +30,7 @@ public class CurrentUserService : ICurrentUserService
                 return _userId.Value;
             }
 
-            throw new UnauthorizedAccessException();
+            return Guid.Empty;
         }
     }
 }
