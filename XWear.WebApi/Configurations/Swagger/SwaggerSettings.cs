@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.OpenApi.Models;
+using XWear.WebApi.Common.Constants;
 
 namespace XWear.WebApi.Configurations.Swagger;
 
@@ -14,9 +15,31 @@ public static class SwaggerSettings
 
         return services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc(name, new OpenApiInfo { Title = "XWear API", Version = "v1" });
+            c.SwaggerDoc(name, new OpenApiInfo { Title = DomainApiConstants.TitleApi, Version = DomainApiConstants.Version });
             c.DescribeAllParametersInCamelCase();
             c.OperationFilter<AcceptLanguageHeaderParameter>();
+            c.AddSecurityDefinition(DomainApiConstants.AuthScheme, new OpenApiSecurityScheme
+            {
+                Name = DomainApiConstants.AuthNameHeader,
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = DomainApiConstants.AuthScheme,
+                In = ParameterLocation.Header
+            });
+
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = DomainApiConstants.AuthScheme
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+            });
 
             var xmlFile = $"{executingAssembly.GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
