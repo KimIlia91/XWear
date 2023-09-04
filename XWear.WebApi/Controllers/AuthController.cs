@@ -21,7 +21,7 @@ public class AuthController : ApiController
     /// <param name="request">Запрос на регистрацию пользователя.</param>
     /// <returns>Результат аутентификации.</returns>
     [HttpPost("register")]
-    [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AuthResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> Register(RegisterRequest request)
     {
         var command = Mapper.Map<RegisterCommand>(request);
@@ -37,7 +37,7 @@ public class AuthController : ApiController
     /// <param name="request">Запрос на вход в систему.</param>
     /// <returns>Результат аутентификации.</returns>
     [HttpPost("login")]
-    [ProducesResponseType(typeof(AuthenticationResult), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AuthResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> Login(LoginRequest request)
     {
         var query = Mapper.Map<LoginQuery>(request);

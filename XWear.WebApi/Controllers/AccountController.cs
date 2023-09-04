@@ -18,13 +18,13 @@ public class AccountController : ApiController
     /// </summary>
     /// <returns>Информация о аккаунте</returns>
     [HttpGet]
-    [ProducesResponseType(typeof(AccountResult), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AccountResponse), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAccount()
     {
         var query = new GetAccountQuery();
         var result = await Mediator.Send(query);
         return result.Match(
-            result => Ok(result),
+            result => Ok(Mapper.Map<AccountResponse>(result)),
             errors => Problem(errors));
     }
 
