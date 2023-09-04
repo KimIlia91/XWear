@@ -1,5 +1,6 @@
 PUT https://5zht445t-7210.inc1.devtunnels.ms/api/account/update
 Content-Type: application/json
+Accept: application/json
 Accept-Language: ru-RU
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNjM0NTg4Yy04YjZiLTQ4NjctYjU0My05MmI0ZTU1NWIwZTMiLCJnaXZlbl9uYW1lIjoidGVzdCIsImZhbWlseV9uYW1lIjoidXNlciIsImp0aSI6IjVhN2E3NWI4LTExNjctNDE5Yy05ZWY2LTY3MTUxNDM4ZGI4NCIsImV4cCI6MTY5ODg0MTcwMiwiaXNzIjoiWFdlYXIuQXBpIiwiYXVkIjoiWFdlYXIuV2ViIn0.Qgj8gkyMQ6UrVK_YdFB7cfjyowz6IgESf0fWZbB-6vc
 
