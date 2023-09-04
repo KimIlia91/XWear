@@ -1,4 +1,5 @@
 GET https://localhost:7210/api/isitwork/authorization
 Content-Type: application/json
+Accept: application/json
 Accept-Language: ru-RU
 Authorization: Bearer {your_token}
