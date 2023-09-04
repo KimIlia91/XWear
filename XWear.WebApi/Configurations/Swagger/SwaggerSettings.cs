@@ -20,11 +20,12 @@ public static class SwaggerSettings
             c.OperationFilter<AcceptLanguageHeaderParameter>();
             c.AddSecurityDefinition(DomainApiConstants.AuthScheme, new OpenApiSecurityScheme
             {
+                Description = DomainApiConstants.AuthDescription,
                 Name = DomainApiConstants.AuthNameHeader,
                 Type = SecuritySchemeType.ApiKey,
                 Scheme = DomainApiConstants.AuthScheme,
                 In = ParameterLocation.Header
-            });
+            }); ;
 
             c.AddSecurityRequirement(new OpenApiSecurityRequirement
             {
