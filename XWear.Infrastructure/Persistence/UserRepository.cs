@@ -9,7 +9,7 @@ namespace XWear.Infrastructure.Persistence
 
         public UserRepository()
         {
-            if (_users.SingleOrDefault(u => u.Email == "testuser@test.com") is null)
+            if (_users.Count == 0)
             {
                 _users.Add(new User
                 {

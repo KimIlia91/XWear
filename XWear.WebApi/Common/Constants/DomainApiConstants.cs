@@ -5,6 +5,6 @@
         public static string TitleApi = "XWear API";
         public static string Version = "v1";
         public static string AuthScheme = "Bearer";
-        public static string AuthNameHeader = "Authentication";
+        public static string AuthNameHeader = "Authorization";
     }
 }
