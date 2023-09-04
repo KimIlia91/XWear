@@ -8,7 +8,7 @@ namespace XWear.Application.Common.Mapping
     {
         public void Register(TypeAdapterConfig config)
         {
-            config.NewConfig<AuthenticationResult, AuthenticationResponse>();
+            config.NewConfig<AuthenticationResult, AuthResponse>();
         }
     }
 }
