@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using System.Globalization;
 using XWear.WebApi.Common.Constants;
 
-namespace XWear.WebApi.Configurations.Localization
+namespace XWear.WebApi.Common.Configurations.Localization
 {
     /// <summary>
     /// Локализация расширение

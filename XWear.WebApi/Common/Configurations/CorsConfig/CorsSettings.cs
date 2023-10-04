@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Cors.Infrastructure;
 using XWear.WebApi.Common.Constants;
 
-namespace XWear.WebApi.Configurations.CorsConfig
+namespace XWear.WebApi.Common.Configurations.CorsConfig
 {
     /// <summary>
     /// Настройки CORS

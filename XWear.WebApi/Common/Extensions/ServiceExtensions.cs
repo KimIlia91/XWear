@@ -4,18 +4,18 @@ using XWear.Application;
 using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
 using XWear.Infrastructure;
+using XWear.WebApi.Common.Configurations.CorsConfig;
+using XWear.WebApi.Common.Configurations.Localization;
+using XWear.WebApi.Common.Configurations.Swagger;
 using XWear.WebApi.Common.Constants;
 using XWear.WebApi.Common.Errors;
-using XWear.WebApi.Configurations.CorsConfig;
-using XWear.WebApi.Configurations.Localization;
-using XWear.WebApi.Configurations.Swagger;
 
-namespace XWear.WebApi
+namespace XWear.WebApi.Common.Extensions
 {
     public static class ServiceExtensions
     {
         public static IServiceCollection AddApiServices(
-            this IServiceCollection services, 
+            this IServiceCollection services,
             IConfiguration configuration)
         {
             services.AddHttpContextAccessor();

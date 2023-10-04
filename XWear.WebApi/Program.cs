@@ -6,6 +6,7 @@ using XWear.Domain.Common.Extensions;
 using XWear.Infrastructure;
 using XWear.WebApi.Common.Constants;
 using XWear.WebApi.Common.Errors;
+using XWear.WebApi.Common.Extensions;
 using XWear.WebApi.Configurations.CorsConfig;
 using XWear.WebApi.Configurations.Localization;
 using XWear.WebApi.Configurations.Swagger;

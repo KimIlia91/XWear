@@ -1,4 +1,4 @@
-﻿namespace XWear.WebApi.Configurations.CorsConfig
+﻿namespace XWear.WebApi.Common.Configurations.CorsConfig
 {
     public class CorsOptions
     {

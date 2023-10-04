@@ -1,7 +1,7 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace XWear.WebApi.Configurations.Swagger;
+namespace XWear.WebApi.Common.Configurations.Swagger;
 
 public class AcceptLanguageHeaderParameter : IOperationFilter
 {

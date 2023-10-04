@@ -1,7 +1,7 @@
-﻿using XWear.WebApi.Common.Constants;
-using XWear.WebApi.Configurations.Localization;
+﻿using XWear.WebApi.Common.Configurations.Localization;
+using XWear.WebApi.Common.Constants;
 
-namespace XWear.WebApi
+namespace XWear.WebApi.Common.Extensions
 {
     public static class AppExtensions
     {
