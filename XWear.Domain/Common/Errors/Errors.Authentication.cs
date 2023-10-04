@@ -14,10 +14,6 @@ namespace XWear.Domain.Common.Errors
             public static Error InvalidConfirmPassword => Error.Validation(
                 code: PropertyResources.InvalidConfirmPassword,
                 description: ErrorResources.InvalidConfirmPassword);
-
-            public static Error EmailAlreadyTaken => Error.Validation(
-                code: PropertyResources.EmailAlreadyTaken,
-                description: ErrorResources.EmailAlreadyTaken);
         }
     }
 }

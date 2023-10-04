@@ -34,7 +34,7 @@ public class UpdateAccountCommandHandler
         var userByEmail = _userRepository.GetUserByEmail(command.Email);
 
         if (userByEmail is not null && userByEmail.Id != _currentUser.UserId)
-            return Errors.Authentication.EmailAlreadyTaken;
+            return Errors.User.DuplicateEmail;
 
         if (_userRepository.GetUserById(_currentUser.UserId) is not User user)
             return Errors.Authentication.InvalidCredentinals;
