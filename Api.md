@@ -21,7 +21,7 @@
 ### Register
 
 ```js
-POST {{host}}/auth/register
+POST {{host}}/api/auth/register
 ```
 
 #### Register Request
@@ -50,7 +50,7 @@ POST {{host}}/auth/register
 ### Login
 
 ```js
-POST {{host}}/auth/login
+POST {{host}}/api/auth/login
 ```
 
 #### Login Request
