@@ -38,7 +38,7 @@ namespace XWear.Infrastructure.Authentication
             var securiryToken = new JwtSecurityToken(
                 issuer: _jwtSettings.Issuer,
                 audience: _jwtSettings.Audience,
-                expires: _dateTimeProvider.UtcNow.AddDays(_jwtSettings.ExpiryMinutes),
+                expires: _dateTimeProvider.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes),
                 claims: claims,
                 signingCredentials: signingCredentials);
 
