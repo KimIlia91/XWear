@@ -11,5 +11,9 @@
                         "\"Пример: \"Bearer {Ваш_Токен}\".\r\n" +
                         "Пример ввода токена в HTTP запрос \"Authorization: Bearer {Ваш_Токен}\"\r\n" +
                         "Токен указывается в \"Header\" HTTP запроса.";
+
+        public static string Cors = "CORS";
+        public static string ResourcesPath = "Resources";
+        public static string CorsPolicyName = "CorsPolicy";
     }
 }

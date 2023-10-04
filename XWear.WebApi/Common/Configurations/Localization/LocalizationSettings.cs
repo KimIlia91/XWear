@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using System.Globalization;
+using XWear.WebApi.Common.Constants;
 
 namespace XWear.WebApi.Configurations.Localization
 {
@@ -19,7 +20,7 @@ namespace XWear.WebApi.Configurations.Localization
         public static IServiceCollection AddCustomLocalization(this IServiceCollection services, string defaultCulture,
            params string[] supportedCultures)
         {
-            services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
+            services.AddLocalization(opt => { opt.ResourcesPath = DomainApiConstants.ResourcesPath; });
 
             services.Configure<RequestLocalizationOptions>(options =>
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Cors.Infrastructure;
+using XWear.WebApi.Common.Constants;
 
 namespace XWear.WebApi.Configurations.CorsConfig
 {
@@ -17,7 +18,7 @@ namespace XWear.WebApi.Configurations.CorsConfig
         public static IServiceCollection AddCorsPolicy(this IServiceCollection services, string corsPolicyName,
             IConfiguration configuration)
         {
-            var corsOption = configuration.GetSection("CORS").Get<CorsOptions>() ?? new CorsOptions();
+            var corsOption = configuration.GetSection(DomainApiConstants.Cors).Get<CorsOptions>() ?? new CorsOptions();
 
             services.AddCors(options =>
             {

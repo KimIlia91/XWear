@@ -2,13 +2,13 @@
 using Microsoft.OpenApi.Models;
 using XWear.WebApi.Common.Constants;
 
-namespace XWear.WebApi.Configurations.Swagger;
+namespace XWear.WebApi.Common.Configurations.Swagger;
 
 public static class SwaggerSettings
 {
     public static IServiceCollection AddCustomSwaggerGen(
         this IServiceCollection services,
-        string name, 
+        string name,
         Assembly executingAssembly)
     {
         services.AddRouting(options => options.LowercaseUrls = true);
