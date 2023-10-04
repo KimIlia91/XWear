@@ -10,14 +10,17 @@ public class UpdateAccountCommandValidator : AbstractValidator<UpdateAccountComm
         RuleFor(command => command.FirstName)
             .NotEmpty()
             .WithMessage(ErrorResources.Required);
+
         RuleFor(command => command.LastName)
             .NotEmpty()
             .WithMessage(ErrorResources.Required);
+
         RuleFor(command => command.Email)
             .NotEmpty()
             .WithMessage(ErrorResources.Required)
             .EmailAddress()
             .WithMessage(ErrorResources.InvalidEmailFormat);
+
         RuleFor(command => command.Phone)
             .NotEmpty()
             .WithMessage(ErrorResources.Required);

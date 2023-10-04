@@ -26,7 +26,7 @@ namespace XWear.Infrastructure
             return services;
         }
 
-        public static IServiceCollection AddAuth(
+        private static IServiceCollection AddAuth(
             this IServiceCollection services,
             IConfiguration configuration)
         {
