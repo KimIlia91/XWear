@@ -31,12 +31,14 @@ public class UpdateAccountCommandHandler
     {
         await Task.CompletedTask;
 
-        var userByEmail = _userRepository.GetUserByEmail(command.Email);
+        var user = _userRepository.GetUserByEmail(command.Email);
 
-        if (userByEmail is not null && userByEmail.Id != _currentUser.UserId)
+        if (user is not null && user.Id != _currentUser.UserId)
             return Errors.User.DuplicateEmail;
 
-        if (_userRepository.GetUserById(_currentUser.UserId) is not User user)
+        user ??= _userRepository.GetUserById(_currentUser.UserId);
+
+        if (user is null)
             return Errors.Authentication.InvalidCredentinals;
 
         _mapper.Map(command, user);
