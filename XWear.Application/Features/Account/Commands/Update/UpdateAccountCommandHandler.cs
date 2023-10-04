@@ -1,7 +1,6 @@
 ﻿using ErrorOr;
 using MediatR;
 using MapsterMapper;
-using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
 using XWear.Application.Common.Interfaces;
 using XWear.Application.Features.Account.Common;
