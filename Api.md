@@ -28,8 +28,8 @@ POST {{host}}/auth/register
 
 ```json
 {
-	"firstName": "Данияр",
-	"lastName": "Данияров",
+	"firstName": "Daniyar",
+	"lastName": "Daniyarov",
 	"email": "testuser@test.com",
 	"phone": "+996709123123",
 	"password": "TestUser123!",
@@ -86,8 +86,8 @@ GET {{host}}/api/account
 
 ```json
 {
-	"firstName": "Данияр",
-	"lastName": "Данияров",
+	"firstName": "Daniyar",
+	"lastName": "Daniyarov",
 	"email": "testuser@test.com",
 	"phone": "+996709123123"
 }
@@ -103,8 +103,8 @@ PUT {{host}}/api/account
 
 ```json
 {
-	"firstName": "Данияр",
-	"lastName": "Данияров",
+	"firstName": "Daniyar",
+	"lastName": "Daniyarov",
 	"email": "testuser@test.com",
 	"phone": "+996709123123"
 }
