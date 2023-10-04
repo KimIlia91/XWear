@@ -1,4 +1,4 @@
-POST https://5zht445t-7210.inc1.devtunnels.ms/api/auth/login
+POST https://localhost:7210/api/auth/login
 Content-Type: application/json
 Accept: application/json
 Accept-Language: ru-RU

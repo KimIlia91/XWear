@@ -9,5 +9,7 @@ namespace XWear.Application.Common.Interfaces
         User? GetUserById(Guid id);
 
         void Add(User user);
+
+        bool IsEmailUnique(string email, Guid userId);
     }
 }

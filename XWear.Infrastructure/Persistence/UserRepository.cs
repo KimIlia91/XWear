@@ -36,5 +36,12 @@ namespace XWear.Infrastructure.Persistence
         {
             return _users.SingleOrDefault(u => u.Id == id);
         }
+
+        public bool IsEmailUnique(string email, Guid userId)
+        {
+            var user = _users.SingleOrDefault(u => u.Email == email && u.Id != userId);
+
+            return user is null;
+        }
     }
 }

@@ -1,8 +1,8 @@
-PUT https://5zht445t-7210.inc1.devtunnels.ms/api/account/update
+PUT https://localhost:7210/api/account
 Content-Type: application/json
 Accept: application/json
 Accept-Language: ru-RU
-Authorization: Bearer {your_token}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNmZhZGQ3My1lZmRhLTRmY2UtOTAyNC1iYTliZmMyNWQzNzIiLCJnaXZlbl9uYW1lIjoi0JTQsNC90LjRj9GAIiwiZmFtaWx5X25hbWUiOiLQlNCw0L3QuNGP0YDQvtCy0LjRhyIsImp0aSI6IjdlMTYxYzM0LTc4OTAtNGRhNi04NzYzLTg3Y2I1NTY0YWZlOSIsImV4cCI6MTcwMTYxODYzNiwiaXNzIjoiWFdlYXIuQXBpIiwiYXVkIjoiWFdlYXIuV2ViIn0.0x_n7EHFKZ3Ih7QeXxdq55pyGzTG_W7eC41W8IXHsxY
 
 {
 	"firstName": "testtest",

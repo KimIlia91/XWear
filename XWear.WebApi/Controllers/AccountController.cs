@@ -39,7 +39,7 @@ public class AccountController : ApiController
         var command = Mapper.Map<UpdateAccountCommand>(request);
         var result = await Mediator.Send(command);
         return result.Match(
-            result => Ok(result),
+            result => Ok(Mapper.Map<AccountResponse>(result)),
             errors => Problem(errors));
     }
 }

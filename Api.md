@@ -113,6 +113,11 @@ PUT {{host}}/api/account
 #### Update Account Response
 
 ```json
-200 Ok
+{
+	"firstName": "Daniyar",
+	"lastName": "Daniyarov",
+	"email": "testuser@test.com",
+	"phone": "+996509123123"
+}
 ```
 
