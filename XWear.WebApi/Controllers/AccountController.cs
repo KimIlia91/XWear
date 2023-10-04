@@ -33,8 +33,8 @@ public class AccountController : ApiController
     /// <param name="request">Запрос на обновления аккаунта</param>
     /// <returns>Ответ о успешном обновлении</returns>
     [HttpPut]
-    [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-    public async Task<IActionResult> UpdateAccount(UpdateAccountRequest request)
+    [ProducesResponseType(typeof(AccountResponse), StatusCodes.Status200OK)]
+    public async Task<IActionResult> UpdateAccount(AccountUpdateRequest request)
     {
         var command = Mapper.Map<UpdateAccountCommand>(request);
         var result = await Mediator.Send(command);

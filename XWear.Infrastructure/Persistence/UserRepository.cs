@@ -1,5 +1,5 @@
-﻿using XWear.Application.Common.Interfaces;
-using XWear.Domain.Entities;
+﻿using XWear.Domain.Entities;
+using XWear.Application.Common.Interfaces;
 
 namespace XWear.Infrastructure.Persistence
 {
@@ -35,13 +35,6 @@ namespace XWear.Infrastructure.Persistence
         public User? GetUserById(Guid id)
         {
             return _users.SingleOrDefault(u => u.Id == id);
-        }
-
-        public bool IsEmailUnique(string email, Guid userId)
-        {
-            var user = _users.SingleOrDefault(u => u.Email == email && u.Id != userId);
-
-            return user is null;
         }
     }
 }
