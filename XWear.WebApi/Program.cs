@@ -19,11 +19,11 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddApiServices(builder.Configuration);
+        builder.Services.AddCustomServices(builder.Configuration);
 
         var app = builder.Build();
 
-        app.AddApiSettings();
+        app.UseCustomConfiguration();
         app.Run();
     }
 }

@@ -3,9 +3,17 @@ using XWear.WebApi.Common.Constants;
 
 namespace XWear.WebApi.Common.Extensions
 {
-    public static class AppExtensions
+    /// <summary>
+    /// Расширение для настройки кастомной конфигурации ASP.NET Core приложения.
+    /// </summary>
+    public static class ApplicationBuilderExtensions
     {
-        public static WebApplication AddApiSettings(this WebApplication app)
+        /// <summary>
+        /// Применяет настройку кастомной конфигурации ASP.NET Core приложения.
+        /// </summary>
+        /// <param name="app">Построитель приложения (ApplicationBuilder).</param>
+        /// <returns>Построитель приложения с настройками кастомной конфигурации.</returns>
+        public static WebApplication UseCustomConfiguration(this WebApplication app)
         {
             if (app.Environment.IsDevelopment())
             {

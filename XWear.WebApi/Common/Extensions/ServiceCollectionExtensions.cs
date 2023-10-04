@@ -12,9 +12,18 @@ using XWear.WebApi.Common.Errors;
 
 namespace XWear.WebApi.Common.Extensions
 {
-    public static class ServiceExtensions
+    /// <summary>
+    /// Расширение для добавления кастомных служб в контейнер служб ASP.NET Core.
+    /// </summary>
+    public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddApiServices(
+        /// <summary>
+        /// Добавляет кастомные службы в контейнер служб ASP.NET Core.
+        /// </summary>
+        /// <param name="services">Контейнер служб (IServiceCollection).</param>
+        /// <param name="configuration">Конфигурация приложения.</param>
+        /// <returns>Контейнер служб с добавленными кастомными службами.</returns>
+        public static IServiceCollection AddCustomServices(
             this IServiceCollection services,
             IConfiguration configuration)
         {
