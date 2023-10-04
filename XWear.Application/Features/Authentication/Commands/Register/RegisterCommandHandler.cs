@@ -1,5 +1,6 @@
 ﻿using ErrorOr;
 using MediatR;
+using MapsterMapper;
 using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
 using XWear.Application.Common.Interfaces;
@@ -11,13 +12,16 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
 {
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
     private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
 
     public RegisterCommandHandler(
         IUserRepository userRepository,
-        IJwtTokenGenerator jwtTokenGenerator)
+        IJwtTokenGenerator jwtTokenGenerator, 
+        IMapper mapper)
     {
         _userRepository = userRepository;
         _jwtTokenGenerator = jwtTokenGenerator;
+        _mapper = mapper;
     }
 
     public async Task<ErrorOr<AuthenticationResult>> Handle(
@@ -29,16 +33,9 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, ErrorOr<A
             return Errors.User.DuplicateEmail;
 
         if (!string.Equals(command.Password, command.ConfirmPassword))
-            return Errors.User.DuplicateEmail;
+            return Errors.Authentication.InvalidConfirmPassword;
 
-        var user = new User
-        {
-            FirstName = command.FirstName,
-            LastName = command.LastName,
-            Email = command.Email,
-            Phone = command.Phone,
-            Password = command.Password
-        };
+        var user = _mapper.Map<User>(command);
 
         _userRepository.Add(user);
         var token = _jwtTokenGenerator.GenerateToken(user);

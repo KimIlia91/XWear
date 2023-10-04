@@ -61,6 +61,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid confirm password.
+        /// </summary>
+        public static string InvalidConfirmPassword {
+            get {
+                return ResourceManager.GetString("InvalidConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User duplicate email.
         /// </summary>
         public static string UserDuplicateEmail {

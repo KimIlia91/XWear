@@ -10,6 +10,10 @@ namespace XWear.Domain.Common.Errors
             public static Error InvalidCredentinals => Error.Validation(
                 code: PropertyResources.UserInvalidCredentinals,
                 description: ErrorResources.UserInvalidCredentinals);
+
+            public static Error InvalidConfirmPassword => Error.Validation(
+                code: PropertyResources.InvalidConfirmPassword,
+                description: ErrorResources.InvalidConfirmPassword);
         }
     }
 }
