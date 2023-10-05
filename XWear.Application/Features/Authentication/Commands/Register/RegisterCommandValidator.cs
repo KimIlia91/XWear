@@ -14,8 +14,8 @@ namespace XWear.Application.Features.Authentication.Commands.Register
 
             RuleFor(command => command.LastName)
                 .NotEmpty()
-                .WithMessage(ErrorResources.Required);   
-            
+                .WithMessage(ErrorResources.Required);
+
             RuleFor(command => command.Email)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
@@ -31,8 +31,11 @@ namespace XWear.Application.Features.Authentication.Commands.Register
                 .WithMessage(ErrorResources.InvalidPhoneFormat);
 
             RuleFor(command => command.Password)
+                .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
-                .WithMessage(ErrorResources.Required);
+                .WithMessage(ErrorResources.Required)
+                .Must(ValidatorHelpers.PasswordPolicy)
+                .WithMessage(ErrorResources.PasswordPolicy);
 
             RuleFor(command => command.ConfirmPassword)
                 .NotEmpty()
