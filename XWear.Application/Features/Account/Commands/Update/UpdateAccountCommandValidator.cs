@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using PhoneNumbers;
+using XWear.Application.Common.Helpers;
 using XWear.Application.Common.Resources;
 
 namespace XWear.Application.Features.Account.Commands.Update;
@@ -23,6 +25,10 @@ public class UpdateAccountCommandValidator : AbstractValidator<UpdateAccountComm
 
         RuleFor(command => command.Phone)
             .NotEmpty()
-            .WithMessage(ErrorResources.Required);
+            .WithMessage(ErrorResources.Required)
+            .Must(ValidatorHelpers.MustBePhoneNumberFormat)
+            .WithMessage(ErrorResources.InvalidPhoneFormat);
     }
+
+    
 }

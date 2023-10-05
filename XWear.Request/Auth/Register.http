@@ -1,4 +1,4 @@
-POST https://5zht445t-7210.inc1.devtunnels.ms/api/auth/register
+POST https://localhost:7210/api/auth/register
 Content-Type: application/json
 Accept: application/json
 Accept-Language: ru-RU
@@ -7,7 +7,7 @@ Accept-Language: ru-RU
 	"firstName": "test",
 	"lastName": "user",
 	"email": "testuser1@test.com",
-	"phone": "+996705123456",
+	"phone": "+996701023456",
 	"password": "TestUser123!",
 	"confirmPassword": "TestUser123!"
 }

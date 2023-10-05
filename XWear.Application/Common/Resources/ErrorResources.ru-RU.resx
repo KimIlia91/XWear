@@ -120,6 +120,9 @@
   <data name="InvalidEmailFormat" xml:space="preserve">
     <value>Неверный формат электронной почты</value>
   </data>
+  <data name="InvalidPhoneFormat" xml:space="preserve">
+    <value>Неверный формат номера телефона</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>Обязательное поле</value>
   </data>

@@ -70,6 +70,15 @@ namespace XWear.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid phone number format.
+        /// </summary>
+        public static string InvalidPhoneFormat {
+            get {
+                return ResourceManager.GetString("InvalidPhoneFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Required field.
         /// </summary>
         public static string Required {
