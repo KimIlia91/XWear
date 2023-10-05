@@ -7,7 +7,9 @@ namespace XWear.Application.Common.Mapping
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddMapping(this IServiceCollection services, Assembly assembly)
+        public static IServiceCollection AddMapping(
+            this IServiceCollection services, 
+            Assembly assembly)
         {
             var config = TypeAdapterConfig.GlobalSettings;
             config.Scan(assembly);

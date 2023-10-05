@@ -4,4 +4,4 @@ public record ProductResponse(
     Guid Id,
     string Name,
     string Img,
-    decimal Price);
+    IEnumerable<ProductSizeResponse> Prices);

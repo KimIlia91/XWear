@@ -3,7 +3,7 @@ using XWear.Domain.Entities;
 
 namespace XWear.Application.Features.ProductContext.Common;
 
-public class ProductResult
+public class ProductResult : IRegister
 {
     public Guid Id { get; set; }
 
@@ -11,10 +11,12 @@ public class ProductResult
 
     public string ImgUrl { get; set; } = null!;
 
-    public decimal Price { get; set; }
+    public IEnumerable<ProductSizeResult> Prices { get; set; } = new List<ProductSizeResult>();
 
-    public ProductResult()
+    public void Register(TypeAdapterConfig config)
     {
-        TypeAdapterConfig<Product, ProductResult>.NewConfig();
+        config.NewConfig<Product, ProductResult>()
+         .Map(dest => dest.Name, src => src.Model.Name)
+         .Map(dest => dest.Prices, src => src.ProductSizes);
     }
 }
