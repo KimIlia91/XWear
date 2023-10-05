@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using XWear.Application.Common.Interfaces;
 using XWear.Infrastructure.Authentication.Extensions;
-using XWear.Infrastructure.Persistence;
+using XWear.Infrastructure.Persistence.Repositories;
 using XWear.Infrastructure.Services;
 
 namespace XWear.Infrastructure
