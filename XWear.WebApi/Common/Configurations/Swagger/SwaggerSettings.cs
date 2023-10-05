@@ -8,14 +8,14 @@ public static class SwaggerSettings
 {
     public static IServiceCollection AddCustomSwaggerGen(
         this IServiceCollection services,
-        string name,
         Assembly executingAssembly)
     {
         services.AddRouting(options => options.LowercaseUrls = true);
 
         return services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc(name, new OpenApiInfo { Title = DomainApiConstants.TitleApi, Version = DomainApiConstants.Version });
+            c.SwaggerDoc(DomainApiConstants.Version, 
+                new OpenApiInfo { Title = DomainApiConstants.TitleApi, Version = DomainApiConstants.Version });
             c.DescribeAllParametersInCamelCase();
             c.OperationFilter<AcceptLanguageHeaderParameter>();
             c.AddSecurityDefinition(DomainApiConstants.AuthScheme, new OpenApiSecurityScheme

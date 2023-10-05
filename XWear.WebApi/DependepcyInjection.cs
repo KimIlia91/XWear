@@ -21,9 +21,27 @@ namespace XWear.WebApi
             services.AddControllers();
             services.AddSingleton<ProblemDetailsFactory, XWearErrorProblemDitailsFactory>();
             services.AddCorsPolicy(DomainApiConstants.CorsPolicyName, configuration);
-            services.AddCustomSwaggerGen("v1", Assembly.GetExecutingAssembly());
+            services.AddCustomSwaggerGen(Assembly.GetExecutingAssembly());
             services.AddCustomLocalization(LanguagesEnum.En.GetDescription(), LanguagesEnum.Ru.GetDescription());
             return services;
+        }
+
+        public static WebApplication UsePresentation(this WebApplication app)
+        {
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseCustomSwaggerConfiguration();
+            }
+
+            app.UseExceptionHandler("/error");
+            app.UseHttpsRedirection();
+            app.MapControllers();
+
+            app.UseCors(DomainApiConstants.CorsPolicyName);
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseCustomLocalization();
+            return app;
         }
     }
 }
