@@ -12,6 +12,6 @@
 
         public string Password { get; set; } = null!;
 
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public virtual ICollection<FavoritProduct> FavoritProducts { get; set; } = new List<FavoritProduct>();
     }
 }

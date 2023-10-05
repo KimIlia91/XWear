@@ -7,6 +7,6 @@
         public Guid CatalogId { get; set; }
         public Catalog Catalog { get; set; } = null!;
 
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public virtual ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

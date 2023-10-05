@@ -4,6 +4,6 @@
     {
         public string Name { get; set; } = null!;
 
-        public ICollection<Model> Models { get; set; } = new List<Model>();
+        public virtual ICollection<Model> Models { get; set; } = new List<Model>();
     }
 }

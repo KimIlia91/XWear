@@ -1,6 +1,6 @@
 ﻿namespace XWear.Domain.Entities
 {
-    public class ProductSizes : BaseEntity
+    public class ProductSize : BaseEntity
     {
         public decimal Price { get; set; }
 

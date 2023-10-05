@@ -16,7 +16,7 @@ public class Product : BaseEntity
     public Guid ColorId { get; set; }
     public Color Color { get; set; } = null!;
 
-    public ICollection<ProductSizes> ProductSizes { get; set; } = new List<ProductSizes>();
+    public virtual ICollection<ProductSize> ProductSizes { get; set; } = new List<ProductSize>();
 
-    public ICollection<User> Users { get; set; } = new List<User>();
+    public virtual ICollection<FavoritProduct> FavoritProducts { get; set; } = new List<FavoritProduct>();
 }
