@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Entities;
 
-namespace XWear.Application.Common.Interfaces
+namespace XWear.Application.Common.Interfaces.IGenerators
 {
     public interface IJwtTokenGenerator
     {

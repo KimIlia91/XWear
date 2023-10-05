@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Entities;
 
-namespace XWear.Application.Common.Interfaces;
+namespace XWear.Application.Common.Interfaces.IRepositories;
 
 public interface IProductRepository
 {
