@@ -1,9 +1,7 @@
 ﻿namespace XWear.Domain.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
-
         public string FirstName { get; set; } = null!;
 
         public string LastName { get; set; } = null!;
@@ -13,5 +11,7 @@
         public string Phone { get; set; } = null!;
 
         public string Password { get; set; } = null!;
+
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }
