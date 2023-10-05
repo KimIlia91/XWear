@@ -1,4 +1,4 @@
-﻿namespace XWear.Contracts.Account
+﻿namespace XWear.Contracts.Account.Requests
 {
     public record AccountUpdateRequest(
         string FirstName,

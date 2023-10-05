@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using XWear.Application.Features.Account.Commands.Update;
 using XWear.Application.Features.Account.Queries.GetAccount;
-using XWear.Contracts.Account;
+using XWear.Contracts.Account.Requests;
+using XWear.Contracts.Account.Responses;
 
 namespace XWear.WebApi.Controllers;
 

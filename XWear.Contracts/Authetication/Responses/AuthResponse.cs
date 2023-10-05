@@ -1,4 +1,4 @@
-﻿namespace XWear.Contracts.Authetication;
+﻿namespace XWear.Contracts.Authetication.Responses;
 
 public record AuthResponse(
     string Email,

@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using XWear.Contracts.Authetication;
 using XWear.Application.Features.Authentication.Queries.Login;
 using XWear.Application.Features.Authentication.Commands.Register;
 using Microsoft.AspNetCore.Authorization;
+using XWear.Contracts.Authetication.Requests;
+using XWear.Contracts.Authetication.Responses;
 
 namespace XWear.WebApi.Controllers;
 

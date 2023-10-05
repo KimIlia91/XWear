@@ -1,6 +1,6 @@
 ﻿using Mapster;
 using XWear.Application.Features.Authentication.Common;
-using XWear.Contracts.Authetication;
+using XWear.Contracts.Authetication.Responses;
 
 namespace XWear.Application.Common.Mapping
 {

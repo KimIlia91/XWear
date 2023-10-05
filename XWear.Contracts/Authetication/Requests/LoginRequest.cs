@@ -1,4 +1,4 @@
-﻿namespace XWear.Contracts.Authetication;
+﻿namespace XWear.Contracts.Authetication.Requests;
 
 public record LoginRequest(
     string Email,

@@ -1,4 +1,4 @@
-﻿namespace XWear.Contracts.Authetication;
+﻿namespace XWear.Contracts.Authetication.Requests;
 
 public record RegisterRequest(
     string FirstName,

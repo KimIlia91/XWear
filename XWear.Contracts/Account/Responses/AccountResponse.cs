@@ -1,4 +1,4 @@
-﻿namespace XWear.Contracts.Account;
+﻿namespace XWear.Contracts.Account.Responses;
 
 public record AccountResponse(
     string FirstName,
