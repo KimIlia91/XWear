@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using PhoneNumbers;
 using XWear.Application.Common.Helpers;
 using XWear.Application.Common.Resources;
 

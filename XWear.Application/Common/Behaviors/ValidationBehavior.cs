@@ -1,8 +1,8 @@
 ﻿using ErrorOr;
 using MediatR;
 using FluentValidation;
-using FluentValidation.Results;
 using System.Reflection;
+using FluentValidation.Results;
 
 namespace XWear.Application.Common.Behaviors;
 
