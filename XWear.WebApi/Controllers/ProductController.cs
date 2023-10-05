@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using XWear.Application.Features.ProductContext.Queries.GetProducts;
-using XWear.Contracts.Product;
+using XWear.Contracts.Product.Responses;
 
 namespace XWear.WebApi.Controllers
 {

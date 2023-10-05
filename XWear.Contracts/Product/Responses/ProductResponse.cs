@@ -1,4 +1,4 @@
-﻿namespace XWear.Contracts.Product;
+﻿namespace XWear.Contracts.Product.Responses;
 
 public record ProductResponse(
     Guid Id,
