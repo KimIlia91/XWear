@@ -1,4 +1,4 @@
-﻿namespace XWear.Application.Common.Interfaces;
+﻿namespace XWear.Application.Common.Interfaces.IServices;
 
 public interface IDateTimeProvider
 {

@@ -1,7 +1,7 @@
 ﻿using ErrorOr;
 using MapsterMapper;
 using MediatR;
-using XWear.Application.Common.Interfaces;
+using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Features.ProductContext.Common;
 
 namespace XWear.Application.Features.ProductContext.Queries.GetProducts;

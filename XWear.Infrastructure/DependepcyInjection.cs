@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using XWear.Application.Common.Interfaces;
+using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Common.Interfaces.IServices;
 using XWear.Infrastructure.Authentication.Extensions;
 using XWear.Infrastructure.Persistence.Repositories;
 using XWear.Infrastructure.Services;

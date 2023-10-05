@@ -2,8 +2,9 @@
 using MediatR;
 using MapsterMapper;
 using XWear.Domain.Common.Errors;
-using XWear.Application.Common.Interfaces;
 using XWear.Application.Features.Account.Common;
+using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Common.Interfaces.IServices;
 
 namespace XWear.Application.Features.Account.Commands.Update;
 

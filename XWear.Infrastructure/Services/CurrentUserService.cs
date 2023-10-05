@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using XWear.Application.Common.Interfaces;
+using XWear.Application.Common.Interfaces.IServices;
 
 namespace XWear.Infrastructure.Services;
 

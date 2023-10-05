@@ -1,5 +1,5 @@
 ﻿using XWear.Domain.Entities;
-using XWear.Application.Common.Interfaces;
+using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Infrastructure.Persistence.Repositories
 {

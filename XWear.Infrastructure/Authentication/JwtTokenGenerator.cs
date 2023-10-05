@@ -4,8 +4,9 @@ using System.Security.Claims;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using XWear.Application.Common.Interfaces;
 using XWear.Infrastructure.Authentication.Settings;
+using XWear.Application.Common.Interfaces.IServices;
+using XWear.Application.Common.Interfaces.IGenerators;
 
 namespace XWear.Infrastructure.Authentication
 {

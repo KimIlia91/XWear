@@ -1,4 +1,4 @@
-﻿using XWear.Application.Common.Interfaces;
+﻿using XWear.Application.Common.Interfaces.IServices;
 
 namespace XWear.Infrastructure.Services
 {

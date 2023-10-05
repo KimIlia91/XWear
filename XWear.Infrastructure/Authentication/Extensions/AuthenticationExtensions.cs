@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using XWear.Application.Common.Interfaces;
+using XWear.Application.Common.Interfaces.IGenerators;
 using XWear.Infrastructure.Authentication.Settings;
 
 namespace XWear.Infrastructure.Authentication.Extensions

@@ -2,8 +2,9 @@
 using MediatR;
 using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
-using XWear.Application.Common.Interfaces;
 using XWear.Application.Features.Authentication.Common;
+using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Common.Interfaces.IGenerators;
 
 namespace XWear.Application.Features.Authentication.Queries.Login;
 

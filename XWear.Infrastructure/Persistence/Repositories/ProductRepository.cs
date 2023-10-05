@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Entities;
-using XWear.Application.Common.Interfaces;
 using XWear.Infrastructure.Persistence.Seeds;
+using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
