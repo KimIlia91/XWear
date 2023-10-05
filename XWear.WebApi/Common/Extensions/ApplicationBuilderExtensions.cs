@@ -1,4 +1,5 @@
 ﻿using XWear.WebApi.Common.Configurations.Localization;
+using XWear.WebApi.Common.Configurations.Swagger;
 using XWear.WebApi.Common.Constants;
 
 namespace XWear.WebApi.Common.Extensions
@@ -17,11 +18,7 @@ namespace XWear.WebApi.Common.Extensions
         {
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "XWear v1");
-                });
+                app.UseCustomSwaggerConfiguration();
             }
 
             app.UseExceptionHandler("/error");

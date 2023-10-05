@@ -1,3 +1,5 @@
+using XWear.Application;
+using XWear.Infrastructure;
 using XWear.WebApi.Common.Extensions;
 
 namespace XWear.WebApi;
@@ -15,8 +17,9 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddCustomServices(builder.Configuration);
-
+        builder.Services.AddPresintation(builder.Configuration);
+        builder.Services.AddApplication();
+        builder.Services.AddInfrastructure(builder.Configuration);
         var app = builder.Build();
 
         app.UseCustomConfiguration();

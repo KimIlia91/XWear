@@ -58,4 +58,15 @@ public static class SwaggerSettings
             };
         });
     }
+
+    public static WebApplication UseCustomSwaggerConfiguration(this WebApplication app)
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI(c =>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "XWear v1");
+        });
+
+        return app;
+    }
 }

@@ -23,13 +23,11 @@ namespace XWear.WebApi.Common.Extensions
         /// <param name="services">Контейнер служб (IServiceCollection).</param>
         /// <param name="configuration">Конфигурация приложения.</param>
         /// <returns>Контейнер служб с добавленными кастомными службами.</returns>
-        public static IServiceCollection AddCustomServices(
+        public static IServiceCollection AddPresintation(
             this IServiceCollection services,
             IConfiguration configuration)
         {
             services.AddHttpContextAccessor();
-            services.AddInfrastructure(configuration);
-            services.AddApplication();
             services.AddAuthorization();
             services.AddControllers();
             services.AddSingleton<ProblemDetailsFactory, XWearErrorProblemDitailsFactory>();
