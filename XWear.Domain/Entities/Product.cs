@@ -2,6 +2,8 @@
 
 public class Product : BaseEntity
 {
+    public string ImgUrl { get; set; } = null!;
+
     public Guid ModelId { get; set; }
     public Model Model { get; set; } = null!;
 

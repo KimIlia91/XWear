@@ -1,7 +1,7 @@
 ﻿using XWear.Domain.Entities;
 using XWear.Application.Common.Interfaces;
 
-namespace XWear.Infrastructure.Persistence
+namespace XWear.Infrastructure.Persistence.Repositories
 {
     public class UserRepository : IUserRepository
     {

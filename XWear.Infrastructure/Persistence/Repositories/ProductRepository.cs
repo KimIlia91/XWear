@@ -2,7 +2,7 @@
 using XWear.Application.Common.Interfaces;
 using XWear.Infrastructure.Persistence.Seeds;
 
-namespace XWear.Infrastructure.Persistence;
+namespace XWear.Infrastructure.Persistence.Repositories;
 
 internal class ProductRepository : IProductRepository
 {

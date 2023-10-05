@@ -9,7 +9,7 @@ public class ProductResult
 
     public string Name { get; set; } = null!;
 
-    public string Img { get; set; } = null!;
+    public string ImgUrl { get; set; } = null!;
 
     public decimal Price { get; set; }
 
