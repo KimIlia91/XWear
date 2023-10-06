@@ -2,51 +2,56 @@
 using XWear.Domain.Common.Extensions;
 using XWear.Domain.Entities;
 
-namespace XWear.Infrastructure.Persistence.Seeds
+namespace XWear.Infrastructure.Persistence.Seeds;
+
+public static class CategorySeed
 {
-    public static class CategorySeed
+    public static List<Category> Seed()
     {
-        public static List<Category> Seed()
+        var catalogs = CatalogSeed.Seed();
+
+        var shoes = catalogs.First(c => c.Name == CatalogEnum.Shoes.GetDescription());
+        var clothing = catalogs.First(c => c.Name == CatalogEnum.Clothing.GetDescription());
+        var accessories = catalogs.First(c => c.Name == CatalogEnum.Accessories.GetDescription());
+
+        var categories = new List<Category>()
         {
-            var categories = new List<Category>()
-            {
-                new Category{ Name = CategoryEnum.Activewear.GetDescription() },
+            new Category{ Name = CategoryEnum.Activewear.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
 
-                new Category{ Name = CategoryEnum.Belts.GetDescription() },
-                new Category{ Name = CategoryEnum.Bottoms.GetDescription() },
+            new Category{ Name = CategoryEnum.Belts.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
+            new Category{ Name = CategoryEnum.Bottoms.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
 
-                new Category{ Name = CategoryEnum.Dresses.GetDescription() },
+            new Category{ Name = CategoryEnum.Dresses.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
 
-                new Category{ Name = CategoryEnum.FlipFlops.GetDescription() },
+            new Category{ Name = CategoryEnum.FlipFlops.GetDescription(), CatalogId = shoes.Id, Catalog = shoes },
 
-                new Category{ Name = CategoryEnum.Gloves.GetDescription() },
-                new Category{ Name = CategoryEnum.Gumshoes.GetDescription() },
+            new Category{ Name = CategoryEnum.Gloves.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
+            new Category{ Name = CategoryEnum.Gumshoes.GetDescription(), CatalogId = shoes.Id, Catalog= shoes },
 
-                new Category{ Name = CategoryEnum.Outerwear.GetDescription() },
+            new Category{ Name = CategoryEnum.Outerwear.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
 
-                new Category{ Name = CategoryEnum.Scarves.GetDescription() },
-                new Category{ Name = CategoryEnum.Sandals.GetDescription() },
-                new Category{ Name = CategoryEnum.Swimwear.GetDescription() },
-                new Category{ Name = CategoryEnum.Sunglasses.GetDescription() },
-                new Category{ Name = CategoryEnum.Sneakers.GetDescription() },
-                new Category{ Name = CategoryEnum.Sleepwear.GetDescription() },
+            new Category{ Name = CategoryEnum.Scarves.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
+            new Category{ Name = CategoryEnum.Sandals.GetDescription(), CatalogId = shoes.Id, Catalog = shoes },
+            new Category{ Name = CategoryEnum.Swimwear.GetDescription(), CatalogId = clothing.Id, Catalog = clothing},
+            new Category{ Name = CategoryEnum.Sunglasses.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
+            new Category{ Name = CategoryEnum.Sneakers.GetDescription(), CatalogId = shoes.Id, Catalog = shoes },
+            new Category{ Name = CategoryEnum.Sleepwear.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
 
-                new Category{ Name = CategoryEnum.Handbags.GetDescription() },
-                new Category{ Name = CategoryEnum.Hats.GetDescription() },
+            new Category{ Name = CategoryEnum.Handbags.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
+            new Category{ Name = CategoryEnum.Hats.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
 
-                new Category{ Name = CategoryEnum.Loafers.GetDescription() },
-                new Category{ Name = CategoryEnum.Lingerie.GetDescription() },
+            new Category{ Name = CategoryEnum.Loafers.GetDescription(), CatalogId = shoes.Id, Catalog = shoes },
+            new Category{ Name = CategoryEnum.Lingerie.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
 
-                new Category{ Name = CategoryEnum.Ties.GetDescription() },
-                new Category{ Name = CategoryEnum.Tops.GetDescription() },
+            new Category{ Name = CategoryEnum.Ties.GetDescription(), CatalogId = clothing.Id, Catalog = clothing },
+            new Category{ Name = CategoryEnum.Tops.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
 
-                new Category{ Name = CategoryEnum.Jewelry.GetDescription() },
-  
-                new Category{ Name = CategoryEnum.Wallets.GetDescription() },
-                new Category{ Name = CategoryEnum.Watches.GetDescription() }
-            };
+            new Category{ Name = CategoryEnum.Jewelry.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
 
-            return categories;
-        }
+            new Category{ Name = CategoryEnum.Wallets.GetDescription(), CatalogId = accessories.Id, Catalog = accessories },
+            new Category{ Name = CategoryEnum.Watches.GetDescription(), CatalogId = accessories.Id, Catalog = accessories }
+        };
+
+        return categories;
     }
 }
