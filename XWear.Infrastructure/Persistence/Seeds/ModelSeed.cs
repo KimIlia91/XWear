@@ -6,7 +6,17 @@ namespace XWear.Infrastructure.Persistence.Seeds
 {
     public static class ModelSeed
     {
-        public static List<Model> Seed()
+        public static async Task SeedAsync(ApplicationDbContext context)
+        {
+            if (!context.Models.Any())
+            {
+                var models = CreateModels();
+                await context.Models.AddRangeAsync(models);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        private static List<Model> CreateModels()
         {
             var models = new List<Model>()
             {

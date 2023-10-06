@@ -6,7 +6,17 @@ namespace XWear.Infrastructure.Persistence.Seeds;
 
 public static class SizeSeed
 {
-    public static List<Size> Seed()
+    public static async Task SeedAsync(ApplicationDbContext context)
+    {
+        if (!context.Sizes.Any())
+        {
+            var sizes = CreateSizes();
+            await context.Sizes.AddRangeAsync(sizes);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static List<Size> CreateSizes()
     {
         var sizes = new List<Size>()
         {

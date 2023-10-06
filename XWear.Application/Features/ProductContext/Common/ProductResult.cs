@@ -11,12 +11,12 @@ public class ProductResult : IRegister
 
     public string ImgUrl { get; set; } = null!;
 
-    public decimal Prices { get; set; }
+    public IEnumerable<ProductSizeResult> Prices { get; set; } = new List<ProductSizeResult>();
 
     public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<Product, ProductResult>()
          .Map(dest => dest.Name, src => src.Model.Name)
-         .Map(dest => dest.Prices, src => src.ProductSizes.Select(ps => ps.Price).First());
+         .Map(dest => dest.Prices, src => src.ProductSizes);
     }
 }

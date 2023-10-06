@@ -1,23 +1,26 @@
-﻿using XWear.Domain.Entities;
-using XWear.Infrastructure.Persistence.Seeds;
+﻿using Microsoft.EntityFrameworkCore;
+using XWear.Domain.Entities;
 using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
 internal class ProductRepository : IProductRepository
 {
-    private readonly List<Product> _products = new();
+    private readonly ApplicationDbContext _context;
 
-    public ProductRepository()
+    public ProductRepository(ApplicationDbContext context)
     {
-        if (_products.Count == 0)
-        {
-            _products.AddRange(ProductSeed.Seed());
-        }
+        _context = context;
     }
 
-    public IEnumerable<Product> GetAllProducts()
+    public async Task<IEnumerable<Product>> GetAllProductsAsync(CancellationToken cancellationToken)
     {
-        return _products.ToList();
+        var p = await _context.Products
+            .Include(p => p.Model)
+            .Include(p => p.ProductSizes)
+                .ThenInclude(p => p.Size)
+            .ToListAsync(cancellationToken);
+
+        return p;
     }
 }

@@ -41,6 +41,7 @@ namespace XWear.WebApi
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseCustomLocalization();
+
             return app;
         }
     }

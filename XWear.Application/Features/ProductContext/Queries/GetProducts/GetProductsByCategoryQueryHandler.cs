@@ -11,11 +11,14 @@ public class GetProductsByCategoryQueryHandler
 {
     private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
+    private readonly ICatalogRepository _catalogRepository;
 
     public GetProductsByCategoryQueryHandler(
         IProductRepository productRepository, 
-        IMapper mapper)
+        IMapper mapper,
+        ICatalogRepository catalogRepository)
     {
+        _catalogRepository = catalogRepository;
         _mapper = mapper;
         _productRepository = productRepository;
     }
@@ -24,14 +27,8 @@ public class GetProductsByCategoryQueryHandler
         GetProductsByCategoryQuery request, 
         CancellationToken cancellationToken)
     {
-        await Task.CompletedTask;
-        var products = _productRepository.GetAllProducts();
+        var products = await _productRepository.GetAllProductsAsync(cancellationToken);
 
-        var updatadAtProductsByCategory = products
-            .GroupBy(p => p.CategoryId)
-            .Select(group => group.OrderByDescending(p => p.UpdatedAt).FirstOrDefault())
-            .ToList();
-
-        return _mapper.Map<List<ProductResult>>(updatadAtProductsByCategory);
+        return _mapper.Map<List<ProductResult>>(products.ToList());
     }
 }

@@ -6,7 +6,17 @@ namespace XWear.Infrastructure.Persistence.Seeds;
 
 public static class CatalogSeed
 {
-    public static List<Catalog> Seed()
+    public static async Task SeedAsync(ApplicationDbContext context)
+    {
+        if (!context.Catalogs.Any())
+        {
+            var catalogs = CreateCatalogs();
+            await context.Catalogs.AddRangeAsync(catalogs);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static List<Catalog> CreateCatalogs()
     {
         var catalogs = new List<Catalog>()
         {

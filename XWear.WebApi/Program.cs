@@ -1,5 +1,6 @@
 using XWear.Application;
 using XWear.Infrastructure;
+using XWear.Infrastructure.Persistence;
 
 namespace XWear.WebApi;
 
@@ -12,7 +13,7 @@ public class Program
     /// Главный метод приложения.
     /// </summary>
     /// <param name="args">Массив аргументов командной строки.</param>
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddPresentation(builder.Configuration);
@@ -20,6 +21,11 @@ public class Program
         builder.Services.AddInfrastructure(builder.Configuration);
         var app = builder.Build();
         app.UsePresentation();
+
+        using var scope = app.Services.CreateScope();
+        var services = scope.ServiceProvider;
+        await DataBaseSeeds.AddSeeds(services);
+
         app.Run();
     }
 }

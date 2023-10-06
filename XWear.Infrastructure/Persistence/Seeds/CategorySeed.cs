@@ -1,4 +1,6 @@
-﻿using XWear.Domain.Common.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
 using XWear.Domain.Entities;
 
@@ -6,9 +8,19 @@ namespace XWear.Infrastructure.Persistence.Seeds;
 
 public static class CategorySeed
 {
-    public static List<Category> Seed()
+    public static async Task SeedAsync(ApplicationDbContext context)
     {
-        var catalogs = CatalogSeed.Seed();
+        if (!context.Categories.Any())
+        {
+            var categories = await CreateCatalogsAsync(context);
+            await context.Categories.AddRangeAsync(categories);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    public static async Task<List<Category>> CreateCatalogsAsync(ApplicationDbContext context)
+    {
+        var catalogs = await context.Catalogs.ToListAsync();
 
         var shoes = catalogs.First(c => c.Name == CatalogEnum.Shoes.GetDescription());
         var clothing = catalogs.First(c => c.Name == CatalogEnum.Clothing.GetDescription());

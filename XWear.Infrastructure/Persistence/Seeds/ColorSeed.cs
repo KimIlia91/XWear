@@ -6,7 +6,17 @@ namespace XWear.Infrastructure.Persistence.Seeds;
 
 public static class ColorSeed
 {
-    public static List<Color> Seed()
+    public static async Task SeedAsync(ApplicationDbContext context)
+    {
+        if (!context.Colors.Any())
+        {
+            var colors = CreateColors();
+            await context.Colors.AddRangeAsync(colors);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    public static List<Color> CreateColors()
     {
         var colors = new List<Color>()
         {

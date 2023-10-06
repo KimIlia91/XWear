@@ -6,9 +6,20 @@ namespace XWear.Infrastructure.Persistence.Seedsl;
 
 public class BrandSeed
 {
-    public static List<Brand> Seed()
+    public static async Task SeedAsync(ApplicationDbContext context)
     {
-        var brands = new List<Brand>()
+
+        if (!context.Brands.Any())
+        {
+            var years = CreateBrands();
+            await context.Brands.AddRangeAsync(years);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static List<Brand> CreateBrands()
+    {
+        return new List<Brand>()
         {
             new Brand { Name = BrandEnum.Gucci.GetDescription() },
             new Brand { Name = BrandEnum.Timberland.GetDescription() },
@@ -32,7 +43,6 @@ public class BrandSeed
             new Brand { Name = BrandEnum.Burberry.GetDescription() },
             new Brand { Name = BrandEnum.Valentino.GetDescription() }
         };
-
-        return brands;
     }
+
 }
