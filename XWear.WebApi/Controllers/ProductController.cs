@@ -16,13 +16,13 @@ namespace XWear.WebApi.Controllers
         /// </summary>
         /// <returns>Список последних добавленых товаров по категориям.</returns>
         [HttpGet("byCategory")]
-        [ProducesResponseType(typeof(IEnumerable<ProductResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(IEnumerable<CatalogResponse>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetProductsAsync()
         {
             var query = new GetProductsByCategoryQuery();
             var productResults = await Mediator.Send(query);
             return productResults.Match(
-                productResults => Ok(Mapper.Map<List<ProductResponse>>(productResults)),
+                productResults => Ok(Mapper.Map<List<CatalogResponse>>(productResults)),
                 errors => Problem(errors));
         }
     }

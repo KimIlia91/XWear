@@ -16,7 +16,7 @@ namespace XWear.Infrastructure.Persistence.Seeds
             }
         }
 
-        private static List<Model> CreateModels()
+        public static List<Model> CreateModels()
         {
             var models = new List<Model>()
             {

@@ -8,6 +8,10 @@ public class ProductMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
+        config.NewConfig<CategoryResult, CategoryResponse>();
+
+        config.NewConfig<CatalogResponse, CatalogResult>();
+
         config.NewConfig<ProductResult, ProductResponse>();
     }
 }

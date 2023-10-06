@@ -7,16 +7,18 @@ public class ProductResult : IRegister
 {
     public Guid Id { get; set; }
 
-    public string Name { get; set; } = null!;
+    public string Model { get; set; } = null!;
 
     public string ImgUrl { get; set; } = null!;
 
-    public IEnumerable<ProductSizeResult> Prices { get; set; } = new List<ProductSizeResult>();
+    public decimal Price { get; set; }
+
+    public bool IsFavorit { get; set; }
 
     public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<Product, ProductResult>()
-         .Map(dest => dest.Name, src => src.Model.Name)
-         .Map(dest => dest.Prices, src => src.ProductSizes);
+         .Map(dest => dest.Id, src => src.Id)
+         .Map(dest => dest.Model, src => src.Model.Name);
     }
 }

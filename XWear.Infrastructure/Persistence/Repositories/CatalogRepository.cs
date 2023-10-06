@@ -1,5 +1,6 @@
-﻿using XWear.Application.Common.Interfaces.IRepositories;
+﻿using Microsoft.EntityFrameworkCore;
 using XWear.Domain.Entities;
+using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Infrastructure.Persistence.Repositories
 {
@@ -12,9 +13,14 @@ namespace XWear.Infrastructure.Persistence.Repositories
             _context = context;
         }
 
-        public List<Catalog> GetCatalogs()
+        public async Task<IEnumerable<Catalog>> GetCatalogsAsync(
+            CancellationToken cancellationToken)
         {
-            return _context.Catalogs.ToList();
+            return await _context.Catalogs
+                .Include(c => c.Categories)
+                    .ThenInclude(c => c.Products)
+                        .ThenInclude(p => p.Model)
+                .ToListAsync(cancellationToken);
         }
     }
 }

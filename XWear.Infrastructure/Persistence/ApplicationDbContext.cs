@@ -13,8 +13,6 @@ namespace XWear.Infrastructure.Persistence
 
         public DbSet<Size> Sizes { get; set; }
 
-        public DbSet<ProductSize> ProductSizes { get; set; }
-
         public DbSet<Catalog> Catalogs { get; set; }
 
         public DbSet<Category> Categories { get; set; }
