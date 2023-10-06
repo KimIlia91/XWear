@@ -4,28 +4,38 @@ namespace XWear.Domain.Common.Enums;
 
 public enum CategoryEnum
 {
-    [Description("Кросовки")] Sneakers,
-    [Description("Кеды")] Gumshoes,
-    [Description("Лофферы")] Loafers,
-    [Description("Сандали")] Sandals,
-    [Description("Шлепки")] FlipFlops,
-    [Description("Верхняя одежда")] Tops,
-    [Description("Нижнее белье")] Bottoms,
-    [Description("Платья")] Dresses,
-    [Description("Верхняя одежда")] Outerwear,
     [Description("Спортивная одежда")] Activewear,
-    [Description("Купальники")] Swimwear,
-    [Description("Белье")] Lingerie,
-    [Description("Пижамы")] Sleepwear,
-    [Description("Аксессуары")] Accessories,
-    [Description("Украшения")] Jewelry,
-    [Description("Часы")] Watches,
-    [Description("Солнцезащитные очки")] Sunglasses,
-    [Description("Сумки")] Handbags,
-    [Description("Кошельки")] Wallets,
+
+    [Description("Нижнее белье")] Bottoms,
     [Description("Ремни")] Belts,
-    [Description("Шарфы")] Scarves,
-    [Description("Головные уборы")] Hats,
+
+    [Description("Платья")] Dresses,
+
+    [Description("Шлепки")] FlipFlops,
+
     [Description("Перчатки")] Gloves,
+    [Description("Кеды")] Gumshoes,
+
+    [Description("Верхняя одежда")] Outerwear,
+
+    [Description("Купальники")] Swimwear,
+    [Description("Кросовки")] Sneakers,
+    [Description("Сандали")] Sandals,
+    [Description("Пижамы")] Sleepwear,
+    [Description("Солнцезащитные очки")] Sunglasses,
+    [Description("Шарфы")] Scarves,
+
+    [Description("Сумки")] Handbags,
+    [Description("Головные уборы")] Hats,
+
+    [Description("Лофферы")] Loafers,
+    [Description("Белье")] Lingerie,
+
+    [Description("Верхняя одежда")] Tops,
     [Description("Галстуки")] Ties,
+
+    [Description("Украшения")] Jewelry,
+
+    [Description("Часы")] Watches,
+    [Description("Кошельки")] Wallets,
 }

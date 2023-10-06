@@ -9,7 +9,7 @@ public enum ColorEnum
     [Description("Розовый")] Pink,
     [Description("Черный")] Black,
     [Description("Белый")] White,
-    [Description("Желтый")] Yelow,
+    [Description("Желтый")] Yellow,
     [Description("Фиолетовый")] Violet,
     [Description("Серый")] Gray,
     [Description("Зеленый")] Green,
