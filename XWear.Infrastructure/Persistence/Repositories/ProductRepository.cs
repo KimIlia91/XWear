@@ -35,7 +35,7 @@ internal class ProductRepository : IProductRepository
         return await _context.Products
             .Include(p => p.Model)
             .AsNoTracking()
-            .Where(p => p.Id == catalogId)
+            .Where(p => p.Category.CatalogId == catalogId)
             .ToListAsync(cancellationToken);
     }
 
@@ -52,5 +52,14 @@ internal class ProductRepository : IProductRepository
             .ToListAsync(cancellationToken);
 
         return favoritProducts;
+    }
+
+    public async Task<FavoritProduct> AddFavoriteProductAsync(
+        FavoritProduct favoritProduct, 
+        CancellationToken cancellationToken)
+    {
+        await _context.FavoritProducts.AddAsync(favoritProduct, cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
+        return favoritProduct;
     }
 }

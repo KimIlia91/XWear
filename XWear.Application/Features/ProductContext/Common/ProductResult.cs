@@ -7,7 +7,7 @@ public class ProductResult : IRegister
 {
     public Guid Id { get; set; }
 
-    public string Model { get; set; } = null!;
+    public string Name { get; set; } = null!;
 
     public string ImgUrl { get; set; } = null!;
 
@@ -19,6 +19,6 @@ public class ProductResult : IRegister
     {
         config.NewConfig<Product, ProductResult>()
          .Map(dest => dest.Id, src => src.Id)
-         .Map(dest => dest.Model, src => src.Model.Name);
+         .Map(dest => dest.Name, src => src.Model.Name);
     }
 }

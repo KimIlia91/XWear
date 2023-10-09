@@ -41,7 +41,7 @@ public class GetProductsByCategoryQueryHandler
                     {
                         Id = p.Id,
                         ImgUrl = p.ImgUrl ?? string.Empty,
-                        Model = p.Model != null ? p.Model.Name : string.Empty,
+                        Name = p.Model != null ? p.Model.Name : string.Empty,
                         Price = p.Price,
                     }).FirstOrDefault() ?? new ProductResult()
                 })

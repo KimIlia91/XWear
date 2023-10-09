@@ -2,7 +2,8 @@
 {
     public record ProductResponse(
         Guid Id,
-        string Model,
+        string Name,
         string ImgUrl,
-        decimal Price);
+        decimal Price,
+        bool IsFavorit);
 }

@@ -13,4 +13,8 @@ public interface IProductRepository
 
     Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
         CancellationToken cancellationToken);
+
+    Task<FavoritProduct> AddFavoriteProductAsync(
+        FavoritProduct favoritProduct,
+        CancellationToken cancellationToken);
 }
