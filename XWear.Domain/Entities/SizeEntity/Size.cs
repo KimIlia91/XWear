@@ -1,8 +1,8 @@
-﻿using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
-using XWear.Domain.EntitiesCatalog.Entities.SizeEntity.ValueObjects;
-using XWear.Domain.Common.Models;
+﻿using XWear.Domain.Common.Models;
+using XWear.Domain.Entities.ProductEntity;
+using XWear.Domain.Entities.SizeEntity.ValueObjects;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.SizeEntity
+namespace XWear.Domain.Entities.SizeEntity
 {
     public sealed class Size : Entity<SizeId>
     {

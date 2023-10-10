@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.ColorEntity.ValueObjects;
+namespace XWear.Domain.Entities.ColorEntity.ValueObjects;
 
 public sealed class ColorId : ValueObject
 {

@@ -6,7 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using XWear.Infrastructure.Authentication.Settings;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Common.Interfaces.IGenerators;
-using XWear.Domain.EntitiesCatalog.Entities.UserEntity;
+using XWear.Domain.Entities.UserEntity;
 
 namespace XWear.Infrastructure.Authentication;
 

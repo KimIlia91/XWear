@@ -1,9 +1,9 @@
-﻿using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
-using XWear.Domain.Common.Models;
+﻿using XWear.Domain.Common.Models;
+using XWear.Domain.Entities.ProductEntity;
+using XWear.Domain.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.CategoryEntity;
+namespace XWear.Domain.Entities.CategoryEntity;
 
 public sealed class Category : Entity<CategoryId>
 {

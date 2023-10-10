@@ -1,4 +1,4 @@
-﻿using XWear.Domain.EntitiesCatalog.Entities.UserEntity.ValueObjects;
+﻿using XWear.Domain.Entities.UserEntity.ValueObjects;
 
 namespace XWear.Application.Common.Interfaces.IServices
 {

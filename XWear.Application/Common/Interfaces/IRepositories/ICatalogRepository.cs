@@ -1,4 +1,4 @@
-﻿using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity;
+﻿using XWear.Domain.Entities.CatalogEntity;
 
 namespace XWear.Application.Common.Interfaces.IRepositories;
 

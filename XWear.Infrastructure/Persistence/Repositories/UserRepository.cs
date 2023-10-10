@@ -1,6 +1,6 @@
 ﻿using XWear.Application.Common.Interfaces.IRepositories;
-using XWear.Domain.EntitiesCatalog.Entities.UserEntity;
-using XWear.Domain.EntitiesCatalog.Entities.UserEntity.ValueObjects;
+using XWear.Domain.Entities.UserEntity;
+using XWear.Domain.Entities.UserEntity.ValueObjects;
 
 namespace XWear.Infrastructure.Persistence.Repositories
 {

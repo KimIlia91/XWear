@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.CatalogEntity.ValueObjects;
+namespace XWear.Domain.Entities.CatalogEntity.ValueObjects;
 
 public sealed class CatalogId : ValueObject
 {

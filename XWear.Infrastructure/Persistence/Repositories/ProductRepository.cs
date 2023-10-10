@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
-using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity;
-using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
+using XWear.Domain.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Entities.FavoritParoductEntity;
+using XWear.Domain.Entities.ProductEntity;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 

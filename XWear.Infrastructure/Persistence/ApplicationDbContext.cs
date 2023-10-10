@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWear.Domain.EntitiesCatalog.Entities.BrandEntity;
-using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity;
-using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity;
-using XWear.Domain.EntitiesCatalog.Entities.ColorEntity;
-using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity;
-using XWear.Domain.EntitiesCatalog.Entities.ModelEntity;
-using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
-using XWear.Domain.EntitiesCatalog.Entities.SizeEntity;
-using XWear.Domain.EntitiesCatalog.Entities.UserEntity;
+using XWear.Domain.Entities.BrandEntity;
+using XWear.Domain.Entities.CatalogEntity;
+using XWear.Domain.Entities.CategoryEntity;
+using XWear.Domain.Entities.ColorEntity;
+using XWear.Domain.Entities.FavoritParoductEntity;
+using XWear.Domain.Entities.ModelEntity;
+using XWear.Domain.Entities.ProductEntity;
+using XWear.Domain.Entities.SizeEntity;
+using XWear.Domain.Entities.UserEntity;
 
 namespace XWear.Infrastructure.Persistence
 {

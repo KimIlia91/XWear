@@ -1,20 +1,20 @@
 ﻿using XWear.Domain.Common.Models;
-using XWear.Domain.EntitiesCatalog.Entities.ModelEntity;
-using XWear.Domain.EntitiesCatalog.Entities.BrandEntity;
-using XWear.Domain.EntitiesCatalog.Entities.BrandEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity;
-using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.ColorEntity;
-using XWear.Domain.EntitiesCatalog.Entities.ColorEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity;
-using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.ModelEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.ProductEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.SizeEntity;
-using XWear.Domain.EntitiesCatalog.Entities.SizeEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.UserEntity.ValueObjects;
+using XWear.Domain.Entities.BrandEntity;
+using XWear.Domain.Entities.CategoryEntity;
+using XWear.Domain.Entities.ColorEntity;
+using XWear.Domain.Entities.FavoritParoductEntity;
+using XWear.Domain.Entities.ModelEntity;
+using XWear.Domain.Entities.SizeEntity;
+using XWear.Domain.Entities.BrandEntity.ValueObjects;
+using XWear.Domain.Entities.CategoryEntity.ValueObjects;
+using XWear.Domain.Entities.ColorEntity.ValueObjects;
+using XWear.Domain.Entities.FavoritParoductEntity.ValueObjects;
+using XWear.Domain.Entities.ModelEntity.ValueObjects;
+using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Entities.SizeEntity.ValueObjects;
+using XWear.Domain.Entities.UserEntity.ValueObjects;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
+namespace XWear.Domain.Entities.ProductEntity;
 
 public sealed class Product : AggregateRoot<ProductId>
 {

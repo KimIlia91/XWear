@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.BrandEntity.ValueObjects;
+namespace XWear.Domain.Entities.BrandEntity.ValueObjects;
 
 public sealed class BrandId : ValueObject
 {

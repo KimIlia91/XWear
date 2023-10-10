@@ -1,8 +1,8 @@
-﻿using XWear.Domain.EntitiesCatalog.Entities.BrandEntity.ValueObjects;
-using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
-using XWear.Domain.Common.Models;
+﻿using XWear.Domain.Common.Models;
+using XWear.Domain.Entities.ProductEntity;
+using XWear.Domain.Entities.BrandEntity.ValueObjects;
 
-namespace XWear.Domain.EntitiesCatalog.Entities.BrandEntity;
+namespace XWear.Domain.Entities.BrandEntity;
 
 public sealed class Brand : Entity<BrandId>
 {

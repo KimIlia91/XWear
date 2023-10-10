@@ -5,10 +5,7 @@ using XWear.Domain.Common.Errors;
 using XWear.Application.Features.Account.Common;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Common.Interfaces.IRepositories;
-using XWear.Domain.EntitiesCatalog.Entities.UserEntity;
-using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity;
-using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity;
-using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Entities.UserEntity;
 
 namespace XWear.Application.Features.Account.Queries.GetAccount;
 
