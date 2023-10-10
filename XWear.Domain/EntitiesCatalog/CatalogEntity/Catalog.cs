@@ -1,8 +1,8 @@
-﻿using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.CategoryEntity;
+﻿using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities.CatalogEntity;
+namespace XWear.Domain.EntitiesCatalog.Entities.CatalogEntity;
 
 public sealed class Catalog : Entity<CatalogId>
 {

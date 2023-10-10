@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWear.Domain.Entities;
 using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Domain.EntitiesCatalog.CatalogEntity;
 
 namespace XWear.Infrastructure.Persistence.Repositories
 {

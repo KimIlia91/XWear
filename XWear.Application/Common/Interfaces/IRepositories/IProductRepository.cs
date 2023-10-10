@@ -1,6 +1,6 @@
-﻿using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
-using XWear.Domain.Catalog.Entities.ProductEntity;
+﻿using XWear.Domain.EntitiesCatalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity;
+using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
 
 namespace XWear.Application.Common.Interfaces.IRepositories;
 

@@ -1,8 +1,8 @@
-﻿using XWear.Domain.Catalog.Entities.ModelEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.ProductEntity;
-using XWear.Domain.Common.Models;
+﻿using XWear.Domain.Common.Models;
+using XWear.Domain.EntitiesCatalog.ProductEntity;
+using XWear.Domain.EntitiesCatalog.ModelEntity.ValueObjects;
 
-namespace XWear.Domain.Catalog.Entities.ModelEntity;
+namespace XWear.Domain.EntitiesCatalog.ModelEntity;
 
 public sealed class Model : Entity<ModelId>
 {

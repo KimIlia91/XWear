@@ -1,6 +1,5 @@
 ﻿using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
-using XWear.Domain.Entities;
 
 namespace XWear.Infrastructure.Persistence.Seeds;
 

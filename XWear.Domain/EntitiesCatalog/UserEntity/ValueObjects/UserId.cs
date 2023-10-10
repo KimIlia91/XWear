@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
+namespace XWear.Domain.EntitiesCatalog.Entities.UserEntity.ValueObjects;
 
 public sealed class UserId : ValueObject
 {

@@ -1,8 +1,8 @@
-﻿using XWear.Domain.Catalog.Entities.ColorEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.ProductEntity;
+﻿using XWear.Domain.EntitiesCatalog.Entities.ColorEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities.ColorEntity;
+namespace XWear.Domain.EntitiesCatalog.Entities.ColorEntity;
 
 public sealed class Color : Entity<ColorId>
 {

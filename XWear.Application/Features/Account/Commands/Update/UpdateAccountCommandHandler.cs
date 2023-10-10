@@ -1,11 +1,10 @@
 ﻿using ErrorOr;
-using MediatR;
 using MapsterMapper;
-using XWear.Domain.Common.Errors;
-using XWear.Application.Features.Account.Common;
+using MediatR;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
-using XWear.Domain.Catalog.ValueObjects;
+using XWear.Application.Features.Account.Common;
+using XWear.Domain.Common.Errors;
 
 namespace XWear.Application.Features.Account.Commands.Update;
 

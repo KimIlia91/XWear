@@ -1,9 +1,4 @@
-﻿using XWear.Domain.Entities;
-using XWear.Domain.Common.Enums;
-using XWear.Domain.Common.Extensions;
-using Microsoft.EntityFrameworkCore;
-
-namespace XWear.Infrastructure.Persistence.Seeds;
+﻿namespace XWear.Infrastructure.Persistence.Seeds;
 
 public static class ProductSeed
 {

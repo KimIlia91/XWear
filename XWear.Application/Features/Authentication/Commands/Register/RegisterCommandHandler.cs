@@ -1,11 +1,11 @@
 ﻿using ErrorOr;
 using MediatR;
 using MapsterMapper;
-using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
 using XWear.Application.Features.Authentication.Common;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IGenerators;
+using XWear.Domain.EntitiesCatalog.UserEntity;
 
 namespace XWear.Application.Features.Authentication.Commands.Register;
 

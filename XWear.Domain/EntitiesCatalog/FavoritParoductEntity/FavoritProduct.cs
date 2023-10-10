@@ -1,9 +1,9 @@
-﻿using XWear.Domain.Catalog.Entities.FavoritParoductEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.ProductEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
+﻿using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.UserEntity.ValueObjects;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities.FavoritParoductEntity;
+namespace XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity;
 
 public class FavoritProduct : Entity<FavoriteProductId>
 {
