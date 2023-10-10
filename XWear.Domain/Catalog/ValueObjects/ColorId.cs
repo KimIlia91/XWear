@@ -2,7 +2,7 @@
 
 namespace XWear.Domain.Catalog.ValueObjects;
 
-public class ColorId : ValueObject
+public sealed class ColorId : ValueObject
 {
     public Guid Value { get; set; }
 
