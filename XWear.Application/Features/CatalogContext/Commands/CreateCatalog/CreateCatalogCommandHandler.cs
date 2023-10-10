@@ -3,7 +3,7 @@ using MediatR;
 using MapsterMapper;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Features.CatalogContext.Common;
-using XWear.Domain.EntitiesCatalog.CatalogEntity;
+using XWear.Domain.Entities.CatalogEntity;
 
 namespace XWear.Application.Features.CatalogContext.Commands.CreateCatalog;
 

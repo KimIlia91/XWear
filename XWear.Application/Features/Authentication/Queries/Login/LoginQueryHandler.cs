@@ -4,7 +4,7 @@ using XWear.Domain.Common.Errors;
 using XWear.Application.Features.Authentication.Common;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IGenerators;
-using XWear.Domain.EntitiesCatalog.UserEntity;
+using XWear.Domain.Entities.UserEntity;
 
 namespace XWear.Application.Features.Authentication.Queries.Login;
 
