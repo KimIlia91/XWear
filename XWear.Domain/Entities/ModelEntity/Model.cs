@@ -10,7 +10,7 @@ public sealed class Model : Entity<ModelId>
 
     public string Name { get; private set; } = null!;
 
-    public IReadOnlyList<Product> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
     internal Model(
         ModelId modelId,

@@ -33,14 +33,10 @@ internal class ProductRepository : IProductRepository
         throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
+    public Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
         CancellationToken cancellationToken)
     {
-        return await _context.Products
-            .Include(p => p.Model)
-            .Where(p => p.FavoritProducts
-            .Any(fp => fp.UserId == _currentUserService.UserId))
-            .ToListAsync(cancellationToken);
+        throw new NotImplementedException();
     }
 
     public async Task<IEnumerable<Product>> GetProductByCatalogIdAsync(

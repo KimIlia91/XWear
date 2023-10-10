@@ -10,7 +10,7 @@ public sealed class Catalog : Entity<CatalogId>
 
     public string Name { get; private set; } = null!;
 
-    public IReadOnlyList<Category> Categories => _categories.AsReadOnly();
+    public IReadOnlyCollection<Category> Categories => _categories.AsReadOnly();
 
     public Catalog(
         CatalogId catalogId,

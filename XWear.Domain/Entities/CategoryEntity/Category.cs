@@ -13,7 +13,7 @@ public sealed class Category : Entity<CategoryId>
 
     public CatalogId CatalogId { get; set; }
 
-    public IReadOnlyList<Product> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
     public Category(
         CategoryId categoryId,

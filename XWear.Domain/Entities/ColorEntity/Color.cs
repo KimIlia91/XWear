@@ -10,7 +10,7 @@ public sealed class Color : Entity<ColorId>
 
     public string Name { get; private set; } = null!;
 
-    public IReadOnlyList<Product> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
     public Color(
         ColorId colorId,

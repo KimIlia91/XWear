@@ -1,13 +1,12 @@
 ﻿using XWear.Domain.Common.Models;
+using XWear.Domain.Entities.SizeEntity;
+using XWear.Domain.Entities.ColorEntity;
+using XWear.Domain.Entities.BrandEntity;
+using XWear.Domain.Entities.ModelEntity;
+using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.FavoritParoductEntity;
-using XWear.Domain.Entities.SizeEntity.ValueObjects;
 using XWear.Domain.Entities.UserEntity.ValueObjects;
-using XWear.Domain.Entities.BrandEntity.ValueObjects;
-using XWear.Domain.Entities.ColorEntity.ValueObjects;
-using XWear.Domain.Entities.ModelEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
-using XWear.Domain.Entities.CategoryEntity.ValueObjects;
-using XWear.Domain.Entities.FavoritParoductEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ProductEntity;
 
@@ -25,28 +24,28 @@ public sealed class Product : Entity<ProductId>
 
     public DateTime UpdatedDateTime { get; private set; }
 
-    public CategoryId CategoryId { get; private set; }
+    public Category Category { get; private set; }
 
-    public SizeId SizeId { get; private set; }
+    public Size Size { get; private set; }
 
-    public ColorId ColorId { get; private set; }
+    public Color Color { get; private set; }
 
-    public BrandId BrandId { get; private set; }
+    public Brand Brand { get; private set; }
 
-    public ModelId ModelId { get; private set; }
+    public Model Model { get; private set; }
 
-    public IReadOnlyList<FavoritProduct> FavoritProducts => _favoritProducts.AsReadOnly();
+    public IReadOnlyCollection<FavoritProduct> FavoritProducts => _favoritProducts.AsReadOnly();
 
     internal Product(
         ProductId productId,
         decimal price,
         int quantity,
         string imgUrl,
-        CategoryId categoryId,
-        BrandId brandId,
-        ModelId modelId,
-        SizeId sizeId,
-        ColorId colorId)
+        Category category,
+        Brand brand,
+        Model model,
+        Size size,
+        Color color)
         : base(productId)
     {
         Price = price;
@@ -54,34 +53,33 @@ public sealed class Product : Entity<ProductId>
         ImgUrl = imgUrl;
         CreatedDateTime = DateTime.UtcNow;
         UpdatedDateTime = DateTime.UtcNow;
-        CategoryId = categoryId;
-        BrandId = brandId;
-        ModelId = modelId;
-        ColorId = colorId;
-        SizeId = sizeId;
+        Category = category;
+        Brand = brand;
+        Model = model;
+        Color = color;
+        Size = size;
     }
 
     public static Product Create(
         decimal price,
         int quantity,
         string imgUrl,
-        CategoryId categoryId,
-        BrandId brandId,
-        ModelId modelId,
-        ModelName name,
-        SizeId sizeId,
-        ColorId colorId)
+        Category category,
+        Brand brand,
+        Model model,
+        Size size,
+        Color color)
     {
         return new(
             ProductId.CreateUnique(),
             price,
             quantity,
             imgUrl,
-            categoryId,
-            brandId,
-            modelId,
-            sizeId,
-            colorId);
+            category,
+            brand,
+            model,
+            size,
+            color);
     }
 
     public void AddFavoritProduct(UserId userId)

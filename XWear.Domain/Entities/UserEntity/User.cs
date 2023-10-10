@@ -19,7 +19,7 @@ public class User : Entity<UserId>
 
     public string Password { get; private set; }
 
-    public IReadOnlyList<FavoritProduct> FavoriteProducts => _favoriteProducts.AsReadOnly();
+    public IReadOnlyCollection<FavoritProduct> FavoriteProducts => _favoriteProducts.AsReadOnly();
 
     internal User(
         UserId userId,
