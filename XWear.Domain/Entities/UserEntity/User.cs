@@ -53,9 +53,9 @@ public class User : Entity<UserId>
             password);
     }
 
-    public void AddFavoriteProduct(UserId userId, ProductId productId)
+    public void AddFavoriteProduct(ProductId productId)
     {
-        var favoriteProduct = new FavoritProduct(userId, productId);
+        var favoriteProduct = new FavoritProduct(Id, productId);
         _favoriteProducts.Add(favoriteProduct);
     }
 }

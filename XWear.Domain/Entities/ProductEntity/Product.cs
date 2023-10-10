@@ -68,6 +68,7 @@ public sealed class Product : Entity<ProductId>
         CategoryId categoryId,
         BrandId brandId,
         ModelId modelId,
+        ModelName name,
         SizeId sizeId,
         ColorId colorId)
     {
@@ -83,12 +84,9 @@ public sealed class Product : Entity<ProductId>
             colorId);
     }
 
-    public FavoriteProductId AddFavoritProduct(
-        UserId userId,
-        ProductId productId)
+    public void AddFavoritProduct(UserId userId)
     {
-        var favoritProduct = new FavoritProduct(userId, productId);
+        var favoritProduct = new FavoritProduct(userId, Id);
         _favoritProducts.Add(favoritProduct);
-        return favoritProduct.Id;
     }
 }
