@@ -1,4 +1,4 @@
-﻿using XWear.Domain.Entities;
+﻿using XWear.Domain.Catalog.Entities;
 
 namespace XWear.Application.Common.Interfaces.IGenerators
 {

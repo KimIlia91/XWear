@@ -1,4 +1,5 @@
 ﻿using XWear.Domain.Catalog.Entities;
+using XWear.Domain.Catalog.ValueObjects;
 
 namespace XWear.Application.Common.Interfaces.IRepositories
 {
@@ -6,7 +7,7 @@ namespace XWear.Application.Common.Interfaces.IRepositories
     {
         User? GetUserByEmail(string email);
 
-        User? GetUserById(Guid id);
+        User? GetUserById(UserId id);
 
         void Add(User user);
     }

@@ -1,4 +1,5 @@
-﻿using XWear.Domain.Entities;
+﻿using XWear.Domain.Catalog.Entities;
+using XWear.Domain.Catalog.ValueObjects;
 
 namespace XWear.Application.Common.Interfaces.IRepositories;
 
@@ -8,13 +9,13 @@ public interface IProductRepository
         CancellationToken cancellationToken);
 
     Task<IEnumerable<Product>> GetProductByCatalogIdAsync(
-        Guid catalogId,
+        CatalogId catalogId,
         CancellationToken cancellationToken);
 
     Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
         CancellationToken cancellationToken);
 
-    Task<FavoritProduct> AddFavoriteProductAsync(
-        FavoritProduct favoritProduct,
+    Task<FavoriteProduct> AddFavoriteProductAsync(
+        FavoriteProduct favoritProduct,
         CancellationToken cancellationToken);
 }

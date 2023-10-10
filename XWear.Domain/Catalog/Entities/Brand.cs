@@ -11,7 +11,7 @@ public sealed class Brand : Entity<BrandId>
 
     public IReadOnlyList<Product> Products => _products.AsReadOnly();
 
-    public Brand(
+    internal Brand(
         BrandId brandId, 
         string name) 
         : base(brandId)

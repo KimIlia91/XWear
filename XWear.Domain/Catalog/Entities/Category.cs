@@ -9,6 +9,9 @@ public sealed class Category : Entity<CategoryId>
 
     public string Name { get; private set; } = null!;
 
+    public CatalogId CatalogId { get; set; }
+    public Catalog Catalog { get; set; }
+
     public IReadOnlyList<Product> Products => _products.AsReadOnly();
 
     public Category(

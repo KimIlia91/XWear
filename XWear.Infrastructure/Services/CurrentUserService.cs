@@ -1,13 +1,14 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using XWear.Application.Common.Interfaces.IServices;
+using XWear.Domain.Catalog.ValueObjects;
 
 namespace XWear.Infrastructure.Services;
 
 public class CurrentUserService : ICurrentUserService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private Guid? _userId;
+    private UserId _userId;
 
     public CurrentUserService(IHttpContextAccessor httpContextAccessor)
     {
@@ -19,18 +20,24 @@ public class CurrentUserService : ICurrentUserService
             ? Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier))
             : default;
 
-    public Guid UserId
+    public UserId UserId
     {
         get
         {
             if (_httpContextAccessor.HttpContext.User.HasClaim(x => x.Type == ClaimTypes.NameIdentifier))
             {
-                _userId ??= Guid.Parse(
+                var guidUserId = Guid.Parse(
                     _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
-                return _userId.Value;
+
+                if (guidUserId != Guid.Empty)
+                {
+                    _userId = UserId.ConvertFromGuid(guidUserId);
+
+                    return _userId;
+                }
             }
 
-            return Guid.Empty;
+            return UserId.CreateEmpty();
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWear.Domain.Entities;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
+using XWear.Domain.Catalog.Entities;
+using XWear.Domain.Catalog.ValueObjects;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -18,48 +19,37 @@ internal class ProductRepository : IProductRepository
         _currentUserService = currentUserService;
     }
 
-    public async Task<IEnumerable<Product>> GetAllProductsAsync(
+    public Task<FavoriteProduct> AddFavoriteProductAsync(
+        FavoriteProduct favoritProduct, 
         CancellationToken cancellationToken)
     {
-        return await _context.Products
-            .Include(p => p.Model)
-            .Include(p => p.Category)
-                .ThenInclude(p => p.Catalog)
-            .ToListAsync(cancellationToken);
+        throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<Product>> GetProductByCatalogIdAsync(
-        Guid catalogId,
+    public Task<IEnumerable<Product>> GetAllProductsAsync(
         CancellationToken cancellationToken)
     {
-        return await _context.Products
-            .Include(p => p.Model)
-            .AsNoTracking()
-            .Where(p => p.Category.CatalogId == catalogId)
-            .ToListAsync(cancellationToken);
+        throw new NotImplementedException();
     }
 
     public async Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
         CancellationToken cancellationToken)
     {
-        if (_currentUserService.UserId == Guid.Empty)
-            return new List<Product>();
-
-        var favoritProducts = await _context.Products
-            .Include(p => p.FavoritProducts)
-            .AsNoTracking()
-            .Where(p => p.FavoritProducts.Any(p => p.UserId == _currentUserService.UserId))
+        return await _context.Products
+            .Include(p => p.Model)
+            .Where(p => p.FavoriteByUsers
+            .Any(fp => fp.UserId == _currentUserService.UserId))
             .ToListAsync(cancellationToken);
-
-        return favoritProducts;
     }
 
-    public async Task<FavoritProduct> AddFavoriteProductAsync(
-        FavoritProduct favoritProduct, 
+    public async Task<IEnumerable<Product>> GetProductByCatalogIdAsync(
+        CatalogId catalogId, 
         CancellationToken cancellationToken)
     {
-        await _context.FavoritProducts.AddAsync(favoritProduct, cancellationToken);
-        await _context.SaveChangesAsync(cancellationToken);
-        return favoritProduct;
+        return await _context.Products
+            .Include(p => p.Model)
+            .Where(p => p.Category.CatalogId == catalogId)
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
     }
 }

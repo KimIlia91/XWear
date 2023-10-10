@@ -5,6 +5,7 @@ using XWear.Domain.Common.Errors;
 using XWear.Application.Features.Account.Common;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
+using XWear.Domain.Catalog.ValueObjects;
 
 namespace XWear.Application.Features.Account.Commands.Update;
 

@@ -1,5 +1,6 @@
-﻿using XWear.Domain.Entities;
-using XWear.Application.Common.Interfaces.IRepositories;
+﻿using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Domain.Catalog.Entities;
+using XWear.Domain.Catalog.ValueObjects;
 
 namespace XWear.Infrastructure.Persistence.Repositories
 {
@@ -11,14 +12,12 @@ namespace XWear.Infrastructure.Persistence.Repositories
         {
             if (_users.Count == 0)
             {
-                _users.Add(new User
-                {
-                    FirstName = "Данияр",
-                    LastName = "Даниярович",
-                    Email = "testuser@test.com",
-                    Phone = "+996709123123",
-                    Password = "TestUser123!",
-                });
+                _users.Add(User.Create(
+                    "Данияр",
+                    "Даниярович",
+                    "testuser@test.com",
+                    "+996709123123",
+                    "TestUser123!"));
             }
         }
 
@@ -32,7 +31,7 @@ namespace XWear.Infrastructure.Persistence.Repositories
             return _users.SingleOrDefault(u => u.Email == email);
         }
 
-        public User? GetUserById(Guid id)
+        public User? GetUserById(UserId id)
         {
             return _users.SingleOrDefault(u => u.Id == id);
         }

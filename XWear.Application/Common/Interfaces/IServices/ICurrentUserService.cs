@@ -1,8 +1,10 @@
-﻿namespace XWear.Application.Common.Interfaces.IServices
+﻿using XWear.Domain.Catalog.ValueObjects;
+
+namespace XWear.Application.Common.Interfaces.IServices
 {
     public interface ICurrentUserService
     {
-        Guid UserId { get; }
+        UserId UserId { get; }
 
         Guid? NullableUserId { get; }
     }

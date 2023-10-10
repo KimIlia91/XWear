@@ -1,10 +1,10 @@
 ﻿using ErrorOr;
 using MediatR;
-using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
 using XWear.Application.Features.Authentication.Common;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IGenerators;
+using XWear.Domain.Catalog.Entities;
 
 namespace XWear.Application.Features.Authentication.Queries.Login;
 

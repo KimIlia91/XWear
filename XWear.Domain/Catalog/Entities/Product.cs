@@ -18,6 +18,9 @@ public sealed class Product : Entity<ProductId>
 
     public DateTime UpdatedDateTime { get; private set; }
 
+    public CategoryId CategoryId { get; private set; }
+    public Category Category { get; private set; }
+
     public SizeId SizeId { get; private set; }
     public Size Size { get; private set; }
 

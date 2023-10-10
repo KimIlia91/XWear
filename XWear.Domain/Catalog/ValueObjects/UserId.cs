@@ -4,7 +4,7 @@ namespace XWear.Domain.Catalog.ValueObjects;
 
 public sealed class UserId : ValueObject
 {
-    public Guid Value { get; set; }
+    public Guid Value { get; private set; }
 
     private UserId(Guid value)
     {
@@ -19,5 +19,15 @@ public sealed class UserId : ValueObject
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
+    }
+
+    public static UserId ConvertFromGuid(Guid guid)
+    {
+        return new UserId(guid);
+    }
+
+    public static UserId CreateEmpty()
+    {
+        return new UserId(Guid.Empty);
     }
 }
