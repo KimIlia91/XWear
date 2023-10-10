@@ -1,11 +1,11 @@
 ﻿using ErrorOr;
 using MediatR;
 using MapsterMapper;
-using XWear.Domain.Entities;
 using XWear.Domain.Common.Errors;
+using XWear.Domain.Catalog.Entities;
 using XWear.Application.Features.Account.Common;
-using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
+using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Application.Features.Account.Queries.GetAccount;
 

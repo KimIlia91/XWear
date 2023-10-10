@@ -70,6 +70,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favorit product exist.
+        /// </summary>
+        public static string FavoritProductExist {
+            get {
+                return ResourceManager.GetString("FavoritProductExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid confirm password.
         /// </summary>
         public static string InvalidConfirmPassword {

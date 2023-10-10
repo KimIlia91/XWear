@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWear.Domain.Entities;
+using XWear.Domain.Catalog.Entities;
 
 namespace XWear.Infrastructure.Persistence
 {
@@ -19,7 +19,7 @@ namespace XWear.Infrastructure.Persistence
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<FavoritProduct> FavoritProducts { get; set; }
+        public DbSet<FavoriteProduct> FavoritProducts { get; set; }
 
         public DbSet<Color> Colors { get; set; }
 

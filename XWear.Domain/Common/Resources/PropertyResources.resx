@@ -120,6 +120,9 @@
   <data name="EmailAlreadyTaken" xml:space="preserve">
     <value>Email already taken</value>
   </data>
+  <data name="FavoritProductExist" xml:space="preserve">
+    <value>Favorit product exist</value>
+  </data>
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Invalid confirm password</value>
   </data>
