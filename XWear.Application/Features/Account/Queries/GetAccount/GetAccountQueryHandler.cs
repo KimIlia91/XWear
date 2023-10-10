@@ -32,7 +32,7 @@ public class GetAccountQueryHandler
         CancellationToken cancellationToken)
     {
         await Task.CompletedTask;
-        if (_userRepository.GetUserById(UserId.ConvertFromGuid(_currentUser.UserId)) is not User user)
+        if (_userRepository.GetUserById(_currentUser.UserId) is not User user)
             return Errors.Authentication.InvalidCredentinals;
 
         return _mapper.Map<AccountResult>(user);
