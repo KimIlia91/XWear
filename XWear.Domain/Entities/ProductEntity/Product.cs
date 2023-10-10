@@ -11,7 +11,7 @@ using XWear.Domain.Entities.FavoritParoductEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ProductEntity;
 
-public sealed class Product : AggregateRoot<ProductId>
+public sealed class Product : Entity<ProductId>
 {
     private readonly List<FavoritProduct> _favoritProducts = new();
 
