@@ -1,20 +1,21 @@
-﻿using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.FavoritParoductEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
 using XWear.Domain.Common.Models;
-using XWear.Domain.FavoritProduct.ValueObjects;
 
-namespace XWear.Domain.Catalog.Entities;
+namespace XWear.Domain.Catalog.Entities.FavoritParoductEntity;
 
-public class FavoriteProduct : Entity<FavoriteProductId>
+public class FavoritProduct : Entity<FavoriteProductId>
 {
     public UserId UserId { get; private set; }
 
-    public ProductId ProductId { get; private set;   }
+    public ProductId ProductId { get; private set; }
 
     public DateTime CreatedDateTime { get; private set; }
 
     public DateTime UpdatedDateTime { get; private set; }
 
-    internal FavoriteProduct(
+    internal FavoritProduct(
         UserId userId,
         ProductId productId)
         : base(FavoriteProductId.CreateUnique())

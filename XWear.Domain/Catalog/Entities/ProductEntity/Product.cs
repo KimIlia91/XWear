@@ -1,12 +1,24 @@
 ﻿using XWear.Domain.Common.Models;
-using XWear.Domain.Catalog.ValueObjects;
-using XWear.Domain.FavoritProduct.ValueObjects;
+using XWear.Domain.Catalog.Entities.BrandEntity;
+using XWear.Domain.Catalog.Entities.BrandEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.CategoryEntity;
+using XWear.Domain.Catalog.Entities.CategoryEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.ColorEntity;
+using XWear.Domain.Catalog.Entities.ColorEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
+using XWear.Domain.Catalog.Entities.FavoritParoductEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.ModelEntity;
+using XWear.Domain.Catalog.Entities.ModelEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.SizeEntity;
+using XWear.Domain.Catalog.Entities.SizeEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
 
-namespace XWear.Domain.Catalog.Entities;
+namespace XWear.Domain.Catalog.Entities.ProductEntity;
 
 public sealed class Product : Entity<ProductId>
 {
-    private readonly List<FavoriteProduct> _favoriteByUsers = new();
+    private readonly List<FavoritProduct> _favoriteByUsers = new();
 
     public decimal Price { get; private set; }
 
@@ -33,18 +45,18 @@ public sealed class Product : Entity<ProductId>
     public ModelId ModelId { get; private set; }
     public Model Model { get; private set; }
 
-    public IReadOnlyList<FavoriteProduct> FavoriteByUsers => _favoriteByUsers.AsReadOnly();
+    public IReadOnlyList<FavoritProduct> FavoriteByUsers => _favoriteByUsers.AsReadOnly();
 
     internal Product(
-        ProductId productId, 
-        decimal price, 
-        int quantity, 
+        ProductId productId,
+        decimal price,
+        int quantity,
         string imgUrl,
         Category category,
-        Brand brand, 
+        Brand brand,
         Model model,
         Size size,
-        Color color) 
+        Color color)
         : base(productId)
     {
         Price = price;
@@ -65,7 +77,7 @@ public sealed class Product : Entity<ProductId>
     }
 
     public Product Create(
-        decimal price, 
+        decimal price,
         int quantity,
         string imgUrl,
         Category category,
@@ -75,9 +87,9 @@ public sealed class Product : Entity<ProductId>
         Color color)
     {
         return new(
-            ProductId.CreateUnique(), 
-            price, 
-            quantity, 
+            ProductId.CreateUnique(),
+            price,
+            quantity,
             imgUrl,
             category,
             brand,
@@ -87,10 +99,10 @@ public sealed class Product : Entity<ProductId>
     }
 
     public FavoriteProductId AddProductToFavoritUser(
-        UserId userId, 
+        UserId userId,
         ProductId productId)
     {
-        var favoritProduct = new FavoriteProduct(userId, productId);
+        var favoritProduct = new FavoritProduct(userId, productId);
         _favoriteByUsers.Add(favoritProduct);
         return favoritProduct.Id;
     }

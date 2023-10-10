@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
-using XWear.Domain.Catalog.Entities;
-using XWear.Domain.Catalog.ValueObjects;
+using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
+using XWear.Domain.Catalog.Entities.ProductEntity;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -19,8 +20,8 @@ internal class ProductRepository : IProductRepository
         _currentUserService = currentUserService;
     }
 
-    public Task<FavoriteProduct> AddFavoriteProductAsync(
-        FavoriteProduct favoritProduct, 
+    public Task<FavoritProduct> AddFavoriteProductAsync(
+        FavoritProduct favoritProduct, 
         CancellationToken cancellationToken)
     {
         throw new NotImplementedException();

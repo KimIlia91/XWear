@@ -1,7 +1,9 @@
-﻿using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.CategoryEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.ProductEntity;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities;
+namespace XWear.Domain.Catalog.Entities.CategoryEntity;
 
 public sealed class Category : Entity<CategoryId>
 {
@@ -17,7 +19,7 @@ public sealed class Category : Entity<CategoryId>
     public Category(
         CategoryId categoryId,
         Catalog catalog,
-        string name) 
+        string name)
         : base(categoryId)
     {
         Name = name;

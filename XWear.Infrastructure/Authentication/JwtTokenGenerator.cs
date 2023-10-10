@@ -3,10 +3,10 @@ using System.Security.Claims;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using XWear.Domain.Catalog.Entities;
 using XWear.Infrastructure.Authentication.Settings;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Common.Interfaces.IGenerators;
+using XWear.Domain.Catalog.Entities.UserEntity;
 
 namespace XWear.Infrastructure.Authentication;
 

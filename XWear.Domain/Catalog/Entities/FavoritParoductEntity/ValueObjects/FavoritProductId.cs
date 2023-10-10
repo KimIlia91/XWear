@@ -1,6 +1,6 @@
 ﻿using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.FavoritProduct.ValueObjects;
+namespace XWear.Domain.Catalog.Entities.FavoritParoductEntity.ValueObjects;
 
 public sealed class FavoriteProductId : ValueObject
 {

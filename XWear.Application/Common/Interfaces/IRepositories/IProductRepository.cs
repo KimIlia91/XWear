@@ -1,5 +1,6 @@
-﻿using XWear.Domain.Catalog.Entities;
-using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
+using XWear.Domain.Catalog.Entities.ProductEntity;
 
 namespace XWear.Application.Common.Interfaces.IRepositories;
 
@@ -15,7 +16,7 @@ public interface IProductRepository
     Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
         CancellationToken cancellationToken);
 
-    Task<FavoriteProduct> AddFavoriteProductAsync(
-        FavoriteProduct favoritProduct,
+    Task<FavoritProduct> AddFavoriteProductAsync(
+        FavoritProduct favoritProduct,
         CancellationToken cancellationToken);
 }

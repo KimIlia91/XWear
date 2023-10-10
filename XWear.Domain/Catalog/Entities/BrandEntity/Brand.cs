@@ -1,7 +1,8 @@
-﻿using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.BrandEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.ProductEntity;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities;
+namespace XWear.Domain.Catalog.Entities.BrandEntity;
 
 public sealed class Brand : Entity<BrandId>
 {
@@ -12,8 +13,8 @@ public sealed class Brand : Entity<BrandId>
     public IReadOnlyList<Product> Products => _products.AsReadOnly();
 
     internal Brand(
-        BrandId brandId, 
-        string name) 
+        BrandId brandId,
+        string name)
         : base(brandId)
     {
         Name = name;

@@ -1,5 +1,5 @@
 ﻿using Mapster;
-using XWear.Domain.Catalog.Entities;
+using XWear.Domain.Catalog.Entities.CatalogEntity;
 
 namespace XWear.Application.Features.CatalogContext.Common;
 

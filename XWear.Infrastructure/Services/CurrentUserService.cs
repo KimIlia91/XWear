@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using XWear.Application.Common.Interfaces.IServices;
-using XWear.Domain.Catalog.ValueObjects;
+using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
 
 namespace XWear.Infrastructure.Services;
 

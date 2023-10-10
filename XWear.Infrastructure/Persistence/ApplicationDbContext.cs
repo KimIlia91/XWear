@@ -1,5 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWear.Domain.Catalog.Entities;
+using XWear.Domain.Catalog.Entities.BrandEntity;
+using XWear.Domain.Catalog.Entities.CatalogEntity;
+using XWear.Domain.Catalog.Entities.CategoryEntity;
+using XWear.Domain.Catalog.Entities.ColorEntity;
+using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
+using XWear.Domain.Catalog.Entities.ModelEntity;
+using XWear.Domain.Catalog.Entities.ProductEntity;
+using XWear.Domain.Catalog.Entities.SizeEntity;
+using XWear.Domain.Catalog.Entities.UserEntity;
 
 namespace XWear.Infrastructure.Persistence
 {
@@ -19,7 +27,7 @@ namespace XWear.Infrastructure.Persistence
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<FavoriteProduct> FavoritProducts { get; set; }
+        public DbSet<FavoritProduct> FavoritProducts { get; set; }
 
         public DbSet<Color> Colors { get; set; }
 

@@ -1,5 +1,5 @@
-﻿using XWear.Domain.Catalog.Entities;
-using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.UserEntity;
+using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
 
 namespace XWear.Application.Common.Interfaces.IRepositories
 {

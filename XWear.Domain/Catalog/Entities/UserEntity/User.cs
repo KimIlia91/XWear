@@ -1,11 +1,13 @@
-﻿using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
+using XWear.Domain.Catalog.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities;
+namespace XWear.Domain.Catalog.Entities.UserEntity;
 
 public class User : Entity<UserId>
 {
-    private readonly List<FavoriteProduct> _favoriteProducts = new();
+    private readonly List<FavoritProduct> _favoriteProducts = new();
 
     public string FirstName { get; private set; }
 
@@ -17,15 +19,15 @@ public class User : Entity<UserId>
 
     public string Password { get; private set; }
 
-    public IReadOnlyList<FavoriteProduct> FavoriteProducts => _favoriteProducts.AsReadOnly();
+    public IReadOnlyList<FavoritProduct> FavoriteProducts => _favoriteProducts.AsReadOnly();
 
     internal User(
-        UserId userId, 
+        UserId userId,
         string firstName,
         string lastName,
         string email,
         string phone,
-        string password) 
+        string password)
         : base(userId)
     {
         FirstName = firstName;
@@ -43,7 +45,7 @@ public class User : Entity<UserId>
         string password)
     {
         return new(
-            UserId.CreateUnique(), 
+            UserId.CreateUnique(),
             firstName,
             lastName,
             email,
@@ -53,7 +55,7 @@ public class User : Entity<UserId>
 
     public void AddFavoriteProduct(UserId userId, ProductId productId)
     {
-        var favoriteProduct = new FavoriteProduct(userId, productId);
+        var favoriteProduct = new FavoritProduct(userId, productId);
         _favoriteProducts.Add(favoriteProduct);
     }
 }

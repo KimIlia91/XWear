@@ -1,7 +1,8 @@
-﻿using XWear.Domain.Catalog.ValueObjects;
+﻿using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.CategoryEntity;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.Entities;
+namespace XWear.Domain.Catalog.Entities.CatalogEntity;
 
 public sealed class Catalog : AggregateRoot<CatalogId>
 {

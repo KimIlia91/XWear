@@ -1,17 +1,17 @@
 ﻿using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Catalog.ValueObjects;
+namespace XWear.Domain.Catalog.Entities.CategoryEntity.ValueObjects;
 
-public sealed class ColorId : ValueObject
+public sealed class CategoryId : ValueObject
 {
     public Guid Value { get; private set; }
 
-    private ColorId(Guid value)
+    private CategoryId(Guid value)
     {
         Value = value;
     }
 
-    public static ColorId CreateUnique()
+    public static CategoryId CreateUnique()
     {
         return new(Guid.NewGuid());
     }
