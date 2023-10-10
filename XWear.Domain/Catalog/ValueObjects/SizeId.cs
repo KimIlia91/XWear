@@ -4,7 +4,7 @@ namespace XWear.Domain.Catalog.ValueObjects;
 
 public sealed class SizeId : ValueObject
 {
-    public Guid Value { get; set; }
+    public Guid Value { get; private set; }
 
     private SizeId(Guid value)
     {

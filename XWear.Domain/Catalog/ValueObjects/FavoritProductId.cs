@@ -4,7 +4,7 @@ namespace XWear.Domain.FavoritProduct.ValueObjects;
 
 public sealed class FavoriteProductId : ValueObject
 {
-    public Guid Value { get; set; }
+    public Guid Value { get; private set; }
 
     private FavoriteProductId(Guid value)
     {
