@@ -15,16 +15,19 @@ public sealed class Category : Entity<CategoryId>
     public IReadOnlyList<Product> Products => _products.AsReadOnly();
 
     public Category(
-        CategoryId categoryId, 
+        CategoryId categoryId,
+        Catalog catalog,
         string name) 
         : base(categoryId)
     {
         Name = name;
+        CatalogId = catalog.Id;
+        Catalog = catalog;
     }
 
-    public static Category Create(string name)
+    public static Category Create(string name, Catalog catalog)
     {
-        return new(CategoryId.CreateUnique(), name);
+        return new(CategoryId.CreateUnique(), catalog, name);
     }
 
     public void AddProduct(Product product)

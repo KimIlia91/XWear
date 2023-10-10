@@ -39,7 +39,8 @@ public sealed class Product : Entity<ProductId>
         ProductId productId, 
         decimal price, 
         int quantity, 
-        string imgUrl, 
+        string imgUrl,
+        Category category,
         Brand brand, 
         Model model,
         Size size,
@@ -51,6 +52,8 @@ public sealed class Product : Entity<ProductId>
         ImgUrl = imgUrl;
         CreatedDateTime = DateTime.UtcNow;
         UpdatedDateTime = DateTime.UtcNow;
+        CategoryId = category.Id;
+        Category = category;
         BrandId = brand.Id;
         Brand = brand;
         ModelId = model.Id;
@@ -65,6 +68,7 @@ public sealed class Product : Entity<ProductId>
         decimal price, 
         int quantity,
         string imgUrl,
+        Category category,
         Brand brand,
         Model model,
         Size size,
@@ -75,6 +79,7 @@ public sealed class Product : Entity<ProductId>
             price, 
             quantity, 
             imgUrl,
+            category,
             brand,
             model,
             size,
