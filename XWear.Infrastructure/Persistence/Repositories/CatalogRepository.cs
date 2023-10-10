@@ -1,26 +1,29 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Mapster;
+using MapsterMapper;
+using Microsoft.EntityFrameworkCore;
+using XWear.Contracts.Catalog.Responses;
 using XWear.Application.Common.Interfaces.IRepositories;
-using XWear.Domain.Entities.CatalogEntity;
 
-namespace XWear.Infrastructure.Persistence.Repositories
+namespace XWear.Infrastructure.Persistence.Repositories;
+
+public class CatalogRepository : ICatalogRepository
 {
-    public class CatalogRepository : ICatalogRepository
+    private readonly ApplicationDbContext _context;
+    private readonly IMapper _mapper;
+
+    public CatalogRepository(
+        ApplicationDbContext context,
+        IMapper mapper)
     {
-        private readonly ApplicationDbContext _context;
+        _mapper = mapper;
+        _context = context;
+    }
 
-        public CatalogRepository(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
-        public async Task<IEnumerable<Catalog>> GetCatalogsAsync(
-            CancellationToken cancellationToken)
-        {
-            return await _context.Catalogs
-                .Include(c => c.Categories)
-                    .ThenInclude(c => c.Products)
-                        .ThenInclude(p => p.Model)
-                .ToListAsync(cancellationToken);
-        }
+    public async Task<IEnumerable<CatalogResponse>> GetCatalogAsync(
+        CancellationToken cancellationToken)
+    {
+        return await _context.Catalogs
+            .ProjectToType<CatalogResponse>(_mapper.Config)
+            .ToListAsync(cancellationToken);
     }
 }

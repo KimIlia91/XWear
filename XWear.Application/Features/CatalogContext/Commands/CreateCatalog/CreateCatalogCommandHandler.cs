@@ -4,12 +4,14 @@ using MapsterMapper;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Features.CatalogContext.Common;
 using XWear.Domain.Entities.CatalogEntity;
+using Mapster;
 
 namespace XWear.Application.Features.CatalogContext.Commands.CreateCatalog;
 
 public class CreateCatalogCommandHandler : IRequestHandler<CreateCatalogCommand, ErrorOr<CatalogResult>>
 {
     private readonly IBaseRepository<Catalog> _baseRepository;
+    private readonly ICatalogRepository _catalogRepository;
     private readonly IMapper _mapper;
 
     public CreateCatalogCommandHandler(

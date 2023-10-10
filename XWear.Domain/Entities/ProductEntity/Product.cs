@@ -70,9 +70,11 @@ public sealed class Product : Entity<ProductId>
         Size size,
         Color color)
     {
+        var roundPrice = Math.Round(price, 2);
+
         return new(
             ProductId.CreateUnique(),
-            price,
+            roundPrice,
             quantity,
             imgUrl,
             category,
