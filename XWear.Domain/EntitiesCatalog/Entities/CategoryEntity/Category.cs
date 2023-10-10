@@ -12,24 +12,22 @@ public sealed class Category : Entity<CategoryId>
     public string Name { get; private set; } = null!;
 
     public CatalogId CatalogId { get; set; }
-    public Catalog Catalog { get; set; }
 
     public IReadOnlyList<Product> Products => _products.AsReadOnly();
 
     public Category(
         CategoryId categoryId,
-        Catalog catalog,
+        CatalogId catalogId,
         string name)
         : base(categoryId)
     {
         Name = name;
-        CatalogId = catalog.Id;
-        Catalog = catalog;
+        CatalogId = catalogId;
     }
 
-    public static Category Create(string name, Catalog catalog)
+    public static Category Create(string name, CatalogId catalogId)
     {
-        return new(CategoryId.CreateUnique(), catalog, name);
+        return new(CategoryId.CreateUnique(), catalogId, name);
     }
 
     public void AddProduct(Product product)

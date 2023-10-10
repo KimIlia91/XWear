@@ -6,7 +6,9 @@ using XWear.Application.Features.Account.Common;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Domain.Catalog.Entities.UserEntity;
-using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
+using XWear.Domain.Catalog.Entities.CategoryEntity;
+using XWear.Domain.Catalog.Entities.CatalogEntity;
+using XWear.Domain.Catalog.Entities.CatalogEntity.ValueObjects;
 
 namespace XWear.Application.Features.Account.Queries.GetAccount;
 
@@ -34,7 +36,6 @@ public class GetAccountQueryHandler
         await Task.CompletedTask;
         if (_userRepository.GetUserById(_currentUser.UserId) is not User user)
             return Errors.Authentication.InvalidCredentinals;
-
         return _mapper.Map<AccountResult>(user);
     }
 }

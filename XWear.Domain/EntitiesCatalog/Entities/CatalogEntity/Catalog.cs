@@ -4,7 +4,7 @@ using XWear.Domain.Common.Models;
 
 namespace XWear.Domain.Catalog.Entities.CatalogEntity;
 
-public sealed class Catalog : AggregateRoot<CatalogId>
+public sealed class Catalog : Entity<CatalogId>
 {
     private readonly List<Category> _categories = new();
 

@@ -1,22 +1,22 @@
 ﻿using XWear.Domain.Common.Models;
-using XWear.Domain.Catalog.Entities.BrandEntity;
-using XWear.Domain.Catalog.Entities.BrandEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.CategoryEntity;
-using XWear.Domain.Catalog.Entities.CategoryEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.ColorEntity;
-using XWear.Domain.Catalog.Entities.ColorEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.FavoritParoductEntity;
-using XWear.Domain.Catalog.Entities.FavoritParoductEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.ModelEntity;
-using XWear.Domain.Catalog.Entities.ModelEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.ProductEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.SizeEntity;
-using XWear.Domain.Catalog.Entities.SizeEntity.ValueObjects;
-using XWear.Domain.Catalog.Entities.UserEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.BrandEntity;
+using XWear.Domain.EntitiesCatalog.Entities.BrandEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity;
+using XWear.Domain.EntitiesCatalog.Entities.CategoryEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.ColorEntity;
+using XWear.Domain.EntitiesCatalog.Entities.ColorEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity;
+using XWear.Domain.EntitiesCatalog.Entities.FavoritParoductEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.ModelEntity;
+using XWear.Domain.EntitiesCatalog.Entities.ModelEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.SizeEntity;
+using XWear.Domain.EntitiesCatalog.Entities.SizeEntity.ValueObjects;
+using XWear.Domain.EntitiesCatalog.Entities.UserEntity.ValueObjects;
 
-namespace XWear.Domain.Catalog.Entities.ProductEntity;
+namespace XWear.Domain.EntitiesCatalog.Entities.ProductEntity;
 
-public sealed class Product : Entity<ProductId>
+public sealed class Product : AggregateRoot<ProductId>
 {
     private readonly List<FavoritProduct> _favoriteByUsers = new();
 
@@ -76,7 +76,7 @@ public sealed class Product : Entity<ProductId>
         Size = size;
     }
 
-    public Product Create(
+    public static Product Create(
         decimal price,
         int quantity,
         string imgUrl,
