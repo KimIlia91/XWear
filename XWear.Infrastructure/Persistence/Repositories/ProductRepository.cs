@@ -38,7 +38,7 @@ internal class ProductRepository : IProductRepository
     {
         return await _context.Products
             .Include(p => p.Model)
-            .Where(p => p.FavoriteByUsers
+            .Where(p => p.FavoritProducts
             .Any(fp => fp.UserId == _currentUserService.UserId))
             .ToListAsync(cancellationToken);
     }
