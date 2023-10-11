@@ -88,6 +88,24 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid image URL.
+        /// </summary>
+        public static string InvalidImgUrl {
+            get {
+                return ResourceManager.GetString("InvalidImgUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity must be more than 0.
+        /// </summary>
+        public static string InvalidQuantity {
+            get {
+                return ResourceManager.GetString("InvalidQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Length must be between 1 and {0}.
         /// </summary>
         public static string InvalidStringLength {
@@ -102,6 +120,15 @@ namespace XWear.Domain.Common.Resources {
         public static string NotFound {
             get {
                 return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requred.
+        /// </summary>
+        public static string Requred {
+            get {
+                return ResourceManager.GetString("Requred", resourceCulture);
             }
         }
         

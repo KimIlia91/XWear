@@ -1,6 +1,9 @@
 ﻿using XWear.Domain.Common.Models;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
+using XWear.Domain.Common.Constants;
+using XWear.Domain.Common.Errors;
+using ErrorOr;
 
 namespace XWear.Domain.Entities.ModelEntity;
 
@@ -20,8 +23,11 @@ public sealed class Model : Entity<ModelId>
         Name = name;
     }
 
-    public static Model Create(string name)
+    public static ErrorOr<Model> Create(string name)
     {
-        return new(ModelId.CreateUnique(), name);
+        if (string.IsNullOrEmpty(name) || name.Length > EntityConstants.ModelNameLength)
+            return Errors.Model.InvalidNameLength;
+
+        return new Model(ModelId.CreateUnique(), name);
     }
 }

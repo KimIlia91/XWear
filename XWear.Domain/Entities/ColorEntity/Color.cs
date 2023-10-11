@@ -15,7 +15,7 @@ public sealed class Color : Entity<ColorId>
 
     public string Name { get; private set; } = null!;
 
-    public ColorEnum Value { get; set; }
+    public ColorEnum Value { get; private set; }
 
     public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 

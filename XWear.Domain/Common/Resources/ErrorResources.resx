@@ -126,11 +126,20 @@
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Invalid confirm password</value>
   </data>
+  <data name="InvalidImgUrl" xml:space="preserve">
+    <value>Invalid image URL</value>
+  </data>
+  <data name="InvalidQuantity" xml:space="preserve">
+    <value>Quantity must be more than 0</value>
+  </data>
   <data name="InvalidStringLength" xml:space="preserve">
     <value>Length must be between 1 and {0}</value>
   </data>
   <data name="NotFound" xml:space="preserve">
     <value>Not Found</value>
+  </data>
+  <data name="Requred" xml:space="preserve">
+    <value>Requred</value>
   </data>
   <data name="UserDuplicateEmail" xml:space="preserve">
     <value>User duplicate email</value>

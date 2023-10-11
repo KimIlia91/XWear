@@ -9,4 +9,12 @@ internal sealed class EntityConstants
     public const short ColorNameLength = 50;
 
     public const short CategoryNameLength = 50;
+
+    public const short CatalogNameLength = 50;
+
+    public const short ModelNameLength = 50;
+
+    public const short SizeNameLength = 50;
+
+    public const short ImageUrlLength = 1000;
 }

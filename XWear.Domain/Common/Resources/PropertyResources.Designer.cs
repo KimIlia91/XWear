@@ -61,6 +61,33 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Catalog name.
+        /// </summary>
+        public static string CatalogName {
+            get {
+                return ResourceManager.GetString("CatalogName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category name.
+        /// </summary>
+        public static string CategoryName {
+            get {
+                return ResourceManager.GetString("CategoryName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color name.
+        /// </summary>
+        public static string ColorName {
+            get {
+                return ResourceManager.GetString("ColorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color not found.
         /// </summary>
         public static string ColorNotFound {
@@ -88,6 +115,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image URL.
+        /// </summary>
+        public static string ImgUrl {
+            get {
+                return ResourceManager.GetString("ImgUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid confirm password.
         /// </summary>
         public static string InvalidConfirmPassword {
@@ -106,11 +142,38 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Model name.
+        /// </summary>
+        public static string ModelName {
+            get {
+                return ResourceManager.GetString("ModelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not found.
         /// </summary>
         public static string NotFound {
             get {
                 return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size name.
+        /// </summary>
+        public static string SizeName {
+            get {
+                return ResourceManager.GetString("SizeName", resourceCulture);
             }
         }
         

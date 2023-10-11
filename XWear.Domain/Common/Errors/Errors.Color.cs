@@ -9,7 +9,7 @@ public static partial class Errors
     public static class Color
     {
         public static Error InvalidNameLength => Error.Validation(
-               code: PropertyResources.InvalidStringLength,
+               code: PropertyResources.ColorName,
                description: string.Format(ErrorResources.InvalidStringLength, EntityConstants.ColorNameLength));
 
         public static Error ColorNotFound => Error.Validation(

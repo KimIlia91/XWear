@@ -1,4 +1,5 @@
-﻿using XWear.Domain.Common.Models;
+﻿using ErrorOr;
+using XWear.Domain.Common.Models;
 using XWear.Domain.Entities.SizeEntity;
 using XWear.Domain.Entities.ColorEntity;
 using XWear.Domain.Entities.BrandEntity;
@@ -14,11 +15,11 @@ public sealed class Product : Entity<ProductId>
 {
     private readonly List<FavoritProduct> _favoritProducts = new();
 
-    public decimal Price { get; private set; }
+    public Price Price { get; private set; }
 
-    public int Quantity { get; private set; }
+    public Quantity Quantity { get; private set; }
 
-    public string ImgUrl { get; private set; } = null!;
+    public ImageUrl ImgUrl { get; private set; } = null!;
 
     public DateTime CreatedDateTime { get; private set; }
 
@@ -36,11 +37,11 @@ public sealed class Product : Entity<ProductId>
 
     public IReadOnlyCollection<FavoritProduct> FavoritProducts => _favoritProducts.AsReadOnly();
 
-    internal Product(
+    private Product(
         ProductId productId,
-        decimal price,
-        int quantity,
-        string imgUrl,
+        Price price,
+        Quantity quantity,
+        ImageUrl imgUrl,
         Category category,
         Brand brand,
         Model model,
@@ -60,7 +61,7 @@ public sealed class Product : Entity<ProductId>
         Size = size;
     }
 
-    public static Product Create(
+    public static ErrorOr<Product> Create(
         decimal price,
         int quantity,
         string imgUrl,
@@ -70,13 +71,21 @@ public sealed class Product : Entity<ProductId>
         Size size,
         Color color)
     {
-        var roundPrice = Math.Round(price, 2);
+        var imgResult = ImageUrl.Create(imgUrl);
 
-        return new(
+        if (imgResult.IsError)
+            return imgResult.Errors;
+
+        var quantityResult = Quantity.Create(quantity);
+
+        if (quantityResult.IsError)
+            return quantityResult.Errors;
+
+        return new Product(
             ProductId.CreateUnique(),
-            roundPrice,
-            quantity,
-            imgUrl,
+            Price.Create(price),
+            quantityResult.Value,
+            imgResult.Value,
             category,
             brand,
             model,

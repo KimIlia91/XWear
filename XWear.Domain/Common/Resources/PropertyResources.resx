@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CatalogName" xml:space="preserve">
+    <value>Catalog name</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Category name</value>
+  </data>
+  <data name="ColorName" xml:space="preserve">
+    <value>Color name</value>
+  </data>
   <data name="ColorNotFound" xml:space="preserve">
     <value>Color not found</value>
   </data>
@@ -126,14 +135,26 @@
   <data name="FavoritProductExist" xml:space="preserve">
     <value>Favorit product exist</value>
   </data>
+  <data name="ImgUrl" xml:space="preserve">
+    <value>Image URL</value>
+  </data>
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Invalid confirm password</value>
   </data>
   <data name="InvalidStringLength" xml:space="preserve">
     <value>Invalid string length</value>
   </data>
+  <data name="ModelName" xml:space="preserve">
+    <value>Model name</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>Not found</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="SizeName" xml:space="preserve">
+    <value>Size name</value>
   </data>
   <data name="UserDuplicateEmail" xml:space="preserve">
     <value>User duplicate email</value>

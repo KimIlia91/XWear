@@ -1,6 +1,9 @@
 ﻿using XWear.Domain.Common.Models;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.CatalogEntity.ValueObjects;
+using XWear.Domain.Common.Constants;
+using XWear.Domain.Common.Errors;
+using ErrorOr;
 
 namespace XWear.Domain.Entities.CatalogEntity;
 
@@ -20,9 +23,12 @@ public sealed class Catalog : Entity<CatalogId>
         Name = name;
     }
 
-    public static Catalog Create(string name)
+    public static ErrorOr<Catalog> Create(string name)
     {
-        return new(CatalogId.CreateUnique(), name);
+        if (string.IsNullOrEmpty(name) || name.Length > EntityConstants.CatalogNameLength)
+            return Errors.Catalog.InvalidNameLength;
+
+        return new Catalog(CatalogId.CreateUnique(), name);
     }
 
     public void AddCategory(Category category)

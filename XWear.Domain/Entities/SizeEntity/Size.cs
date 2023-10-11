@@ -1,4 +1,7 @@
-﻿using XWear.Domain.Common.Models;
+﻿using ErrorOr;
+using XWear.Domain.Common.Constants;
+using XWear.Domain.Common.Errors;
+using XWear.Domain.Common.Models;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.SizeEntity.ValueObjects;
 
@@ -20,9 +23,12 @@ namespace XWear.Domain.Entities.SizeEntity
             Name = name;
         }
 
-        public static Size Create(string name)
+        public static ErrorOr<Size> Create(string name)
         {
-            return new(SizeId.CreateUnique(), name);
+            if (string.IsNullOrEmpty(name) || name.Length > EntityConstants.SizeNameLength)
+                return Errors.Size.InvalidNameLength;
+
+            return new Size(SizeId.CreateUnique(), name);
         }
     }
 }
