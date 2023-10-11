@@ -153,6 +153,12 @@
   <data name="NotFound" xml:space="preserve">
     <value>Not found</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
   <data name="Quantity" xml:space="preserve">
     <value>Quantity</value>
   </data>
@@ -162,7 +168,16 @@
   <data name="UserDuplicateEmail" xml:space="preserve">
     <value>User duplicate email</value>
   </data>
+  <data name="UserEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UserFirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
   <data name="UserInvalidCredentinals" xml:space="preserve">
     <value>User invalid credentinals</value>
+  </data>
+  <data name="UserLastName" xml:space="preserve">
+    <value>Last name</value>
   </data>
 </root>

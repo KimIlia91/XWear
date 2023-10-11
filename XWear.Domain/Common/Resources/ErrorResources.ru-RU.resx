@@ -126,6 +126,9 @@
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Неверный пароль подтверждения</value>
   </data>
+  <data name="InvalidEmailFormat" xml:space="preserve">
+    <value>Неверный формат электронной почты</value>
+  </data>
   <data name="InvalidImgUrl" xml:space="preserve">
     <value>Неверный формат URL адреса изображения</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="InvalidStringLength" xml:space="preserve">
     <value>Длина строки должна быть от 1 до {0} символов</value>
+  </data>
+  <data name="PasswordPolicy" xml:space="preserve">
+    <value>Пароль должен состоять из специальных символов, строчных и прописных букв («a» — «z»), («A» — «Z») и содержать одну цифру.</value>
   </data>
   <data name="Requred" xml:space="preserve">
     <value>Обязателное поле</value>

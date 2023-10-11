@@ -126,6 +126,9 @@
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Invalid confirm password</value>
   </data>
+  <data name="InvalidEmailFormat" xml:space="preserve">
+    <value>Invalid email format</value>
+  </data>
   <data name="InvalidImgUrl" xml:space="preserve">
     <value>Invalid image URL</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="NotFound" xml:space="preserve">
     <value>Not Found</value>
+  </data>
+  <data name="PasswordPolicy" xml:space="preserve">
+    <value>The password must consist of special characters, lowercase and uppercase letters ('a' - 'z'), ('A' - 'Z') and contain a single digit</value>
   </data>
   <data name="Requred" xml:space="preserve">
     <value>Requred</value>

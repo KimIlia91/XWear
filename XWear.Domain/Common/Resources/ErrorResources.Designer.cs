@@ -88,6 +88,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid email format.
+        /// </summary>
+        public static string InvalidEmailFormat {
+            get {
+                return ResourceManager.GetString("InvalidEmailFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid image URL.
         /// </summary>
         public static string InvalidImgUrl {
@@ -120,6 +129,15 @@ namespace XWear.Domain.Common.Resources {
         public static string NotFound {
             get {
                 return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password must consist of special characters, lowercase and uppercase letters (&apos;a&apos; - &apos;z&apos;), (&apos;A&apos; - &apos;Z&apos;) and contain a single digit.
+        /// </summary>
+        public static string PasswordPolicy {
+            get {
+                return ResourceManager.GetString("PasswordPolicy", resourceCulture);
             }
         }
         

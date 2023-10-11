@@ -9,7 +9,7 @@ public static partial class Errors
     public static class Brand
     {
         public static Error InvalidNameLength => Error.Validation(
-               code: PropertyResources.BrandName,
-               description: string.Format(ErrorResources.InvalidStringLength, EntityConstants.CatalogNameLength));
+               code: string.Format(ErrorResources.InvalidStringLength, EntityConstants.CatalogNameLength),
+               description: PropertyResources.BrandName);
     }
 }

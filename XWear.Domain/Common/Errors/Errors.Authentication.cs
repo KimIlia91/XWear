@@ -14,6 +14,10 @@ namespace XWear.Domain.Common.Errors
             public static Error InvalidConfirmPassword => Error.Validation(
                 code: PropertyResources.InvalidConfirmPassword,
                 description: ErrorResources.InvalidConfirmPassword);
+
+            public static Error InvalidPasswordPolicy => Error.Validation(
+               code: PropertyResources.Password,
+               description: ErrorResources.PasswordPolicy);
         }
     }
 }
