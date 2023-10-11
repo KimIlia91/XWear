@@ -29,7 +29,7 @@ public static partial class Errors
             description: PropertyResources.UserEmail);
 
         public static Error InvalidPasswordLength => Error.Conflict(
-            code: string.Format(ErrorResources.InvalidStringLength, EntityConstants.PasswordLength),
+            code: string.Format(ErrorResources.InvalidStringLength, EntityConstants.MinPasswordLength),
             description: PropertyResources.Password);
 
         public static Error InvalidPhoneLength => Error.Conflict(

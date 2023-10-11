@@ -6,6 +6,7 @@ using XWear.Domain.Common.Constants;
 using XWear.Domain.Common.Errors;
 using ErrorOr;
 using XWear.Domain.Common.Extensions;
+using XWear.Domain.Entities.CatalogEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ColorEntity;
 
@@ -19,7 +20,11 @@ public sealed class Color : Entity<ColorId>
 
     public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
-    public Color(
+    private Color() : base(ColorId.CreateUnique())
+    {
+    }
+
+    internal Color(
         ColorId colorId,
         string name,
         ColorEnum value)

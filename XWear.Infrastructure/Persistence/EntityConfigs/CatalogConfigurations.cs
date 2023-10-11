@@ -25,6 +25,14 @@ namespace XWear.Infrastructure.Persistence.EntityConfigs
                 .HasColumnName("Name")
                 .IsRequired()
                 .HasMaxLength(EntityConstants.CatalogNameLength);
+
+            builder.HasIndex(x => x.Name)
+                .IsUnique();
+
+            builder.HasMany(c => c.Categories)
+                .WithOne()
+                .HasForeignKey(c => c.CatalogId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

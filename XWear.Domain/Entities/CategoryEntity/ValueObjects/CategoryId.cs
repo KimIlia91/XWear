@@ -16,6 +16,11 @@ public sealed class CategoryId : ValueObject
         return new(Guid.NewGuid());
     }
 
+    public static CategoryId Create(Guid value)
+    {
+        return new(value);
+    }
+
     public static CategoryId CreateEmpty()
     {
         return new(Guid.Empty);

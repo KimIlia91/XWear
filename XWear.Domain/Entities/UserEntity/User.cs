@@ -1,14 +1,13 @@
 ﻿using ErrorOr;
 using XWear.Domain.Common.Models;
-using XWear.Domain.Entities.FavoritParoductEntity;
-using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.UserEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.UserEntity;
 
 public class User : Entity<UserId>
 {
-    private readonly List<FavoritProduct> _favoriteProducts = new();
+    private readonly List<Product> _favoriteProducts = new();
 
     public string FirstName { get; private set; }
 
@@ -20,7 +19,11 @@ public class User : Entity<UserId>
 
     public string Password { get; private set; }
 
-    public IReadOnlyCollection<FavoritProduct> FavoriteProducts => _favoriteProducts.AsReadOnly();
+    public IReadOnlyCollection<Product> FavoritProducts => _favoriteProducts.AsReadOnly();
+
+    private User() : base(UserId.CreateUnique())
+    {
+    }
 
     internal User(
         UserId userId,
@@ -54,9 +57,8 @@ public class User : Entity<UserId>
             password);
     }
 
-    public void AddFavoriteProduct(ProductId productId)
+    public void AddFavoriteProduct(Product product)
     {
-        var favoriteProduct = new FavoritProduct(Id, productId);
-        _favoriteProducts.Add(favoriteProduct);
+        _favoriteProducts.Add(product);
     }
 }

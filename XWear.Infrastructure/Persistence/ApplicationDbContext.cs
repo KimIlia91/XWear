@@ -3,7 +3,6 @@ using XWear.Domain.Entities.BrandEntity;
 using XWear.Domain.Entities.CatalogEntity;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.ColorEntity;
-using XWear.Domain.Entities.FavoritParoductEntity;
 using XWear.Domain.Entities.ModelEntity;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.SizeEntity;
@@ -26,8 +25,6 @@ namespace XWear.Infrastructure.Persistence
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<User> Users { get; set; }
-
-        public DbSet<FavoritProduct> FavoritProducts { get; set; }
 
         public DbSet<Color> Colors { get; set; }
 

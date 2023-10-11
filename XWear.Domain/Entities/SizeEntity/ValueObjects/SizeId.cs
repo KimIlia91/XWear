@@ -16,6 +16,11 @@ public sealed class SizeId : ValueObject
         return new(Guid.NewGuid());
     }
 
+    public static SizeId Create(Guid value)
+    {
+        return new(value);
+    }
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

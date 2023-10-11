@@ -21,6 +21,11 @@ public sealed class ColorId : ValueObject
         return new(Guid.Empty);
     }
 
+    public static ColorId Create(Guid value)
+    {
+        return new(value);
+    }
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

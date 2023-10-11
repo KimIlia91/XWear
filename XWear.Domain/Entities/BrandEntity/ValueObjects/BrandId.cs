@@ -6,7 +6,7 @@ public sealed class BrandId : ValueObject
 {
     public Guid Value { get; private set; }
 
-    private BrandId(Guid value)
+    internal BrandId(Guid value)
     {
         Value = value;
     }
@@ -14,6 +14,11 @@ public sealed class BrandId : ValueObject
     public static BrandId CreateUnique()
     {
         return new(Guid.NewGuid());
+    }
+
+    public static BrandId Create(Guid value)
+    {
+        return new(value);
     }
 
     public override IEnumerable<object> GetEqualityComponents()

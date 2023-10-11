@@ -18,6 +18,10 @@ public sealed class Category : Entity<CategoryId>
 
     public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
+    private Category() : base(CategoryId.CreateUnique())
+    {
+    }
+
     public Category(
         CategoryId categoryId,
         CatalogId catalogId,

@@ -5,15 +5,14 @@ using XWear.Domain.Entities.ColorEntity;
 using XWear.Domain.Entities.BrandEntity;
 using XWear.Domain.Entities.ModelEntity;
 using XWear.Domain.Entities.CategoryEntity;
-using XWear.Domain.Entities.FavoritParoductEntity;
-using XWear.Domain.Entities.UserEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Entities.UserEntity;
 
 namespace XWear.Domain.Entities.ProductEntity;
 
 public sealed class Product : AggregateRoot<ProductId>
 {
-    private readonly List<FavoritProduct> _favoritProducts = new();
+    private readonly List<User> _favoritByUsers = new();
 
     public Price Price { get; private set; }
 
@@ -35,7 +34,11 @@ public sealed class Product : AggregateRoot<ProductId>
 
     public Model Model { get; private set; }
 
-    public IReadOnlyCollection<FavoritProduct> FavoritProducts => _favoritProducts.AsReadOnly();
+    public IReadOnlyCollection<User> FavoritByUsers => _favoritByUsers.AsReadOnly();
+
+    private Product() : base(ProductId.CreateUnique())
+    {
+    }
 
     private Product(
         ProductId productId,
@@ -93,9 +96,8 @@ public sealed class Product : AggregateRoot<ProductId>
             color);
     }
 
-    public void AddFavoritProduct(UserId userId)
+    public void AddFavoritProduct(User user)
     {
-        var favoritProduct = new FavoritProduct(userId, Id);
-        _favoritProducts.Add(favoritProduct);
+        _favoritByUsers.Add(user);
     }
 }

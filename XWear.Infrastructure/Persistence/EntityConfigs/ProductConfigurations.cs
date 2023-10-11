@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using XWear.Domain.Common.Constants;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 
@@ -22,16 +23,52 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
 
         builder.Property(x => x.Quantity)
             .HasColumnName("Quantity")
-            .IsRequired();
+            .IsRequired()
+            .HasConversion(
+                quantity => quantity.Value,
+                value => Quantity.Create(value).Value);
 
         builder.Property(p => p.Price)
             .HasColumnName("Price")
-            .IsRequired();
+            .IsRequired()
+            .HasConversion(
+                price => price.Value,
+                value => Price.Create(value));
 
         builder.Property(x => x.ImgUrl)
             .HasColumnName("ImageUrl")
             .IsRequired()
-            .HasConversion(period => period.Name,
-                name => BillingPeriod.FromName(name, true));
+            .HasMaxLength(EntityConstants.ImageUrlLength)
+            .HasConversion(
+                imgUrl => imgUrl.Value,
+                value => ImageUrl.Create(value).Value);
+
+        builder.HasOne(x => x.Size)
+            .WithMany(x => x.Products)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasOne(x => x.Model)
+            .WithMany(x => x.Products)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasOne(x => x.Brand)
+            .WithMany(x => x.Products)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasOne(x => x.Category)
+            .WithMany(x => x.Products)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasOne(x => x.Color)
+            .WithMany(x => x.Products)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasMany(u => u.FavoritByUsers)
+           .WithMany(p => p.FavoritProducts);
     }
 }

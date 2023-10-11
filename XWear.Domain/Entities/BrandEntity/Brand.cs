@@ -15,6 +15,10 @@ public sealed class Brand : Entity<BrandId>
 
     public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
+    private Brand() : base(BrandId.CreateUnique())
+    {
+    }
+
     private Brand(
         BrandId brandId,
         string name)

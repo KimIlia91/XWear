@@ -4,6 +4,7 @@ using XWear.Domain.Entities.ModelEntity.ValueObjects;
 using XWear.Domain.Common.Constants;
 using XWear.Domain.Common.Errors;
 using ErrorOr;
+using XWear.Domain.Entities.ColorEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ModelEntity;
 
@@ -14,6 +15,10 @@ public sealed class Model : Entity<ModelId>
     public string Name { get; private set; } = null!;
 
     public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
+
+    private Model() : base(ModelId.CreateUnique())
+    {
+    }
 
     internal Model(
         ModelId modelId,

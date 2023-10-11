@@ -15,6 +15,10 @@ namespace XWear.Domain.Entities.SizeEntity
 
         public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
+        private Size() : base(SizeId.CreateUnique())
+        {
+        }
+
         public Size(
             SizeId sizeId,
             string name)

@@ -7,7 +7,6 @@ using XWear.Application.Features.ProductContext.Queries.GetProductPage;
 using XWear.Domain.Entities.CatalogEntity.ValueObjects;
 using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 using XWear.Domain.Entities.ColorEntity.ValueObjects;
-using XWear.Domain.Entities.FavoritParoductEntity;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity;
 
@@ -27,13 +26,6 @@ internal class ProductRepository : IProductRepository
         _mapper = mapper;
         _context = context;
         _currentUserService = currentUserService;
-    }
-
-    public Task<FavoritProduct> AddFavoriteProductAsync(
-        FavoritProduct favoritProduct, 
-        CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
     }
 
     public Task<IEnumerable<Product>> GetAllProductsAsync(

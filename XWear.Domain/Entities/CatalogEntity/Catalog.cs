@@ -4,6 +4,7 @@ using XWear.Domain.Entities.CatalogEntity.ValueObjects;
 using XWear.Domain.Common.Constants;
 using XWear.Domain.Common.Errors;
 using ErrorOr;
+using XWear.Domain.Entities.BrandEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.CatalogEntity;
 
@@ -14,6 +15,10 @@ public sealed class Catalog : Entity<CatalogId>
     public string Name { get; private set; } = null!;
 
     public IReadOnlyCollection<Category> Categories => _categories.AsReadOnly();
+
+    private Catalog() : base(CatalogId.CreateUnique())
+    {
+    }
 
     public Catalog(
         CatalogId catalogId,
