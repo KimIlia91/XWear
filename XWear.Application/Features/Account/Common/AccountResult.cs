@@ -16,10 +16,10 @@ namespace XWear.Application.Features.Account.Common
         public void Register(TypeAdapterConfig config)
         {
             config.NewConfig<User, AccountResult>()
-                .Map(dest => dest.FirstName, src => src.FirstName.Value)
-                .Map(dest => dest.LastName, src => src.LastName.Value)
-                .Map(dest => dest.Phone, src => src.Phone.Value)
-                .Map(dest => dest.Email, src => src.Email.Value);
+                .Map(dest => dest.FirstName, src => src.FirstName)
+                .Map(dest => dest.LastName, src => src.LastName)
+                .Map(dest => dest.Phone, src => src.Phone)
+                .Map(dest => dest.Email, src => src.Email);
         }
     }
 }

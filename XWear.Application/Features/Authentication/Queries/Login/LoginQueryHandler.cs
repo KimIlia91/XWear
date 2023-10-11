@@ -29,10 +29,10 @@ public class LoginQueryHandler : IRequestHandler<LoginQuery, ErrorOr<Authenticat
         if (_userRepository.GetUserByEmail(query.Email) is not User user)
             return Errors.Authentication.InvalidCredentinals;
 
-        if (user.Password.Value != query.Password)
+        if (user.Password != query.Password)
             return Errors.Authentication.InvalidCredentinals;
 
         var token = _jwtTokenGenerator.GenerateToken(user);
-        return new AuthenticationResult(user.Email.Value, token, token);
+        return new AuthenticationResult(user.Email, token, token);
     }
 }

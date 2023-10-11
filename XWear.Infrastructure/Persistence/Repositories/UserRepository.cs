@@ -30,7 +30,7 @@ namespace XWear.Infrastructure.Persistence.Repositories
 
         public User? GetUserByEmail(string email)
         {
-            return _users.SingleOrDefault(u => u.Email.Value == email);
+            return _users.SingleOrDefault(u => u.Email == email);
         }
 
         public User? GetUserById(UserId id)
