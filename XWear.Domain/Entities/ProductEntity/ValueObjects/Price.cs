@@ -1,4 +1,6 @@
-﻿using XWear.Domain.Common.Models;
+﻿using ErrorOr;
+using XWear.Domain.Common.Errors;
+using XWear.Domain.Common.Models;
 
 namespace XWear.Domain.Entities.ProductEntity.ValueObjects;
 
@@ -11,11 +13,14 @@ public sealed class Price : ValueObject
         Value = value;
     }
 
-    public static Price Create(decimal price)
+    public static ErrorOr<Price> Create(decimal price)
     {
+        if (price < 0)
+            return Errors.Product.InvalidProductPrice;
+
         var priceRound = Math.Round(price, 2);
 
-        return new(priceRound);
+        return new Price(priceRound);
     }
 
     public override IEnumerable<object> GetEqualityComponents()

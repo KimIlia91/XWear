@@ -106,6 +106,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price can not be less than 0.
+        /// </summary>
+        public static string InvalidProductPrice {
+            get {
+                return ResourceManager.GetString("InvalidProductPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantity must be more than 0.
         /// </summary>
         public static string InvalidQuantity {

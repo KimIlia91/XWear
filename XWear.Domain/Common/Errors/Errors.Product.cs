@@ -23,5 +23,9 @@ public static partial class Errors
         public static Error InvalidQuantity => Error.Validation(
            code: PropertyResources.Quantity,
            description: ErrorResources.InvalidQuantity);
+
+        public static Error InvalidProductPrice => Error.Validation(
+           code: PropertyResources.Price,
+           description: ErrorResources.InvalidProductPrice);
     }
 }

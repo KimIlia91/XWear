@@ -33,7 +33,7 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
             .IsRequired()
             .HasConversion(
                 price => price.Value,
-                value => Price.Create(value));
+                value => Price.Create(value).Value);
 
         builder.Property(x => x.ImgUrl)
             .HasColumnName("ImageUrl")

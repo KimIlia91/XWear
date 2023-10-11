@@ -74,6 +74,11 @@ public sealed class Product : AggregateRoot<ProductId>
         Size size,
         Color color)
     {
+        var priceResult = Price.Create(price);
+
+        if (priceResult.IsError)
+            return priceResult.Errors;
+
         var imgResult = ImageUrl.Create(imgUrl);
 
         if (imgResult.IsError)
@@ -86,7 +91,7 @@ public sealed class Product : AggregateRoot<ProductId>
 
         return new Product(
             ProductId.CreateUnique(),
-            Price.Create(price),
+            priceResult.Value,
             quantityResult.Value,
             imgResult.Value,
             category,

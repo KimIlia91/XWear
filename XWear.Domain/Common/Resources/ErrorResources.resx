@@ -132,6 +132,9 @@
   <data name="InvalidImgUrl" xml:space="preserve">
     <value>Invalid image URL</value>
   </data>
+  <data name="InvalidProductPrice" xml:space="preserve">
+    <value>Price can not be less than 0</value>
+  </data>
   <data name="InvalidQuantity" xml:space="preserve">
     <value>Quantity must be more than 0</value>
   </data>

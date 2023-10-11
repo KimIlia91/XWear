@@ -132,6 +132,9 @@
   <data name="InvalidImgUrl" xml:space="preserve">
     <value>Неверный формат URL адреса изображения</value>
   </data>
+  <data name="InvalidProductPrice" xml:space="preserve">
+    <value>Цена не может быть ниже 0</value>
+  </data>
   <data name="InvalidQuantity" xml:space="preserve">
     <value>Количество должно быть больше 0</value>
   </data>

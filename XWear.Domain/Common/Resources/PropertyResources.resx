@@ -159,6 +159,9 @@
   <data name="Phone" xml:space="preserve">
     <value>Phone</value>
   </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
   <data name="Quantity" xml:space="preserve">
     <value>Quantity</value>
   </data>
