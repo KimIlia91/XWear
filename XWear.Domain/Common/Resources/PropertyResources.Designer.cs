@@ -124,6 +124,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image name.
+        /// </summary>
+        public static string ImageName {
+            get {
+                return ResourceManager.GetString("ImageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image URL.
         /// </summary>
         public static string ImgUrl {

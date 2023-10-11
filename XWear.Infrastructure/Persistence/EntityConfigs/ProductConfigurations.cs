@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using XWear.Domain.Common.Constants;
+using XWear.Domain.Entities.ImageEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 

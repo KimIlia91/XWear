@@ -17,6 +17,8 @@ public sealed class EntityConstants
 
     public const short ModelNameLength = 50;
 
+    public const short ImageNameLength = 50;
+
     public const short SizeNameLength = 50;
 
     public const short BrandNameLength = 50;

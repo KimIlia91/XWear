@@ -7,6 +7,8 @@ using XWear.Domain.Entities.ModelEntity;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 using XWear.Domain.Entities.UserEntity;
+using XWear.Domain.Entities.ImageEntity.ValueObjects;
+using XWear.Domain.Entities.ImageEntity;
 
 namespace XWear.Domain.Entities.ProductEntity;
 
@@ -14,11 +16,11 @@ public sealed class Product : AggregateRoot<ProductId>
 {
     private readonly List<User> _favoritByUsers = new();
 
+    private readonly List<Image> _images = new();
+
     public Price Price { get; private set; }
 
     public Quantity Quantity { get; private set; }
-
-    public ImageUrl ImgUrl { get; private set; } = null!;
 
     public DateTime CreatedDateTime { get; private set; }
 
@@ -36,6 +38,8 @@ public sealed class Product : AggregateRoot<ProductId>
 
     public IReadOnlyCollection<User> FavoritByUsers => _favoritByUsers.AsReadOnly();
 
+    public IReadOnlyCollection<Image> Images => _images.AsReadOnly();
+
     private Product() : base(ProductId.CreateUnique())
     {
     }
@@ -44,7 +48,6 @@ public sealed class Product : AggregateRoot<ProductId>
         ProductId productId,
         Price price,
         Quantity quantity,
-        ImageUrl imgUrl,
         Category category,
         Brand brand,
         Model model,
@@ -52,9 +55,9 @@ public sealed class Product : AggregateRoot<ProductId>
         Color color)
         : base(productId)
     {
+        Id = productId;
         Price = price;
         Quantity = quantity;
-        ImgUrl = imgUrl;
         CreatedDateTime = DateTime.UtcNow;
         UpdatedDateTime = DateTime.UtcNow;
         Category = category;
@@ -93,7 +96,6 @@ public sealed class Product : AggregateRoot<ProductId>
             ProductId.CreateUnique(),
             priceResult.Value,
             quantityResult.Value,
-            imgResult.Value,
             category,
             brand,
             model,

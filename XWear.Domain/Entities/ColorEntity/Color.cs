@@ -30,6 +30,7 @@ public sealed class Color : Entity<ColorId>
         ColorEnum value)
         : base(colorId)
     {
+        Id = colorId;
         Name = name;
         Value = value;
     }

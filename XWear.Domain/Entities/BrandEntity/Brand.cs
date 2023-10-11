@@ -24,6 +24,7 @@ public sealed class Brand : Entity<BrandId>
         string name)
         : base(brandId)
     {
+        Id = brandId;
         Name = name;
     }
 

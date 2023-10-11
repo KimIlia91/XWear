@@ -28,6 +28,7 @@ public sealed class Category : Entity<CategoryId>
         string name)
         : base(categoryId)
     {
+        Id = categoryId;
         Name = name;
         CatalogId = catalogId;
     }

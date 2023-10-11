@@ -138,6 +138,9 @@
   <data name="FavoritProductExist" xml:space="preserve">
     <value>Favorit product exist</value>
   </data>
+  <data name="ImageName" xml:space="preserve">
+    <value>Image name</value>
+  </data>
   <data name="ImgUrl" xml:space="preserve">
     <value>Image URL</value>
   </data>

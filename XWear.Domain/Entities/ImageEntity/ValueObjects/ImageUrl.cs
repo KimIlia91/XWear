@@ -4,7 +4,7 @@ using XWear.Domain.Common.Constants;
 using XWear.Domain.Common.Errors;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Entities.ProductEntity.ValueObjects;
+namespace XWear.Domain.Entities.ImageEntity.ValueObjects;
 
 public sealed class ImageUrl : ValueObject
 {

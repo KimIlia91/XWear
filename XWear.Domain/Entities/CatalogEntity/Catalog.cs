@@ -25,6 +25,7 @@ public sealed class Catalog : Entity<CatalogId>
         string name)
         : base(catalogId)
     {
+        Id = catalogId;
         Name = name;
     }
 

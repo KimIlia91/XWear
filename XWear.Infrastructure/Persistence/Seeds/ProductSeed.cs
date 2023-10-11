@@ -41,6 +41,8 @@ public static class ProductSeed
         var models = await context.Models.ToListAsync();
 
         var tie1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Ties.GetDescription(), nameof(Model)));
+        var sleepwear1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Sleepwear.GetDescription(), nameof(Model)));
+        var swimwear1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Swimwear.GetDescription(), nameof(Model)));
 
         var colors = await context.Colors.ToListAsync();
 
@@ -48,6 +50,7 @@ public static class ProductSeed
         var red = colors.Find(c => c.Value == ColorEnum.Red);
         var green = colors.Find(c => c.Value == ColorEnum.Green);
         var black = colors.Find(c => c.Value == ColorEnum.Black);
+        var orange = colors.Find(c => c.Value == ColorEnum.Orange);
 
         var sizes = await context.Sizes.ToListAsync();
 
@@ -61,12 +64,34 @@ public static class ProductSeed
         var tie2 = Product.Create(100.99m, 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU", tiesCloth!, brand1, tie1Model!, xxxl!, red!);
         var tie3 = Product.Create(100.99m, 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU", tiesCloth!, brand1, tie1Model!, m!, green!);
         var tie4 = Product.Create(100.99m, 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU", tiesCloth!, brand1, tie1Model!, l!, black!);
-        var tie5 = Product.Create(100.99m, 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU", tiesCloth!, brand1, tie1Model!, s!, black!);
+        var tie5 = Product.Create(100.99m, 25, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU", tiesCloth!, brand1, tie1Model!, s!, orange!);
         products.Add(tie1.Value);
         products.Add(tie2.Value);
         products.Add(tie3.Value);
         products.Add(tie4.Value);
         products.Add(tie5.Value);
+
+        var sleepwear1 = Product.Create(100.99m, 25, "https://assets.vogue.ru/photos/5eaadfb0166ba0cc6cf48eb8/2:3/w_2560%2Cc_limit/%25D0%25BF%25D0%25B81.jpg", sleepwearCloth!, brand1, sleepwear1Model!, xxl!, blue!);
+        var sleepwear2 = Product.Create(100.99m, 25, "https://content.rozetka.com.ua/goods/images/big/330015520.jpg", sleepwearCloth!, brand1, sleepwear1Model!, xxxl!, red!);
+        var sleepwear3 = Product.Create(100.99m, 25, "https://silkkiss.ua/images/detailed/12/2_3blm-98.jpg", sleepwearCloth!, brand1, sleepwear1Model!, m!, green!);
+        var sleepwear4 = Product.Create(100.99m, 25, "https://images.prom.ua/3397070730_satinovaya-pizhama-victorias.jpg", sleepwearCloth!, brand1, sleepwear1Model!, l!, black!);
+        var sleepwear5 = Product.Create(100.99m, 25, "https://static.insales-cdn.com/images/products/1/8156/475054044/3971945001c23ac32446baf99cb5dc3f.jpg", sleepwearCloth!, brand1, sleepwear1Model!, s!, orange!);
+        products.Add(sleepwear1.Value);
+        products.Add(sleepwear2.Value);
+        products.Add(sleepwear3.Value);
+        products.Add(sleepwear4.Value);
+        products.Add(sleepwear5.Value);
+
+        var swimwear1 = Product.Create(100.99m, 25, "https://www.mimimood.ee/catalog/thumbnails/600x800/9/7/b/a/236a6c68-d0fd-4f17-a93a-1f5f0091914d-vCiV.jpg?v1360", swimwearCloth!, brand1, swimwear1Model!, xxl!, blue!);
+        var swimwear2 = Product.Create(100.99m, 25, "https://milashop.com.ua/image/cache/data/kupalniki/2304-0%20lorin-1000x1000.jpg", swimwearCloth!, brand1, swimwear1Model!, xxxl!, red!);
+        var swimwear3 = Product.Create(100.99m, 25, "https://silkkiss.ua/images/detailed/12/2_3blm-98.jpg", swimwearCloth!, brand1, swimwear1Model!, m!, green!);
+        var swimwear4 = Product.Create(100.99m, 25, "https://images.prom.ua/3397070730_satinovaya-pizhama-victorias.jpg", swimwearCloth!, brand1, swimwear1Model!, l!, black!);
+        var swimwear5 = Product.Create(100.99m, 25, "https://www.mimimood.ee/catalog/thumbnails/600x800/9/7/b/a/236a6c68-d0fd-4f17-a93a-1f5f0091914d-vCiV.jpg?v1360", swimwearCloth!, brand1, swimwear1Model!, s!, orange!);
+        products.Add(swimwear1.Value);
+        products.Add(swimwear2.Value);
+        products.Add(swimwear3.Value);
+        products.Add(swimwear4.Value);
+        products.Add(swimwear5.Value);
 
         return products;
     }
