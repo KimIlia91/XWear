@@ -61,6 +61,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color not found.
+        /// </summary>
+        public static string ColorNotFound {
+            get {
+                return ResourceManager.GetString("ColorNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email already taken.
         /// </summary>
         public static string EmailAlreadyTaken {
@@ -84,6 +93,24 @@ namespace XWear.Domain.Common.Resources {
         public static string InvalidConfirmPassword {
             get {
                 return ResourceManager.GetString("InvalidConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid string length.
+        /// </summary>
+        public static string InvalidStringLength {
+            get {
+                return ResourceManager.GetString("InvalidStringLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not found.
+        /// </summary>
+        public static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
             }
         }
         

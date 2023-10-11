@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColorNotFound" xml:space="preserve">
+    <value>Цвет не найден</value>
+  </data>
   <data name="FavoritProductExist" xml:space="preserve">
     <value>Продукт уже добавлен в избранное</value>
   </data>
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Неверный пароль подтверждения</value>
+  </data>
+  <data name="InvalidStringLength" xml:space="preserve">
+    <value>Длина строки должна быть от 1 до {0} символов</value>
   </data>
   <data name="UserDuplicateEmail" xml:space="preserve">
     <value>Электронная почта уже используется</value>

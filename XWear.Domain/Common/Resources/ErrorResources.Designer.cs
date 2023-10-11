@@ -61,6 +61,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color not found.
+        /// </summary>
+        public static string ColorNotFound {
+            get {
+                return ResourceManager.GetString("ColorNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Favorit product already exist.
         /// </summary>
         public static string FavoritProductExist {
@@ -75,6 +84,24 @@ namespace XWear.Domain.Common.Resources {
         public static string InvalidConfirmPassword {
             get {
                 return ResourceManager.GetString("InvalidConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length must be between 1 and {0}.
+        /// </summary>
+        public static string InvalidStringLength {
+            get {
+                return ResourceManager.GetString("InvalidStringLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Found.
+        /// </summary>
+        public static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
             }
         }
         

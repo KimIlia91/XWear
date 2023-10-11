@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColorNotFound" xml:space="preserve">
+    <value>Color not found</value>
+  </data>
   <data name="FavoritProductExist" xml:space="preserve">
     <value>Favorit product already exist</value>
   </data>
   <data name="InvalidConfirmPassword" xml:space="preserve">
     <value>Invalid confirm password</value>
+  </data>
+  <data name="InvalidStringLength" xml:space="preserve">
+    <value>Length must be between 1 and {0}</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not Found</value>
   </data>
   <data name="UserDuplicateEmail" xml:space="preserve">
     <value>User duplicate email</value>

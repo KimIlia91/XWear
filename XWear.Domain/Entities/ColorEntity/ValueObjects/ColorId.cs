@@ -1,5 +1,4 @@
 ﻿using XWear.Domain.Common.Models;
-using XWear.Domain.Entities.ModelEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ColorEntity.ValueObjects;
 
