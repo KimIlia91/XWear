@@ -66,6 +66,6 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasMany(u => u.FavoritByUsers)
-           .WithMany(p => p.FavoritProducts);
+            .WithMany(p => p.FavoritProducts);
     }
 }
