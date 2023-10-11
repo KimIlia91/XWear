@@ -20,20 +20,20 @@ public static class SizeSeed
     {
         var sizes = new List<Size>()
         {
-            Size.Create(SizeEnum.S.GetDescription()),
-            Size.Create(SizeEnum.M.GetDescription()),
-            Size.Create(SizeEnum.L.GetDescription()),
-            Size.Create(SizeEnum.Xl.GetDescription()),
-            Size.Create(SizeEnum.Xxl.GetDescription()),
-            Size.Create(SizeEnum.Xxxl.GetDescription()),
-            Size.Create(SizeEnum.ThirtyEight.GetDescription()),
-            Size.Create(SizeEnum.ThirtyNine.GetDescription()),
-            Size.Create(SizeEnum.Forty.GetDescription()),
-            Size.Create(SizeEnum.FortyOne.GetDescription()),
-            Size.Create(SizeEnum.FortyTwo.GetDescription()),
-            Size.Create(SizeEnum.FortyThree.GetDescription()),
-            Size.Create(SizeEnum.FortyFour.GetDescription()),
-            Size.Create(SizeEnum.FortyFive.GetDescription())
+            Size.Create(SizeEnum.S.GetDescription()).Value,
+            Size.Create(SizeEnum.M.GetDescription()).Value,
+            Size.Create(SizeEnum.L.GetDescription()).Value,
+            Size.Create(SizeEnum.Xl.GetDescription()).Value,
+            Size.Create(SizeEnum.Xxl.GetDescription()).Value,
+            Size.Create(SizeEnum.Xxxl.GetDescription()).Value,
+            Size.Create(SizeEnum.ThirtyEight.GetDescription()).Value,
+            Size.Create(SizeEnum.ThirtyNine.GetDescription()).Value,
+            Size.Create(SizeEnum.Forty.GetDescription()).Value,
+            Size.Create(SizeEnum.FortyOne.GetDescription()).Value,
+            Size.Create(SizeEnum.FortyTwo.GetDescription()).Value,
+            Size.Create(SizeEnum.FortyThree.GetDescription()).Value,
+            Size.Create(SizeEnum.FortyFour.GetDescription()).Value,
+            Size.Create(SizeEnum.FortyFive.GetDescription()).Value
         };
     
         return sizes;

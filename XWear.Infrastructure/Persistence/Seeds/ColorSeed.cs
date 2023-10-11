@@ -20,18 +20,18 @@ public static class ColorSeed
     {
         var colors = new List<Color>()
         {
-            Color.Create(ColorEnum.Red.GetDescription(), nameof(ColorEnum.Red)),
-            Color.Create(ColorEnum.Blue.GetDescription(), nameof(ColorEnum.Blue)),
-            Color.Create(ColorEnum.Pink.GetDescription(), nameof(ColorEnum.Pink)),
-            Color.Create(ColorEnum.Black.GetDescription(), nameof(ColorEnum.Black)),
-            Color.Create(ColorEnum.White.GetDescription(), nameof(ColorEnum.White)),
-            Color.Create(ColorEnum.Yellow.GetDescription(), nameof(ColorEnum.Yellow)),
-            Color.Create(ColorEnum.Violet.GetDescription(), nameof(ColorEnum.Violet)),
-            Color.Create(ColorEnum.Gray.GetDescription(), nameof(ColorEnum.Gray)),
-            Color.Create(ColorEnum.Green.GetDescription(), nameof(ColorEnum.Green)),
-            Color.Create(ColorEnum.Orange.GetDescription(), nameof(ColorEnum.Orange)),
-            Color.Create(ColorEnum.Brown.GetDescription(), nameof(ColorEnum.Brown)),
-            Color.Create(ColorEnum.Beige.GetDescription(), nameof(ColorEnum.Beige))
+            Color.Create(ColorEnum.Red.GetDescription()).Value,
+            Color.Create(ColorEnum.Blue.GetDescription()).Value,
+            Color.Create(ColorEnum.Pink.GetDescription()).Value,
+            Color.Create(ColorEnum.Black.GetDescription()).Value,
+            Color.Create(ColorEnum.White.GetDescription()).Value,
+            Color.Create(ColorEnum.Yellow.GetDescription()).Value,
+            Color.Create(ColorEnum.Violet.GetDescription()).Value,
+            Color.Create(ColorEnum.Gray.GetDescription()).Value,
+            Color.Create(ColorEnum.Green.GetDescription()).Value,
+            Color.Create(ColorEnum.Orange.GetDescription()).Value,
+            Color.Create(ColorEnum.Brown.GetDescription()).Value,
+            Color.Create(ColorEnum.Beige.GetDescription()).Value
         };
     
         return colors;

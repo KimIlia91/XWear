@@ -34,8 +34,8 @@ public class CatalogRepository : ICatalogRepository
                     .Select(p => new ProductResponse(
                         p.Id.Value,
                         p.Model.Name,
-                        p.Price,
-                        p.ImgUrl))))))
+                        p.Price.Value,
+                        p.ImgUrl.Value))))))
             .ToListAsync(cancellationToken);
     }
 }

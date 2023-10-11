@@ -8,7 +8,7 @@ namespace XWear.Domain.Entities.UserEntity.ValueObjects
 {
     public sealed class Password : ValueObject
     {
-        public string Value { get; set; } = null!;
+        public string Value { get; private set; } = null!;
 
         private Password(
             string value)
@@ -18,7 +18,7 @@ namespace XWear.Domain.Entities.UserEntity.ValueObjects
 
         public static ErrorOr<Password> Create(string value)
         {
-            if (string.IsNullOrEmpty(value) || value.Length > EntityConstants.PasswordLength)
+            if (string.IsNullOrEmpty(value) || value.Length < EntityConstants.PasswordLength)
                 return Errors.User.InvalidPasswordLength;
 
             var regex = new Regex(RegexConstants.PasswordPolicyValidatorRegex, RegexOptions.IgnoreCase);

@@ -10,15 +10,6 @@ public class CurrentUserService : ICurrentUserService
     private readonly IHttpContextAccessor _httpContextAccessor;
     private UserId? _userId;
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-#pragma warning disable CS8604 // Possible null reference argument.
-    public Guid? NullableUserId =>
-        _httpContextAccessor.HttpContext.User.HasClaim(x => x.Type == ClaimTypes.NameIdentifier)
-            ? Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier))
-            : default;
-#pragma warning restore CS8604 // Possible null reference argument.
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-
     public UserId UserId
     {
         get

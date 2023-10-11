@@ -6,7 +6,7 @@ namespace XWear.Domain.Entities.UserEntity.ValueObjects;
 
 public sealed class Phone : ValueObject
 {
-    public string Value { get; set; } = null!;
+    public string Value { get; private set; } = null!;
 
     public Phone(
         string value)

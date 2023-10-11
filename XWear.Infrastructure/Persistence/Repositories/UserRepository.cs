@@ -12,12 +12,14 @@ namespace XWear.Infrastructure.Persistence.Repositories
         {
             if (_users.Count == 0)
             {
-                _users.Add(User.Create(
+                var userResult = User.Create(
                     "Данияр",
                     "Даниярович",
                     "testuser@test.com",
                     "+996709123123",
-                    "TestUser123!"));
+                    "TestUser123!");
+
+                _users.Add(userResult.Value);
             }
         }
 
@@ -28,12 +30,12 @@ namespace XWear.Infrastructure.Persistence.Repositories
 
         public User? GetUserByEmail(string email)
         {
-            return _users.SingleOrDefault(u => u.Email == email);
+            return _users.SingleOrDefault(u => u.Email.Value == email);
         }
 
         public User? GetUserById(UserId id)
         {
-            return _users.SingleOrDefault(u => u.Id == id);
+            return _users.SingleOrDefault(u => u.Id.Value == id.Value);
         }
     }
 }

@@ -26,7 +26,11 @@ public class CreateCatalogCommandHandler
         CancellationToken cancellationToken)
     {
         var catalog = Catalog.Create(command.Name);
-        await _baseRepository.AddAsync(catalog, cancellationToken);
+
+        if (catalog.IsError)
+            return catalog.Errors;
+
+        await _baseRepository.AddAsync(catalog.Value, cancellationToken);
         var catalogResult = _mapper.Map<CatalogResult>(catalog);
         return catalogResult;
     }

@@ -8,7 +8,7 @@ namespace XWear.Domain.Entities.UserEntity.ValueObjects;
 
 public sealed class Email : ValueObject
 {
-    public string Value { get; set; } = null!;
+    public string Value { get; private set; } = null!;
 
     private Email(
         string email)

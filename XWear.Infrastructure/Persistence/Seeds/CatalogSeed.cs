@@ -20,9 +20,9 @@ internal static class CatalogSeed
    {
        var catalogs = new List<Catalog>()
        {
-           Catalog.Create(CatalogEnum.Accessories.GetDescription()),
-           Catalog.Create(CatalogEnum.Clothing.GetDescription()),
-           Catalog.Create(CatalogEnum.Shoes.GetDescription())    
+           Catalog.Create(CatalogEnum.Accessories.GetDescription()).Value,
+           Catalog.Create(CatalogEnum.Clothing.GetDescription()).Value,
+           Catalog.Create(CatalogEnum.Shoes.GetDescription()).Value
        };
    
        return catalogs;

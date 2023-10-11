@@ -21,27 +21,27 @@ public class BrandSeed
     {
         return new List<Brand>()
         {
-            Brand.Create(BrandEnum.Gucci.GetDescription()),
-            Brand.Create(BrandEnum.Timberland.GetDescription()),
-            Brand.Create(BrandEnum.Nike.GetDescription()),
-            Brand.Create(BrandEnum.Adidas.GetDescription()),
-            Brand.Create(BrandEnum.Puma.GetDescription()),
-            Brand.Create(BrandEnum.Geox.GetDescription()),
-            Brand.Create(BrandEnum.Balenciaga.GetDescription()),
-            Brand.Create(BrandEnum.Prada.GetDescription()),
-            Brand.Create(BrandEnum.LouisVuitton.GetDescription()),
-            Brand.Create(BrandEnum.Dior.GetDescription()),
-            Brand.Create(BrandEnum.Versace.GetDescription()),
-            Brand.Create(BrandEnum.NewBalance.GetDescription()),
-            Brand.Create(BrandEnum.Reebok.GetDescription()),
-            Brand.Create(BrandEnum.UnderArmour.GetDescription()),
-            Brand.Create(BrandEnum.Saucony.GetDescription()),
-            Brand.Create(BrandEnum.Asics.GetDescription()),
-            Brand.Create(BrandEnum.Mizuno.GetDescription()),
-            Brand.Create(BrandEnum.Vans.GetDescription()),
-            Brand.Create(BrandEnum.Chanel.GetDescription()),
-            Brand.Create(BrandEnum.Burberry.GetDescription()),
-            Brand.Create(BrandEnum.Valentino.GetDescription())
+            Brand.Create(BrandEnum.Gucci.GetDescription()).Value,
+            Brand.Create(BrandEnum.Timberland.GetDescription()).Value,
+            Brand.Create(BrandEnum.Nike.GetDescription()).Value,
+            Brand.Create(BrandEnum.Adidas.GetDescription()).Value,
+            Brand.Create(BrandEnum.Puma.GetDescription()).Value,
+            Brand.Create(BrandEnum.Geox.GetDescription()).Value,
+            Brand.Create(BrandEnum.Balenciaga.GetDescription()).Value,
+            Brand.Create(BrandEnum.Prada.GetDescription()).Value,
+            Brand.Create(BrandEnum.LouisVuitton.GetDescription()).Value,
+            Brand.Create(BrandEnum.Dior.GetDescription()).Value,
+            Brand.Create(BrandEnum.Versace.GetDescription()).Value,
+            Brand.Create(BrandEnum.NewBalance.GetDescription()).Value,
+            Brand.Create(BrandEnum.Reebok.GetDescription()).Value,
+            Brand.Create(BrandEnum.UnderArmour.GetDescription()).Value,
+            Brand.Create(BrandEnum.Saucony.GetDescription()).Value,
+            Brand.Create(BrandEnum.Asics.GetDescription()).Value,
+            Brand.Create(BrandEnum.Mizuno.GetDescription()).Value,
+            Brand.Create(BrandEnum.Vans.GetDescription()).Value,
+            Brand.Create(BrandEnum.Chanel.GetDescription()).Value,
+            Brand.Create(BrandEnum.Burberry.GetDescription()).Value,
+            Brand.Create(BrandEnum.Valentino.GetDescription()).Value
         };
     }
 }
