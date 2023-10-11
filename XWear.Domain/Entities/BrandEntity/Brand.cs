@@ -1,9 +1,9 @@
-﻿using XWear.Domain.Common.Models;
+﻿using ErrorOr;
+using XWear.Domain.Common.Errors;
+using XWear.Domain.Common.Models;
+using XWear.Domain.Common.Constants;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.BrandEntity.ValueObjects;
-using XWear.Domain.Common.Constants;
-using ErrorOr;
-using XWear.Domain.Common.Errors;
 
 namespace XWear.Domain.Entities.BrandEntity;
 
