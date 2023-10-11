@@ -61,6 +61,15 @@ namespace XWear.Domain.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brand name.
+        /// </summary>
+        public static string BrandName {
+            get {
+                return ResourceManager.GetString("BrandName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Catalog name.
         /// </summary>
         public static string CatalogName {

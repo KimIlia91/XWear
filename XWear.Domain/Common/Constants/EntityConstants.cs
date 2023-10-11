@@ -16,5 +16,7 @@ internal sealed class EntityConstants
 
     public const short SizeNameLength = 50;
 
+    public const short BrandNameLength = 50;
+
     public const short ImageUrlLength = 1000;
 }
