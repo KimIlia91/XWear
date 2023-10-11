@@ -16,6 +16,11 @@ public sealed class CatalogId : ValueObject
         return new(Guid.NewGuid());
     }
 
+    public static CatalogId Create(Guid value)
+    {
+        return new(value);
+    }
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
