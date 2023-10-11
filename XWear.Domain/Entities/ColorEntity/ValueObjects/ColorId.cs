@@ -1,4 +1,5 @@
 ﻿using XWear.Domain.Common.Models;
+using XWear.Domain.Entities.ModelEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ColorEntity.ValueObjects;
 
@@ -14,6 +15,11 @@ public sealed class ColorId : ValueObject
     public static ColorId CreateUnique()
     {
         return new(Guid.NewGuid());
+    }
+
+    public static ColorId CreateEmpty()
+    {
+        return new(Guid.Empty);
     }
 
     public override IEnumerable<object> GetEqualityComponents()

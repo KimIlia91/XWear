@@ -16,6 +16,11 @@ public sealed class ModelId : ValueObject
         return new(Guid.NewGuid());
     }
 
+    public static ModelId CreateEmpty()
+    {
+        return new(Guid.Empty);
+    }
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

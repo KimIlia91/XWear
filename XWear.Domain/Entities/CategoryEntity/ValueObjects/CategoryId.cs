@@ -16,6 +16,11 @@ public sealed class CategoryId : ValueObject
         return new(Guid.NewGuid());
     }
 
+    public static CategoryId CreateEmpty()
+    {
+        return new(Guid.Empty);
+    }
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

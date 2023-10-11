@@ -17,7 +17,7 @@ public sealed class GetLastUpdatedProductsByCategoryQueryHandler
     }
 
     public async Task<ErrorOr<List<CatalogResponse>>> Handle(
-        GetLastUpdatedProductsByCategoryQuery request, 
+        GetLastUpdatedProductsByCategoryQuery query, 
         CancellationToken cancellationToken)
     {
         return await _catalogRepository

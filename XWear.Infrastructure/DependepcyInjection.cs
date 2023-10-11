@@ -22,6 +22,8 @@ namespace XWear.Infrastructure
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICatalogRepository, CatalogRepository>();
             services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
             return services;
         }
