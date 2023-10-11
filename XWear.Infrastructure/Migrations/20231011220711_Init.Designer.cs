@@ -12,7 +12,7 @@ using XWear.Infrastructure.Persistence;
 namespace XWear.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231011185604_Init")]
+    [Migration("20231011220711_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -130,6 +130,28 @@ namespace XWear.Infrastructure.Migrations
                     b.ToTable("Colors", (string)null);
                 });
 
+            modelBuilder.Entity("XWear.Domain.Entities.ImageEntity.Image", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)")
+                        .HasColumnName("ImageUrl");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Images", (string)null);
+                });
+
             modelBuilder.Entity("XWear.Domain.Entities.ModelEntity.Model", b =>
                 {
                     b.Property<Guid>("Id")
@@ -167,12 +189,6 @@ namespace XWear.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("ImgUrl")
-                        .IsRequired()
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)")
-                        .HasColumnName("ImageUrl");
 
                     b.Property<Guid>("ModelId")
                         .HasColumnType("uniqueidentifier");
@@ -258,7 +274,9 @@ namespace XWear.Infrastructure.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("Phone");
 
                     b.HasKey("Id");
 
@@ -288,6 +306,15 @@ namespace XWear.Infrastructure.Migrations
                     b.HasOne("XWear.Domain.Entities.CatalogEntity.Catalog", null)
                         .WithMany("Categories")
                         .HasForeignKey("CatalogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("XWear.Domain.Entities.ImageEntity.Image", b =>
+                {
+                    b.HasOne("XWear.Domain.Entities.ProductEntity.Product", null)
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -358,6 +385,11 @@ namespace XWear.Infrastructure.Migrations
             modelBuilder.Entity("XWear.Domain.Entities.ModelEntity.Model", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("XWear.Domain.Entities.ProductEntity.Product", b =>
+                {
+                    b.Navigation("Images");
                 });
 
             modelBuilder.Entity("XWear.Domain.Entities.SizeEntity.Size", b =>

@@ -46,6 +46,11 @@ public class UserConfigurations : IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(EntityConstants.MaxPasswordLength);
 
+        builder.Property(x => x.Phone)
+            .HasColumnName("Phone")
+            .IsRequired()
+            .HasMaxLength(EntityConstants.PhoneLength);
+
         builder.HasMany(u => u.FavoritProducts)
             .WithMany(p => p.FavoritByUsers);
     }

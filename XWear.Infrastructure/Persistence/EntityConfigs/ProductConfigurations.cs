@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using XWear.Domain.Common.Constants;
-using XWear.Domain.Entities.ImageEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 
@@ -36,14 +34,6 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
                 price => price.Value,
                 value => Price.Create(value).Value);
 
-        builder.Property(x => x.ImgUrl)
-            .HasColumnName("ImageUrl")
-            .IsRequired()
-            .HasMaxLength(EntityConstants.ImageUrlLength)
-            .HasConversion(
-                imgUrl => imgUrl.Value,
-                value => ImageUrl.Create(value).Value);
-
         builder.HasOne(x => x.Size)
             .WithMany(x => x.Products)
             .IsRequired()
@@ -66,6 +56,12 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
 
         builder.HasOne(x => x.Color)
             .WithMany(x => x.Products)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasMany(x => x.Images)
+            .WithOne()
+            .HasForeignKey(i => i.ProductId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
 

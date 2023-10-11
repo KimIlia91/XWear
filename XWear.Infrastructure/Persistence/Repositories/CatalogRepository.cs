@@ -22,20 +22,20 @@ public class CatalogRepository : ICatalogRepository
     public async Task<List<CatalogResponse>> GetLastUpdatedProductsByCategoryAsync(
         CancellationToken cancellationToken)
     {
-        return await _context.Catalogs
-            .Select(c => new CatalogResponse(
-                c.Id.Value,
-                c.Name,
-                c.Categories.Select(cat => new CategoryResponse(
-                    cat.Id.Value,
-                    cat.Products
-                    .OrderByDescending(p => p.UpdatedDateTime)
-                    .Take(1)
-                    .Select(p => new ProductResponse(
-                        p.Id.Value,
-                        p.Model.Name,
-                        p.Price.Value,
-                        p.ImgUrl.Value))))))
-            .ToListAsync(cancellationToken);
+        //return await _context.Catalogs
+        //    .Select(c => new CatalogResponse(
+        //        c.Id.Value,
+        //        c.Name,
+        //        c.Categories.Select(cat => new CategoryResponse(
+        //            cat.Id.Value,
+        //            cat.Products
+        //            .OrderByDescending(p => p.UpdatedDateTime)
+        //            .Take(1)
+        //            .Select(p => new ProductResponse(
+        //                p.Id.Value,
+        //                p.Model.Name,
+        //                p.Price.Value))))))
+        //    .ToListAsync(cancellationToken);
+        throw new NotImplementedException();
     }
 }
