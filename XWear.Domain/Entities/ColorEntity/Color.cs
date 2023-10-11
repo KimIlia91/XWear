@@ -10,18 +10,22 @@ public sealed class Color : Entity<ColorId>
 
     public string Name { get; private set; } = null!;
 
+    public string Value { get; set; } = null!;
+
     public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
 
     public Color(
         ColorId colorId,
-        string name)
+        string name,
+        string value)
         : base(colorId)
     {
         Name = name;
+        Value = value;
     }
 
-    public static Color Create(string name)
+    public static Color Create(string name, string value)
     {
-        return new(ColorId.CreateUnique(), name);
+        return new(ColorId.CreateUnique(), name, value);
     }
 }

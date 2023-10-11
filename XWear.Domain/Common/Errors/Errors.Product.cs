@@ -7,7 +7,7 @@ public static partial class Errors
 {
     public static class Product
     {
-        public static Error FavoritProductExist => Error.Conflict(
+        public static Error FavoritProductExist => Error.Validation(
             code: ErrorResources.FavoritProductExist,
             description: PropertyResources.FavoritProductExist);
     }

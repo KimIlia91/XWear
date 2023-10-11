@@ -4,6 +4,6 @@ namespace XWear.Application.Common.Interfaces.IRepositories;
 
 public interface ICatalogRepository
 {
-    Task<IEnumerable<CatalogResponse>> GetCatalogAsync(
+    Task<List<CatalogResponse>> GetLastUpdatedProductsByCategoryAsync(
             CancellationToken cancellationToken);
 }

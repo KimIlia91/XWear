@@ -1,29 +1,30 @@
 ﻿using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
+using XWear.Domain.Entities.CatalogEntity;
 
 namespace XWear.Infrastructure.Persistence.Seeds;
 
-public static class CatalogSeed
+internal static class CatalogSeed
 {
-    public static async Task SeedAsync(ApplicationDbContext context)
+    internal static async Task SeedAsync(ApplicationDbContext context)
     {
-        //if (!context.Catalogs.Any())
-        //{
-        //    var catalogs = CreateCatalogs();
-        //    await context.Catalogs.AddRangeAsync(catalogs);
-        //    await context.SaveChangesAsync();
-        //}
+        if (!context.Catalogs.Any())
+        {
+            var catalogs = CreateCatalogs();
+            await context.Catalogs.AddRangeAsync(catalogs);
+            await context.SaveChangesAsync();
+        }
     }
 
-   //private static List<Catalog> CreateCatalogs()
-   //{
-   //    var catalogs = new List<Catalog>()
-   //    {
-   //        new Catalog{ Name = CatalogEnum.Accessories.GetDescription() },
-   //        new Catalog{ Name = CatalogEnum.Clothing.GetDescription() },
-   //        new Catalog{ Name = CatalogEnum.Shoes.GetDescription() }
-   //    };
-   //
-   //    return catalogs;
-   //}
+   private static List<Catalog> CreateCatalogs()
+   {
+       var catalogs = new List<Catalog>()
+       {
+           Catalog.Create(CatalogEnum.Accessories.GetDescription()),
+           Catalog.Create(CatalogEnum.Clothing.GetDescription()),
+           Catalog.Create(CatalogEnum.Shoes.GetDescription())    
+       };
+   
+       return catalogs;
+   }
 }

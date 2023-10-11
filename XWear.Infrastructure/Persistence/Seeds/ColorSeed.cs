@@ -1,5 +1,6 @@
 ﻿using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
+using XWear.Domain.Entities.ColorEntity;
 
 namespace XWear.Infrastructure.Persistence.Seeds;
 
@@ -9,30 +10,30 @@ public static class ColorSeed
     {
         if (!context.Colors.Any())
         {
-            //var colors = CreateColors();
-            //await context.Colors.AddRangeAsync(colors);
-            //await context.SaveChangesAsync();
+            var colors = CreateColors();
+            await context.Colors.AddRangeAsync(colors);
+            await context.SaveChangesAsync();
         }
     }
 
-    //public static List<Color> CreateColors()
-    //{
-    //    var colors = new List<Color>()
-    //    {
-    //        new Color { Name = ColorEnum.Red.GetDescription(), Value = ColorEnum.Red },
-    //        new Color { Name = ColorEnum.Blue.GetDescription(), Value = ColorEnum.Blue },
-    //        new Color { Name = ColorEnum.Pink.GetDescription(), Value = ColorEnum.Pink },
-    //        new Color { Name = ColorEnum.Black.GetDescription(), Value = ColorEnum.Black },
-    //        new Color { Name = ColorEnum.White.GetDescription(), Value = ColorEnum.White },
-    //        new Color { Name = ColorEnum.Yellow.GetDescription(), Value = ColorEnum.Yellow },
-    //        new Color { Name = ColorEnum.Violet.GetDescription(), Value = ColorEnum.Violet },
-    //        new Color { Name = ColorEnum.Gray.GetDescription(), Value = ColorEnum.Gray },
-    //        new Color { Name = ColorEnum.Green.GetDescription(), Value = ColorEnum.Green },
-    //        new Color { Name = ColorEnum.Orange.GetDescription(), Value = ColorEnum.Orange },
-    //        new Color { Name = ColorEnum.Brown.GetDescription(), Value = ColorEnum.Brown },
-    //        new Color { Name = ColorEnum.Beige.GetDescription(), Value = ColorEnum.Beige }
-    //    };
-    //
-    //    return colors;
-    //}
+    public static List<Color> CreateColors()
+    {
+        var colors = new List<Color>()
+        {
+            Color.Create(ColorEnum.Red.GetDescription(), nameof(ColorEnum.Red)),
+            Color.Create(ColorEnum.Blue.GetDescription(), nameof(ColorEnum.Blue)),
+            Color.Create(ColorEnum.Pink.GetDescription(), nameof(ColorEnum.Pink)),
+            Color.Create(ColorEnum.Black.GetDescription(), nameof(ColorEnum.Black)),
+            Color.Create(ColorEnum.White.GetDescription(), nameof(ColorEnum.White)),
+            Color.Create(ColorEnum.Yellow.GetDescription(), nameof(ColorEnum.Yellow)),
+            Color.Create(ColorEnum.Violet.GetDescription(), nameof(ColorEnum.Violet)),
+            Color.Create(ColorEnum.Gray.GetDescription(), nameof(ColorEnum.Gray)),
+            Color.Create(ColorEnum.Green.GetDescription(), nameof(ColorEnum.Green)),
+            Color.Create(ColorEnum.Orange.GetDescription(), nameof(ColorEnum.Orange)),
+            Color.Create(ColorEnum.Brown.GetDescription(), nameof(ColorEnum.Brown)),
+            Color.Create(ColorEnum.Beige.GetDescription(), nameof(ColorEnum.Beige))
+        };
+    
+        return colors;
+    }
 }

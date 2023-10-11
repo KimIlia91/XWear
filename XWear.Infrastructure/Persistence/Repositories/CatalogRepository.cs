@@ -19,11 +19,23 @@ public class CatalogRepository : ICatalogRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<CatalogResponse>> GetCatalogAsync(
+    public async Task<List<CatalogResponse>> GetLastUpdatedProductsByCategoryAsync(
         CancellationToken cancellationToken)
     {
         return await _context.Catalogs
-            .ProjectToType<CatalogResponse>(_mapper.Config)
+            .Select(c => new CatalogResponse(
+                c.Id.Value,
+                c.Name,
+                c.Categories.Select(cat => new CategoryResponse(
+                    cat.Id.Value,
+                    cat.Products
+                    .OrderByDescending(p => p.UpdatedDateTime)
+                    .Take(1)
+                    .Select(p => new ProductResponse(
+                        p.Id.Value,
+                        p.Model.Name,
+                        p.Price,
+                        p.ImgUrl))))))
             .ToListAsync(cancellationToken);
     }
 }

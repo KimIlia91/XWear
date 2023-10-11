@@ -15,11 +15,10 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
 
     }
 
-    public async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken)
+    public async Task AddAsync(TEntity entity, CancellationToken cancellationToken)
     {
         await _dbSet.AddAsync(entity, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
-        return entity;
     }
 
     public async Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken cancellationToken)

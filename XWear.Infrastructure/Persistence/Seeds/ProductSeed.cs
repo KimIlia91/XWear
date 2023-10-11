@@ -1,14 +1,22 @@
-﻿namespace XWear.Infrastructure.Persistence.Seeds;
+﻿using Microsoft.EntityFrameworkCore;
+using XWear.Domain.Entities.ProductEntity;
+
+namespace XWear.Infrastructure.Persistence.Seeds;
 
 public static class ProductSeed
 {
     public static async Task SeedAsync(ApplicationDbContext context)
     {
-        //if (!await context.Products.AnyAsync())
-        //{
-        //    var products = await CreateProductsAsync(context);
-        //    await context.Products.AddRangeAsync(products);
-        //    await context.SaveChangesAsync();
-        //}
+        if (!await context.Products.AnyAsync())
+        {
+            var products = await CreateProductsAsync(context);
+            await context.Products.AddRangeAsync(products);
+            await context.SaveChangesAsync();
+        }
+    }
+
+    private static Task<Product[]> CreateProductsAsync(ApplicationDbContext context)
+    {
+        throw new NotImplementedException();
     }
 }
