@@ -1,6 +1,6 @@
 ﻿using ErrorOr;
 using MediatR;
-using XWear.Application.Features.ProductContext.Common;
+using XWear.Application.Features.FavoritProductContext.Common;
 
 namespace XWear.Application.Features.FavoritProductContext.Commands.AddFavoritProduct;
 

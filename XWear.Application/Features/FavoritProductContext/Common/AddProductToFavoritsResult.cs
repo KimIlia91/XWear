@@ -1,4 +1,4 @@
-﻿namespace XWear.Application.Features.ProductContext.Common;
+﻿namespace XWear.Application.Features.FavoritProductContext.Common;
 
 public sealed record AddProductToFavoritsResult(
     Guid ProductId);

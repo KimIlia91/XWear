@@ -5,7 +5,7 @@ using XWear.Application.Common.Interfaces.IServices;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Domain.Entities.ProductEntity;
-using XWear.Application.Features.ProductContext.Common;
+using XWear.Application.Features.FavoritProductContext.Common;
 
 namespace XWear.Application.Features.FavoritProductContext.Commands.AddFavoritProduct;
 
