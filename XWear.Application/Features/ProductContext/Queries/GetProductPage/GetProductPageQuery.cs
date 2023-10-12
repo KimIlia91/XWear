@@ -42,6 +42,8 @@ public sealed class ProductResult : IRegister
 
     public string ImgUrl { get; set; } = null!;
 
+    public bool IsFavorit { get; set; }
+
     public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<Product, ProductResult>()

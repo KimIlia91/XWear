@@ -6,6 +6,5 @@ public class ProductMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
-
     }
 }
