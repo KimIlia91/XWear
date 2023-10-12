@@ -17,6 +17,7 @@ namespace XWear.Infrastructure.Persistence
             await ModelSeed.SeedAsync(context);
             await SizeSeed.SeedAsync(context);
             await ProductSeed.SeedAsync(context);
+            await UserSeed.SeedAsync(context);
         }
     }
 }

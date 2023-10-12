@@ -2,14 +2,12 @@
 using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
-using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Features.ProductContext.Queries.GetProductPage;
 using XWear.Domain.Entities.CatalogEntity.ValueObjects;
 using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 using XWear.Domain.Entities.ColorEntity.ValueObjects;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity;
-using XWear.Domain.Entities.ProductEntity.ValueObjects;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -17,16 +15,13 @@ internal class ProductRepository : IProductRepository
 {
     private readonly ApplicationDbContext _context;
     private readonly IMapper _mapper;
-    private readonly ICurrentUserService _currentUserService;
 
     public ProductRepository(
         ApplicationDbContext context,
-        ICurrentUserService currentUserService,
         IMapper mapper)
     {
         _mapper = mapper;
         _context = context;
-        _currentUserService = currentUserService;
     }
 
     public Task<IEnumerable<Product>> GetAllProductsAsync(

@@ -20,7 +20,7 @@ public class CatalogController : ApiController
         var query = new GetLastUpdatedProductsByCategoryQuery();
         var result = await Mediator.Send(query);
         return result.Match(
-            result => Ok(result),
+            result => Ok(Mapper.Map<List<CatalogResponse>>(result)),
             errors => Problem(errors));
     }
 }

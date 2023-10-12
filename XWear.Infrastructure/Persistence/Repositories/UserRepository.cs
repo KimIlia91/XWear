@@ -1,41 +1,42 @@
-﻿using XWear.Application.Common.Interfaces.IRepositories;
+﻿using Microsoft.EntityFrameworkCore;
 using XWear.Domain.Entities.UserEntity;
 using XWear.Domain.Entities.UserEntity.ValueObjects;
+using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Infrastructure.Persistence.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private static readonly List<User> _users = new();
+        private readonly ApplicationDbContext _context;
 
-        public UserRepository()
+        public UserRepository(
+            ApplicationDbContext context)
         {
-            if (_users.Count == 0)
-            {
-                var userResult = User.Create(
-                    "Данияр",
-                    "Даниярович",
-                    "testuser@test.com",
-                    "+996709123123",
-                    "TestUser123!");
-
-                _users.Add(userResult.Value);
-            }
+            _context = context;
         }
 
-        public void Add(User user)
+        public async Task AddAsync(
+            User user, 
+            CancellationToken cancellationToken)
         {
-            _users.Add(user);
+            await _context.Users
+                .AddAsync(user, cancellationToken);
         }
 
-        public User? GetUserByEmail(string email)
+        public async Task<User?> GetUserByEmailAsync(
+            string email, 
+            CancellationToken cancellationToken)
         {
-            return _users.SingleOrDefault(u => u.Email == email);
+            return await _context.Users
+                .FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
         }
 
-        public User? GetUserById(UserId id)
+        public async Task<User?> GetUserByIdAsync(
+            UserId id, 
+            CancellationToken cancellationToken)
         {
-            return _users.SingleOrDefault(u => u.Id.Value == id.Value);
+            return await _context.Users
+                .FirstOrDefaultAsync(u => u.Id.Value == id.Value, cancellationToken);
         }
     }
 }

@@ -29,14 +29,12 @@ public class UpdateAccountCommandHandler
         UpdateAccountCommand command,
         CancellationToken cancellationToken)
     {
-        await Task.CompletedTask;
-
-        var user = _userRepository.GetUserByEmail(command.Email);
+        var user = await _userRepository.GetUserByEmailAsync(command.Email, cancellationToken);
 
         if (user is not null && user.Id != _currentUser.UserId)
             return Errors.User.DuplicateEmail;
 
-        user ??= _userRepository.GetUserById(_currentUser.UserId);
+        user ??= await _userRepository.GetUserByIdAsync(_currentUser.UserId, cancellationToken);
 
         if (user is null)
             return Errors.Authentication.InvalidCredentinals;

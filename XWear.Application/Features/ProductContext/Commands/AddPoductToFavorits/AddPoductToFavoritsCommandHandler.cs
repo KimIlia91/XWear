@@ -31,7 +31,7 @@ internal sealed class AddPoductToFavoritsCommandHandler
         AddPoductToFavoritsCommand command, 
         CancellationToken cancellationToken)
     {
-        if (_userRepository.GetUserById(_currentUser.UserId) is not User user)
+        if (await _userRepository.GetUserByIdAsync(_currentUser.UserId, cancellationToken) is not User user)
             return Errors.Authentication.InvalidCredentinals;
 
         var productId = ProductId.Create(command.ProdcutId);
@@ -41,7 +41,7 @@ internal sealed class AddPoductToFavoritsCommandHandler
         if (product is null)
             return Errors.Product.NotFound;
 
-        product.AddToFavorits(user);
+        user.AddFavoriteProduct(product);
         await _baseRepository.SaveChangesAsync(cancellationToken);
         return new AddProductToFavoritsResult(product.Id.Value);
     }

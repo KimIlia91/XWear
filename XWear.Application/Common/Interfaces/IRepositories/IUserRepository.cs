@@ -5,10 +5,10 @@ namespace XWear.Application.Common.Interfaces.IRepositories
 {
     public interface IUserRepository
     {
-        User? GetUserByEmail(string email);
+        Task<User?> GetUserByEmailAsync(string email, CancellationToken cancellationToken);
 
-        User? GetUserById(UserId id);
+        Task<User?> GetUserByIdAsync(UserId id, CancellationToken cancellationToken);
 
-        void Add(User user);
+        Task AddAsync(User user, CancellationToken cancellationToken);
     }
 }

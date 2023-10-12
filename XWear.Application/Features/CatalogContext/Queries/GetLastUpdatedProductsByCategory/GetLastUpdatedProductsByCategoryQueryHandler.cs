@@ -1,12 +1,12 @@
 ﻿using ErrorOr;
 using MediatR;
-using XWear.Contracts.Catalog.Responses;
 using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Features.CatalogContext.Common;
 
 namespace XWear.Application.Features.CatalogContext.Queries.GetLastUpdatedProductsByCategory;
 
 public sealed class GetLastUpdatedProductsByCategoryQueryHandler
-    : IRequestHandler<GetLastUpdatedProductsByCategoryQuery, ErrorOr<List<CatalogResponse>>>
+    : IRequestHandler<GetLastUpdatedProductsByCategoryQuery, ErrorOr<List<CatalogResult>>>
 {
     private readonly ICatalogRepository _catalogRepository;
 
@@ -16,7 +16,7 @@ public sealed class GetLastUpdatedProductsByCategoryQueryHandler
         _catalogRepository = catalogRepository;
     }
 
-    public async Task<ErrorOr<List<CatalogResponse>>> Handle(
+    public async Task<ErrorOr<List<CatalogResult>>> Handle(
         GetLastUpdatedProductsByCategoryQuery query, 
         CancellationToken cancellationToken)
     {

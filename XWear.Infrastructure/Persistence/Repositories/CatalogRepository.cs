@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using XWear.Contracts.Catalog.Responses;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
+using XWear.Application.Features.CatalogContext.Common;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -18,18 +18,18 @@ public class CatalogRepository : ICatalogRepository
         _context = context;
     }
 
-    public async Task<List<CatalogResponse>> GetLastUpdatedProductsByCategoryAsync(
+    public async Task<List<CatalogResult>> GetLastUpdatedProductsByCategoryAsync(
         CancellationToken cancellationToken)
     {
         return await _context.Catalogs
-            .Select(g => new CatalogResponse(
+            .Select(g => new CatalogResult(
                 g.Id.Value,
                 g.Name,
-                g.Categories.Select(c => new CategoryResponse(
+                g.Categories.Select(c => new CategoryResult(
                     c.Products.Where(p => c.Products.Any())
                         .OrderByDescending(p => p.UpdatedDateTime)
                         .Take(1)
-                        .Select(p => new ProductResponse(
+                        .Select(p => new ProductResult(
                             p.Id.Value,
                             p.Model.Name,
                             p.Price.Value,

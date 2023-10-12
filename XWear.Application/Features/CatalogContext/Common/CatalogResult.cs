@@ -1,16 +1,16 @@
-﻿using Mapster;
-using XWear.Domain.Entities.CatalogEntity;
+﻿namespace XWear.Application.Features.CatalogContext.Common;
 
-namespace XWear.Application.Features.CatalogContext.Common;
+public sealed record CatalogResult(
+    Guid Id,
+    string Name,
+    IEnumerable<CategoryResult> Categories);
 
-public record CatalogResult : IRegister
-{
-    public Guid Id { get; set; }
+public sealed record CategoryResult(
+    IEnumerable<ProductResult> Products);
 
-    public string Name { get; set; } = null!;
-
-    public void Register(TypeAdapterConfig config)
-    {
-        config.NewConfig<Catalog, CatalogResult>();
-    }
-}
+public sealed record ProductResult(
+    Guid Id,
+    string Name,
+    decimal Price,
+    string ImgUrl,
+    bool IsFavorit);

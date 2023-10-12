@@ -32,7 +32,7 @@ public class GetAccountQueryHandler
     {
         await Task.CompletedTask;
 
-        if (_userRepository.GetUserById(_currentUser.UserId) is not User user)
+        if (await _userRepository.GetUserByIdAsync(_currentUser.UserId, cancellationToken) is not User user)
             return Errors.Authentication.InvalidCredentinals;
 
         return _mapper.Map<AccountResult>(user);
