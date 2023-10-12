@@ -6,11 +6,11 @@ public sealed record CatalogResponse(
     IEnumerable<CategoryResponse> Categories);
 
 public sealed record CategoryResponse(
-    Guid Id,
     IEnumerable<ProductResponse> Products);
 
 public sealed record ProductResponse(
     Guid Id,
     string Name,
     decimal Price,
-    string ImgUrl);
+    string ImgUrl,
+    bool IsFavorit);

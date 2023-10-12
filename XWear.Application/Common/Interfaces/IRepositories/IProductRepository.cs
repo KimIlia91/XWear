@@ -4,6 +4,7 @@ using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 using XWear.Domain.Entities.ColorEntity.ValueObjects;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
 using XWear.Domain.Entities.ProductEntity;
+using XWear.Domain.Entities.ProductEntity.ValueObjects;
 
 namespace XWear.Application.Common.Interfaces.IRepositories;
 
@@ -26,5 +27,9 @@ public interface IProductRepository
         CancellationToken cancellationToken);
 
     Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
+        CancellationToken cancellationToken);
+
+    Task<Product?> GetProductByIdAsync(
+        ProductId productId, 
         CancellationToken cancellationToken);
 }

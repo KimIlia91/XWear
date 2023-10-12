@@ -14,13 +14,10 @@ public class CurrentUserService : ICurrentUserService
     {
         get
         {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             if (_httpContextAccessor.HttpContext.User.HasClaim(x => x.Type == ClaimTypes.NameIdentifier))
             {
-#pragma warning disable CS8604 // Possible null reference argument.
                 var guidUserId = Guid.Parse(
                     _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
-#pragma warning restore CS8604 // Possible null reference argument.
 
                 if (guidUserId != Guid.Empty)
                 {
@@ -29,7 +26,6 @@ public class CurrentUserService : ICurrentUserService
                     return _userId;
                 }
             }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             return UserId.CreateEmpty();
         }

@@ -27,4 +27,9 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
 
         return await query.ToListAsync(cancellationToken);
     }
+
+    public async Task SaveChangesAsync(CancellationToken cancellationToken)
+    {
+        await _context.SaveChangesAsync(cancellationToken);
+    }
 }

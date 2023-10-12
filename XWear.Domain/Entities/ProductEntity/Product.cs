@@ -4,11 +4,10 @@ using XWear.Domain.Entities.SizeEntity;
 using XWear.Domain.Entities.ColorEntity;
 using XWear.Domain.Entities.BrandEntity;
 using XWear.Domain.Entities.ModelEntity;
+using XWear.Domain.Entities.UserEntity;
+using XWear.Domain.Entities.ImageEntity;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
-using XWear.Domain.Entities.UserEntity;
-using XWear.Domain.Entities.ImageEntity.ValueObjects;
-using XWear.Domain.Entities.ImageEntity;
 
 namespace XWear.Domain.Entities.ProductEntity;
 
@@ -70,7 +69,6 @@ public sealed class Product : AggregateRoot<ProductId>
     public static ErrorOr<Product> Create(
         decimal price,
         int quantity,
-        string imgUrl,
         Category category,
         Brand brand,
         Model model,
@@ -81,11 +79,6 @@ public sealed class Product : AggregateRoot<ProductId>
 
         if (priceResult.IsError)
             return priceResult.Errors;
-
-        var imgResult = ImageUrl.Create(imgUrl);
-
-        if (imgResult.IsError)
-            return imgResult.Errors;
 
         var quantityResult = Quantity.Create(quantity);
 
@@ -106,5 +99,12 @@ public sealed class Product : AggregateRoot<ProductId>
     public void AddFavoritProduct(User user)
     {
         _favoritByUsers.Add(user);
+    }
+
+    public void AddProductImage(string imageUrl)
+    {
+        var imageResult = Image.Create(imageUrl, Id);
+        
+        _images.Add(imageResult.Value);
     }
 }
