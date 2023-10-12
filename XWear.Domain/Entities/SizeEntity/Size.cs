@@ -13,7 +13,7 @@ namespace XWear.Domain.Entities.SizeEntity
 
         public string Name { get; private set; } = null!;
 
-        public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
+        public IReadOnlyCollection<Product> Products => _products.ToList();
 
         private Size() : base(SizeId.CreateUnique())
         {

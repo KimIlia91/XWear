@@ -18,7 +18,7 @@ public sealed class Color : Entity<ColorId>
 
     public ColorEnum Value { get; private set; }
 
-    public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<Product> Products => _products.ToList();
 
     private Color() : base(ColorId.CreateUnique())
     {

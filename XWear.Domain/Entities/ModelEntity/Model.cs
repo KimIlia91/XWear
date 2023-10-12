@@ -14,7 +14,7 @@ public sealed class Model : Entity<ModelId>
 
     public string Name { get; private set; } = null!;
 
-    public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<Product> Products => _products.ToList();
 
     private Model() : base(ModelId.CreateUnique())
     {

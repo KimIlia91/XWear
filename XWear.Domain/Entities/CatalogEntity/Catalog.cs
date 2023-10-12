@@ -14,7 +14,7 @@ public sealed class Catalog : Entity<CatalogId>
 
     public string Name { get; private set; } = null!;
 
-    public IReadOnlyCollection<Category> Categories => _categories.AsReadOnly();
+    public IReadOnlyCollection<Category> Categories => _categories.ToList();
 
     private Catalog() : base(CatalogId.CreateUnique())
     {

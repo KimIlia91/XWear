@@ -13,7 +13,7 @@ public sealed class Brand : Entity<BrandId>
 
     public string Name { get; private set; } = null!;
 
-    public IReadOnlyCollection<Product> Products => _products.AsReadOnly();
+    public IReadOnlyCollection<Product> Products => _products.ToList();
 
     private Brand() : base(BrandId.CreateUnique())
     {
