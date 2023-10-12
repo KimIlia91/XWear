@@ -35,9 +35,9 @@ public sealed class Product : AggregateRoot<ProductId>
 
     public Model Model { get; private set; }
 
-    public IReadOnlyCollection<User> FavoritByUsers => _favoritByUsers.AsReadOnly();
+    public IReadOnlyCollection<User> FavoritByUsers => _favoritByUsers.ToList();
 
-    public IReadOnlyCollection<Image> Images => _images.AsReadOnly();
+    public IReadOnlyCollection<Image> Images => _images.ToList();
 
     private Product() : base(ProductId.CreateUnique())
     {
@@ -96,7 +96,7 @@ public sealed class Product : AggregateRoot<ProductId>
             color);
     }
 
-    public void AddFavoritProduct(User user)
+    public void AddToFavorits(User user)
     {
         _favoritByUsers.Add(user);
     }

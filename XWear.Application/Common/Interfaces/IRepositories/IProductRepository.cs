@@ -28,8 +28,4 @@ public interface IProductRepository
 
     Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
         CancellationToken cancellationToken);
-
-    Task<Product?> GetProductByIdAsync(
-        ProductId productId, 
-        CancellationToken cancellationToken);
 }

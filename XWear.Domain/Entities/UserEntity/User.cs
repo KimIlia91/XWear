@@ -19,7 +19,7 @@ public class User : Entity<UserId>
 
     public string Password { get; private set; }
 
-    public IReadOnlyCollection<Product> FavoritProducts => _favoriteProducts.AsReadOnly();
+    public IReadOnlyCollection<Product> FavoritProducts => _favoriteProducts.ToList();
 
     private User() : base(UserId.CreateUnique())
     {

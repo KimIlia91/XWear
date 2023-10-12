@@ -14,18 +14,15 @@ internal sealed class AddPoductToFavoritsCommandHandler
     : IRequestHandler<AddPoductToFavoritsCommand, ErrorOr<AddProductToFavoritsResult>>
 {
     private readonly IUserRepository _userRepository;
-    private readonly IProductRepository _productRepository;
     private readonly ICurrentUserService _currentUser;
     private readonly IBaseRepository<Product> _baseRepository;
 
     public AddPoductToFavoritsCommandHandler(
         IUserRepository userRepository,
         ICurrentUserService currentUser,
-        IProductRepository productRepository,
         IBaseRepository<Product> baseRepository)
     {
         _baseRepository = baseRepository;
-        _productRepository = productRepository;
         _userRepository = userRepository;
         _currentUser = currentUser;
     }
@@ -38,12 +35,13 @@ internal sealed class AddPoductToFavoritsCommandHandler
             return Errors.Authentication.InvalidCredentinals;
 
         var productId = ProductId.Create(command.ProdcutId);
-        var product = await _productRepository.GetProductByIdAsync(productId, cancellationToken);
+        var product = await _baseRepository
+            .GetEntityOrDeafaultAsync(p => p.Id == productId, cancellationToken);
 
         if (product is null)
             return Errors.Product.NotFound;
 
-        product.AddFavoritProduct(user);
+        product.AddToFavorits(user);
         await _baseRepository.SaveChangesAsync(cancellationToken);
         return new AddProductToFavoritsResult(product.Id.Value);
     }
