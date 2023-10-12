@@ -38,5 +38,15 @@ namespace XWear.Infrastructure.Persistence.Repositories
             return await _context.Users
                 .FirstOrDefaultAsync(u => u.Id.Value == id.Value, cancellationToken);
         }
+
+        public async Task<User?> GetUserWithTrackableFavoritProductByIdAsync(
+            UserId id,
+            CancellationToken cancellationToken)
+        {
+            return await _context.Users
+                .Include(u => u.FavoritProducts)
+                .AsSplitQuery()
+                .FirstOrDefaultAsync(u => u.Id == id, cancellationToken);
+        }
     }
 }

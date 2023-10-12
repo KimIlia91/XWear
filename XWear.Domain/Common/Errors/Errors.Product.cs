@@ -27,7 +27,7 @@ public static partial class Errors
         public static Error InvalidProductPrice => Error.Validation(
            code: PropertyResources.Price,
            description: ErrorResources.InvalidProductPrice);
-
+        
         public static Error NotFound => Error.Validation(
            code: nameof(Product),
            description: ErrorResources.NotFound);

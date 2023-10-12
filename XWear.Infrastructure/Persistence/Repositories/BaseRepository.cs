@@ -32,7 +32,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         return await query.ToListAsync(cancellationToken);
     }
 
-    public async Task<TEntity?> GetEntityOrDeafaultAsync(
+    public async Task<TEntity?> GetOrDeafaultAsync(
         Expression<Func<TEntity, bool>> filter,
         CancellationToken cancellationToken)
     {

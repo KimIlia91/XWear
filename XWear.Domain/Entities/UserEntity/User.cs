@@ -57,8 +57,13 @@ public class User : Entity<UserId>
             password);
     }
 
-    public void AddFavoriteProduct(Product product)
+    public void AddFavoriteProducts(Product product)
     {
         _favoriteProducts.Add(product);
+    }
+
+    public void DeleteFromFavoriteProducts(Product product)
+    {
+        _favoriteProducts.Remove(product);
     }
 }

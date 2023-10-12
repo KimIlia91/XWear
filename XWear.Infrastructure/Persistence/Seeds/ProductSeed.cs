@@ -44,6 +44,7 @@ public static class ProductSeed
         var tie1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Ties.GetDescription(), nameof(Model)));
         var sleepwear1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Sleepwear.GetDescription(), nameof(Model)));
         var swimwear1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Swimwear.GetDescription(), nameof(Model)));
+        var scarves1Model = models.Find(m => m.Name == string.Join(" ", CategoryEnum.Scarves.GetDescription(), nameof(Model)));
 
         var colors = await context.Colors.ToListAsync();
 
@@ -108,6 +109,22 @@ public static class ProductSeed
         products.Add(swimwear3.Value);
         products.Add(swimwear4.Value);
         products.Add(swimwear5.Value);
+
+        var scarve1 = Product.Create(100.99m, 25, scarvesCloth!, brand1, scarves1Model!, xxl!, blue!);
+        scarve1.Value.AddProductImage("https://renome-fashion.ru/pictures/product/big/8770_big.png");
+        var scarve2 = Product.Create(100.99m, 25, scarvesCloth!, brand1, scarves1Model!, xxxl!, red!);
+        scarve2.Value.AddProductImage("https://shop-cdn1-2.vigbo.tech/shops/173159/products/21021244/images/3-3262a56754684a5b228a30d8dbdf53d2.jpeg");
+        var scarve3 = Product.Create(100.99m, 25, scarvesCloth!, brand1, scarves1Model!, m!, green!);
+        scarve3.Value.AddProductImage("https://inspireshop.ru/upload/resize_cache/webp/upload/iblock/abb/1ajb66lq5g71a521r091szyy83yan7rv.webp");
+        var scarve4 = Product.Create(100.99m, 25, scarvesCloth!, brand1, scarves1Model!, l!, black!);
+        scarve4.Value.AddProductImage("https://shop-cdn1-2.vigbo.tech/shops/173159/products/21423559/images/2-19dbb21d6583cd28ac87434d9a5a8809.jpeg");
+        var scarve5 = Product.Create(100.99m, 25, scarvesCloth!, brand1, scarves1Model!, s!, orange!);
+        scarve5.Value.AddProductImage("https://royal-wool.ru/wp-content/uploads/2020/03/img_3314.jpg");
+        products.Add(scarve1.Value);
+        products.Add(scarve2.Value);
+        products.Add(scarve3.Value);
+        products.Add(scarve4.Value);
+        products.Add(scarve5.Value);
 
         return products;
     }
