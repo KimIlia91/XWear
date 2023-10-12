@@ -1,11 +1,11 @@
 ﻿using ErrorOr;
 using MediatR;
-using XWear.Application.Common.Interfaces.IRepositories;
-using XWear.Application.Common.Interfaces.IServices;
-using XWear.Contracts.FavoritProduct.Responses;
 using XWear.Domain.Common.Errors;
 using XWear.Domain.Entities.ProductEntity;
+using XWear.Contracts.FavoritProduct.Responses;
+using XWear.Application.Common.Interfaces.IServices;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Application.Common.Interfaces.IRepositories;
 
 namespace XWear.Application.Features.FavoritProductContext.Commands.DeleteFavoritProduct;
 
@@ -30,13 +30,13 @@ internal sealed class DeleteFavoritProductCommandHandler
         DeleteFavoritProductCommand command, 
         CancellationToken cancellationToken)
     {
-        var productId = ProductId.Create(command.ProductId);
         var user = await _userRepository
-            .GetUserWithFavoritProductByIdAsync(productId, _currentUser.UserId, cancellationToken);
+            .GetUserWithTrackableFavoritProductByIdAsync(_currentUser.UserId, cancellationToken);
 
         if (user is null)
             return Errors.Authentication.InvalidCredentinals;
 
+        var productId = ProductId.Create(command.ProductId);
         var product = await _baseRepository
             .GetOrDeafaultAsync(p => p.Id == productId, cancellationToken);
 
