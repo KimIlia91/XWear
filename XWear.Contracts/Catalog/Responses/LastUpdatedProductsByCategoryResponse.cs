@@ -1,4 +1,6 @@
-﻿namespace XWear.Contracts.Catalog.Responses;
+﻿using XWear.Contracts.Product.Responses;
+
+namespace XWear.Contracts.Catalog.Responses;
 
 public sealed record LastUpdatedProductsByCategoryResponse(
     Guid Id,
@@ -12,10 +14,10 @@ public sealed record CategoryResponse(
 public sealed record ProductResponse(
     Guid Id,
     string Name,
-    ProductSize ProductSize,
+    ProductPriceResponse ProductSize,
     string ImgUrl,
     bool IsFavorit);
 
-public sealed record ProductSize(
+public sealed record ProductPriceResponse(
     Guid Id,
     decimal Price);

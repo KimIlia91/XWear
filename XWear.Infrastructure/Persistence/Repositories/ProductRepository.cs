@@ -7,6 +7,7 @@ using XWear.Application.Features.ProductContext.Queries.GetProductPage;
 using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 using XWear.Domain.Entities.ColorEntity.ValueObjects;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
+using XWear.Domain.Entities.ProductEntity.ValueObjects;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -24,12 +25,13 @@ internal class ProductRepository : IProductRepository
     }
 
     public async Task<ProductByIdResult?> GetProductByIdAsync(
-        Guid productId, 
+        ProductId productId, 
         CancellationToken cancellationToken)
     {
         return await _context.Products
+            .Where(p => p.Id == productId)
             .ProjectToType<ProductByIdResult>(_mapper.Config)
-            .FirstOrDefaultAsync(p => p.Id == productId, cancellationToken);
+            .FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<IEnumerable<ProductResult>> GetProductPageAsync(

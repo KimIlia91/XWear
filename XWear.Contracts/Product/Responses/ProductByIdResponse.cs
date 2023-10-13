@@ -10,7 +10,8 @@ public sealed record ProductByIdResponse(
 
 public sealed record ProductSizeResponse(
     Guid Id,
-    string Name);
+    string Name,
+    decimal Price);
 
 public sealed record ProductColorResponse(
     Guid Id,

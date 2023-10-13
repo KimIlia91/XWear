@@ -32,9 +32,9 @@ public class ProductController : ApiController
     }
 
     /// <summary>
-    /// В разработке
+    /// Получить продукт по ID и по ID размера продукта
     /// </summary>
-    /// <returns> </returns>
+    /// <returns>Продукт по указанным ID</returns>
     [HttpGet("{id}/{productSizeId}")]
     [AllowAnonymous]
     [ProducesResponseType(typeof(ProductByIdResponse), 

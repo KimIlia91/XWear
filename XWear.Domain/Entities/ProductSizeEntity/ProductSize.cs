@@ -2,6 +2,7 @@
 using XWear.Domain.Common.Models;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
+using XWear.Domain.Entities.SizeEntity;
 using XWear.Domain.Entities.SizeEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ProductSizeEntity;
@@ -11,6 +12,7 @@ public sealed class ProductSize : Entity<ProductSizeId>
     public ProductId ProductId { get; private set; }
 
     public SizeId SizeId { get; private set; }
+    public Size? Size { get; private set; }
 
     public Price Price { get; private set; }
 

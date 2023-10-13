@@ -2,6 +2,7 @@
 using XWear.Domain.Entities.BrandEntity;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.ColorEntity;
+using XWear.Domain.Entities.ImageEntity;
 using XWear.Domain.Entities.ModelEntity;
 using XWear.Domain.Entities.ProductEntity;
 using XWear.Domain.Entities.ProductSizeEntity;
@@ -11,6 +12,8 @@ namespace XWear.Application.Features.ProductContext.Common;
 public sealed class ProductByIdResult : IRegister
 {
     public Guid Id { get; set; }
+
+    public IEnumerable<ProductImageUrlResult> Images { get; set; } = new List<ProductImageUrlResult>();
 
     public ProductCategoryResult Category { get; set; } = new ProductCategoryResult();
 
@@ -25,18 +28,26 @@ public sealed class ProductByIdResult : IRegister
     public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<Product, ProductByIdResult>()
-            .Map(dest => dest.Id, src => src.Id.Value)
-            .Map(dest => dest.Model, src => src.Model)
-            .Map(dest => dest.Category, src => src.Category)
-            .Map(dest => dest.Brand, src => src.Brand)
-            .Map(dest => dest.Color, src => src.Color)
-            .Ignore(dest => dest.ProductSizes);
+            .Map(dest => dest.Id, src => src.Id.Value);
+    }
+}
+
+public class ProductImageUrlResult : IRegister
+{
+    public string ImageUrl { get; set; } = null!;
+
+    public void Register(TypeAdapterConfig config)
+    {
+        config.NewConfig<Image, ProductImageUrlResult>()
+            .Map(dest => dest.ImageUrl, src => src.ImgUrl.Value);
     }
 }
 
 public class ProductSizeResult : IRegister
 {
     public Guid Id { get; set; }
+
+    public string Size { get; set; } = null!;
 
     public decimal Price { get; set; }
 
@@ -46,6 +57,7 @@ public class ProductSizeResult : IRegister
     {
         config.NewConfig<ProductSize, ProductSizeResult>()
             .Map(dest => dest.Id, src => src.Id.Value)
+            .Map(dest => dest.Size, src => src.Size.Name)
             .Map(dest => dest.Price, src => src.Price.Value)
             .Ignore(dest => dest.IsSelected);
     }

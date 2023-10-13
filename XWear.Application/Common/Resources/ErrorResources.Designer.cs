@@ -79,6 +79,15 @@ namespace XWear.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not found.
+        /// </summary>
+        public static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The password must consist of special characters, lowercase and uppercase latin&apos;s letters (&apos;a&apos; - &apos;z&apos;), (&apos;A&apos; - &apos;Z&apos;) and contain a single digit.
         /// </summary>
         public static string PasswordPolicy {

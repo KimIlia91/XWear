@@ -30,7 +30,7 @@ public sealed class SizeConfigurations : IEntityTypeConfiguration<Size>
             .IsUnique();
 
         builder.HasMany(b => b.ProductSizes)
-            .WithOne()
+            .WithOne(ps => ps.Size)
             .HasForeignKey(ps => ps.SizeId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);

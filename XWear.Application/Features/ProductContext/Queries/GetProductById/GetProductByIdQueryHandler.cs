@@ -1,10 +1,11 @@
 ﻿using ErrorOr;
-using MapsterMapper;
 using MediatR;
-using XWear.Domain.Common.Errors;
+using MapsterMapper;
+using XWear.Application.Common.Resources;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Features.ProductContext.Common;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
 
 namespace XWear.Application.Features.ProductContext.Queries.GetProductById;
 
@@ -27,19 +28,17 @@ internal sealed class GetProductByIdQueryHandler
         CancellationToken cancellationToken)
     {
         var productId = ProductId.Create(query.Id);
-        var product = await _productRepository
+        var productResult = await _productRepository
             .GetProductByIdAsync(productId, cancellationToken);
 
-        if (product is null)
-            return Errors.Product.NotFound;
+        if (productResult is null)
+            return Error.NotFound(nameof(ProductId), ErrorResources.NotFound);
 
-        var productResult = _mapper.Map<ProductByIdResult>(product);
-        productResult.ProductSizes = product.ProductSizes.Select(ps => new ProductSizeResult()
-        {
-            Id = ps.Id.Value,
-            Price = ps.Price.Value,
-            IsSelected = ps.Id.Value == query.ProductSizeId
-        });
+        foreach (var productSize in productResult.ProductSizes)
+            productSize.IsSelected = productSize.Id == query.ProductSizeId;
+
+        if (!productResult.ProductSizes.Any(ps => ps.IsSelected))
+            return Error.NotFound(nameof(ProductSizeId), ErrorResources.NotFound);
 
         return productResult;
     }
