@@ -26,15 +26,17 @@ public class CatalogRepository : ICatalogRepository
                 g.Id.Value,
                 g.Name,
                 g.Categories.Select(c => new CategoryResult(
+                    c.Name,
                     c.Products.Where(p => c.Products.Any())
                         .OrderByDescending(p => p.UpdatedDateTime)
                         .Take(1)
                         .Select(p => new ProductResult(
                             p.Id.Value,
                             p.Model.Name,
-                            p.Price.Value,
-                            p.Images.FirstOrDefault().ImgUrl.Value,
-                            p.FavoritByUsers.Any(u => u.Id == _currentUser.UserId)))))))
+                            p.ProductSizes.First().Price.Value,
+                            p.Images.First().ImgUrl.Value,
+                            p.FavoritByUsers.Any(u => u.Id == _currentUser.UserId)))
+                        .FirstOrDefault()))))
             .ToListAsync(cancellationToken);
     }
 }

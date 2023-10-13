@@ -1,11 +1,10 @@
 ﻿using FluentValidation;
 using XWear.Application.Common.Helpers;
 using XWear.Application.Common.Resources;
-using XWear.Application.Features.Authentication.Commands.Register;
 
 namespace XWear.Application.Features.Authentication.Queries.Login;
 
-internal class LoginQueryValidator : AbstractValidator<LoginQuery>
+public sealed class LoginQueryValidator : AbstractValidator<LoginQuery>
 {
     public LoginQueryValidator()
     {

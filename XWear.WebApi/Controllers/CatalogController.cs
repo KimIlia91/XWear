@@ -14,13 +14,14 @@ public class CatalogController : ApiController
     /// </summary>
     /// <returns> </returns>
     [HttpGet]
-    [ProducesResponseType(typeof(List<CatalogResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(List<LastUpdatedProductsByCategoryResponse>), 
+        StatusCodes.Status200OK)]
     public async Task<IActionResult> GetLastUpdatedProductsByCategoryAsync()
     {
         var query = new GetLastUpdatedProductsByCategoryQuery();
         var result = await Mediator.Send(query);
         return result.Match(
-            result => Ok(Mapper.Map<List<CatalogResponse>>(result)),
+            result => Ok(Mapper.Map<List<LastUpdatedProductsByCategoryResponse>>(result)),
             errors => Problem(errors));
     }
 }

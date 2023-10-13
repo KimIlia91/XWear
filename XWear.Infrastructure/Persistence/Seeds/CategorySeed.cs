@@ -47,15 +47,14 @@ public static class CategorySeed
            Category.Create(CategoryEnum.Sunglasses.GetDescription(), accessories.Id).Value,
            Category.Create(CategoryEnum.Sneakers.GetDescription(), shoes.Id).Value,
            Category.Create(CategoryEnum.Sleepwear.GetDescription(), clothing.Id).Value,
+           Category.Create(CategoryEnum.Shoes.GetDescription(), shoes.Id).Value,
 
            Category.Create(CategoryEnum.Handbags.GetDescription(), accessories.Id).Value,
            Category.Create(CategoryEnum.Hats.GetDescription(), accessories.Id).Value,
 
            Category.Create(CategoryEnum.Loafers.GetDescription(), shoes.Id).Value,
-           Category.Create(CategoryEnum.Lingerie.GetDescription(), clothing.Id).Value,
 
            Category.Create(CategoryEnum.Ties.GetDescription(), clothing.Id).Value,
-           Category.Create(CategoryEnum.Tops.GetDescription(), accessories.Id).Value,
 
            Category.Create(CategoryEnum.Jewelry.GetDescription(), accessories.Id).Value,
 

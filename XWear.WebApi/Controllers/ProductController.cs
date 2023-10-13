@@ -17,7 +17,7 @@ public class ProductController : ApiController
     /// <returns> </returns>
     [HttpGet]
     [AllowAnonymous]
-    [ProducesResponseType(typeof(List<CatalogResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(List<LastUpdatedProductsByCategoryResponse>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetProductsPageAsync([FromQuery] GetProductPageQuery query)
     {
         //var query = new GetLastUpdatedProductsByCategoryQuery();

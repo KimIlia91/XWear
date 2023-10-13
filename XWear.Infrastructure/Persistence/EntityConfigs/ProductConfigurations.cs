@@ -20,25 +20,6 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
                 id => id.Value,
                 value => ProductId.Create(value));
 
-        builder.Property(x => x.Quantity)
-            .HasColumnName("Quantity")
-            .IsRequired()
-            .HasConversion(
-                quantity => quantity.Value,
-                value => Quantity.Create(value).Value);
-
-        builder.Property(p => p.Price)
-            .HasColumnName("Price")
-            .IsRequired()
-            .HasConversion(
-                price => price.Value,
-                value => Price.Create(value).Value);
-
-        builder.HasOne(x => x.Size)
-            .WithMany(x => x.Products)
-            .IsRequired()
-            .OnDelete(DeleteBehavior.Cascade);
-
         builder.HasOne(x => x.Model)
             .WithMany(x => x.Products)
             .IsRequired()
@@ -62,6 +43,12 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
         builder.HasMany(x => x.Images)
             .WithOne()
             .HasForeignKey(i => i.ProductId)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.HasMany(x => x.ProductSizes)
+            .WithOne()
+            .HasForeignKey(ps => ps.ProductId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
 

@@ -6,7 +6,8 @@ public sealed record CatalogResult(
     IEnumerable<CategoryResult> Categories);
 
 public sealed record CategoryResult(
-    IEnumerable<ProductResult> Products);
+    string Name,
+    ProductResult? Product);
 
 public sealed record ProductResult(
     Guid Id,

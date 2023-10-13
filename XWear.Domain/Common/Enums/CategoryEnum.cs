@@ -24,14 +24,13 @@ public enum CategoryEnum
     [Description("Пижамы")] Sleepwear,
     [Description("Солнцезащитные очки")] Sunglasses,
     [Description("Шарфы")] Scarves,
+    [Description("Туфли")] Shoes,
 
     [Description("Сумки")] Handbags,
     [Description("Головные уборы")] Hats,
 
     [Description("Лофферы")] Loafers,
-    [Description("Белье")] Lingerie,
 
-    [Description("Верхняя одежда")] Tops,
     [Description("Галстуки")] Ties,
 
     [Description("Украшения")] Jewelry,

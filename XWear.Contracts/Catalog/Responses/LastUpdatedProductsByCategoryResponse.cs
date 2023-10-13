@@ -1,12 +1,13 @@
 ﻿namespace XWear.Contracts.Catalog.Responses;
 
-public sealed record CatalogResponse(
+public sealed record LastUpdatedProductsByCategoryResponse(
     Guid Id,
     string Name,
     IEnumerable<CategoryResponse> Categories);
 
 public sealed record CategoryResponse(
-    IEnumerable<ProductResponse> Products);
+    string Name,
+    ProductResponse Product);
 
 public sealed record ProductResponse(
     Guid Id,

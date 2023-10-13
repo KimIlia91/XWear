@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Infrastructure;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using System.Reflection;
 using XWear.Domain.Common.Enums;
 using XWear.Domain.Common.Extensions;
@@ -23,6 +24,10 @@ namespace XWear.WebApi
             services.AddCorsPolicy(DomainApiConstants.CorsPolicyName, configuration);
             services.AddCustomSwaggerGen(Assembly.GetExecutingAssembly());
             services.AddCustomLocalization(LanguagesEnum.En.GetDescription(), LanguagesEnum.Ru.GetDescription());
+            //services.Configure<ApiBehaviorOptions>(options =>
+            //{
+            //    options.SuppressModelStateInvalidFilter = true;
+            //});
             return services;
         }
 

@@ -3,7 +3,7 @@ using XWear.Application.Common.Resources;
 
 namespace XWear.Application.Features.FavoritProductContext.Commands.AddFavoritProduct;
 
-internal sealed class AddFavoritPoductCommandValidator
+public sealed class AddFavoritPoductCommandValidator
     : AbstractValidator<AddFavoritPoductCommand>
 {
     public AddFavoritPoductCommandValidator()

@@ -8,6 +8,9 @@ using XWear.Domain.Entities.UserEntity;
 using XWear.Domain.Entities.ImageEntity;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
+using XWear.Domain.Entities.ProductSizeEntity;
+using XWear.Domain.Entities.SizeEntity.ValueObjects;
 
 namespace XWear.Domain.Entities.ProductEntity;
 
@@ -17,17 +20,13 @@ public sealed class Product : AggregateRoot<ProductId>
 
     private readonly List<Image> _images = new();
 
-    public Price Price { get; private set; }
-
-    public Quantity Quantity { get; private set; }
+    private readonly List<ProductSize> _productSizes = new();
 
     public DateTime CreatedDateTime { get; private set; }
 
     public DateTime UpdatedDateTime { get; private set; }
 
     public Category Category { get; private set; }
-
-    public Size Size { get; private set; }
 
     public Color Color { get; private set; }
 
@@ -39,60 +38,40 @@ public sealed class Product : AggregateRoot<ProductId>
 
     public IReadOnlyCollection<Image> Images => _images.ToList();
 
+    public IReadOnlyCollection<ProductSize> ProductSizes => _productSizes.ToList();
+
     private Product() : base(ProductId.CreateUnique())
     {
     }
 
     private Product(
         ProductId productId,
-        Price price,
-        Quantity quantity,
         Category category,
         Brand brand,
         Model model,
-        Size size,
         Color color)
         : base(productId)
     {
         Id = productId;
-        Price = price;
-        Quantity = quantity;
         CreatedDateTime = DateTime.UtcNow;
         UpdatedDateTime = DateTime.UtcNow;
         Category = category;
         Brand = brand;
         Model = model;
         Color = color;
-        Size = size;
     }
 
     public static ErrorOr<Product> Create(
-        decimal price,
-        int quantity,
         Category category,
         Brand brand,
         Model model,
-        Size size,
         Color color)
     {
-        var priceResult = Price.Create(price);
-
-        if (priceResult.IsError)
-            return priceResult.Errors;
-
-        var quantityResult = Quantity.Create(quantity);
-
-        if (quantityResult.IsError)
-            return quantityResult.Errors;
-
         return new Product(
             ProductId.CreateUnique(),
-            priceResult.Value,
-            quantityResult.Value,
             category,
             brand,
             model,
-            size,
             color);
     }
 
@@ -106,5 +85,16 @@ public sealed class Product : AggregateRoot<ProductId>
         var imageResult = Image.Create(imageUrl, Id);
         
         _images.Add(imageResult.Value);
+    }
+
+    public void AddRangeProductSizes(List<ProductSize> productSizes)
+    {
+        _productSizes.AddRange(productSizes);
+    }
+
+    public void AddProductSize(SizeId sizeId, decimal price, int quantity)
+    {
+        var productSizes = ProductSize.Create(Id, sizeId, price, quantity);
+        _productSizes.Add(productSizes.Value);
     }
 }

@@ -2,7 +2,7 @@
 using XWear.Domain.Common.Errors;
 using XWear.Domain.Common.Models;
 
-namespace XWear.Domain.Entities.ProductEntity.ValueObjects;
+namespace XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
 
 public sealed class Price : ValueObject
 {

@@ -56,16 +56,17 @@ internal class ProductRepository : IProductRepository
         CategoryId categoryId,
         CancellationToken cancellationToken)
     {
-        var products = await _context.Products
-            .Where(p => (modelId.Value == Guid.Empty || p.Model.Id == modelId) &&
-                        (colorId.Value == Guid.Empty || p.Color.Id == colorId) &&
-                        (categoryId.Value == Guid.Empty || p.Category.Id == categoryId) &&
-                        (size.Count == 0 || size.Contains(p.Size.Name)))
-            .Skip((pageNumber - 1) * pageSize)
-            .Take(pageSize)
-            .ProjectToType<ProductResult>(_mapper.Config)
-            .ToListAsync(cancellationToken);
-
-        return products;
+        //var products = await _context.Products
+        //    .Where(p => (modelId.Value == Guid.Empty || p.Model.Id == modelId) &&
+        //                (colorId.Value == Guid.Empty || p.Color.Id == colorId) &&
+        //                (categoryId.Value == Guid.Empty || p.Category.Id == categoryId) &&
+        //                (size.Count == 0 || size.Contains(p.Size.Name)))
+        //    .Skip((pageNumber - 1) * pageSize)
+        //    .Take(pageSize)
+        //    .ProjectToType<ProductResult>(_mapper.Config)
+        //    .ToListAsync(cancellationToken);
+        //
+        //return products;
+        return new List<ProductResult>();
     }
 }

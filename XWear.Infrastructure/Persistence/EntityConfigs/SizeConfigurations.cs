@@ -29,8 +29,9 @@ public sealed class SizeConfigurations : IEntityTypeConfiguration<Size>
         builder.HasIndex(x => x.Name)
             .IsUnique();
 
-        builder.HasMany(b => b.Products)
-            .WithOne(p => p.Size)
+        builder.HasMany(b => b.ProductSizes)
+            .WithOne()
+            .HasForeignKey(ps => ps.SizeId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
     }
