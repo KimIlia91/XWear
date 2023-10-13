@@ -7,4 +7,7 @@ public interface ICatalogRepository
 {
     Task<List<CatalogResult>> GetLastUpdatedProductsByCategoryAsync(
             CancellationToken cancellationToken);
+
+    Task<List<CatalogWithCategoriesResult>> GetCatalogsWithCategoriesAsync(
+            CancellationToken cancellationToken);
 }

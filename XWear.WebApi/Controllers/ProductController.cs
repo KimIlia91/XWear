@@ -12,7 +12,7 @@ namespace XWear.WebApi.Controllers;
 public class ProductController : ApiController
 {
     /// <summary>
-    /// 
+    /// В разрабоке
     /// </summary>
     /// <returns> </returns>
     [HttpGet]

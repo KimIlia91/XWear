@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Mapster;
+using MapsterMapper;
+using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Features.CatalogContext.Common;
@@ -9,13 +11,25 @@ public class CatalogRepository : ICatalogRepository
 {
     private readonly ApplicationDbContext _context;
     private readonly ICurrentUserService _currentUser;
+    private readonly IMapper _mapper;
 
     public CatalogRepository(
         ApplicationDbContext context,
-        ICurrentUserService currentUser)
+        ICurrentUserService currentUser,
+        IMapper mapper)
     {
+        _mapper = mapper;
         _currentUser = currentUser;
         _context = context;
+    }
+
+    public async Task<List<CatalogWithCategoriesResult>> GetCatalogsWithCategoriesAsync(
+        CancellationToken cancellationToken)
+    {
+        return await _context.Catalogs
+            .ProjectToType<CatalogWithCategoriesResult>(_mapper.Config)
+            .ToListAsync(cancellationToken);
+            
     }
 
     public async Task<List<CatalogResult>> GetLastUpdatedProductsByCategoryAsync(
