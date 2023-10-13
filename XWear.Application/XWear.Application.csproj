@@ -55,8 +55,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\ProductContext\Common\" />
-  </ItemGroup>
-
 </Project>

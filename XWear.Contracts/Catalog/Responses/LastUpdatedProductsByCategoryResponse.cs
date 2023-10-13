@@ -12,6 +12,10 @@ public sealed record CategoryResponse(
 public sealed record ProductResponse(
     Guid Id,
     string Name,
-    decimal Price,
+    ProductSize ProductSize,
     string ImgUrl,
     bool IsFavorit);
+
+public sealed record ProductSize(
+    Guid Id,
+    decimal Price);

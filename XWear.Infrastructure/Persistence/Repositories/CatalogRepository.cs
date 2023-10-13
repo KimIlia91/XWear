@@ -47,7 +47,9 @@ public class CatalogRepository : ICatalogRepository
                         .Select(p => new ProductResult(
                             p.Id.Value,
                             p.Model.Name,
-                            p.ProductSizes.First().Price.Value,
+                            p.ProductSizes.Select(ps => new ProductSizePriceResult(
+                                ps.Id.Value,
+                                ps.Price.Value)).First(),
                             p.Images.First().ImgUrl.Value,
                             p.FavoritByUsers.Any(u => u.Id == _currentUser.UserId)))
                         .FirstOrDefault()))))

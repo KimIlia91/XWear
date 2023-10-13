@@ -12,6 +12,10 @@ public sealed record CategoryResult(
 public sealed record ProductResult(
     Guid Id,
     string Name,
-    decimal Price,
+    ProductSizePriceResult ProductSize,
     string ImgUrl,
     bool IsFavorit);
+
+public sealed record ProductSizePriceResult(
+    Guid Id,
+    decimal Price);

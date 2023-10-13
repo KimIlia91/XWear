@@ -2,12 +2,11 @@
 using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Features.ProductContext.Common;
 using XWear.Application.Features.ProductContext.Queries.GetProductPage;
-using XWear.Domain.Entities.CatalogEntity.ValueObjects;
 using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 using XWear.Domain.Entities.ColorEntity.ValueObjects;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
-using XWear.Domain.Entities.ProductEntity;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -24,32 +23,18 @@ internal class ProductRepository : IProductRepository
         _context = context;
     }
 
-    public Task<IEnumerable<Product>> GetAllProductsAsync(
-        CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<IEnumerable<Product>> GetFavoritUserProductsAsync(
-        CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<IEnumerable<Product>> GetProductByCatalogIdAsync(
-        CatalogId catalogId, 
+    public async Task<ProductByIdResult?> GetProductByIdAsync(
+        Guid productId, 
         CancellationToken cancellationToken)
     {
         return await _context.Products
-            .Include(p => p.Model)
-            .Where(p => p.Category.CatalogId == catalogId)
-            .AsNoTracking()
-            .ToListAsync(cancellationToken);
+            .ProjectToType<ProductByIdResult>(_mapper.Config)
+            .FirstOrDefaultAsync(p => p.Id == productId, cancellationToken);
     }
 
     public async Task<IEnumerable<ProductResult>> GetProductPageAsync(
-        int pageNumber, 
-        int pageSize, 
+        int pageNumber,
+        int pageSize,
         List<string> size,
         ModelId modelId,
         ColorId colorId,
