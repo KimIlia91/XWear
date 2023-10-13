@@ -1,6 +1,5 @@
 ﻿using ErrorOr;
 using XWear.Domain.Common.Models;
-using XWear.Domain.Entities.SizeEntity;
 using XWear.Domain.Entities.ColorEntity;
 using XWear.Domain.Entities.BrandEntity;
 using XWear.Domain.Entities.ModelEntity;
@@ -8,7 +7,6 @@ using XWear.Domain.Entities.UserEntity;
 using XWear.Domain.Entities.ImageEntity;
 using XWear.Domain.Entities.CategoryEntity;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
-using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
 using XWear.Domain.Entities.ProductSizeEntity;
 using XWear.Domain.Entities.SizeEntity.ValueObjects;
 

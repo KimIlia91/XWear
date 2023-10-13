@@ -32,7 +32,7 @@ public class ProductController : ApiController
     }
 
     /// <summary>
-    /// Получить продукт по ID и по ID размера продукта
+    /// Получить продукт по ID размера продукта
     /// </summary>
     /// <returns>Продукт по указанным ID</returns>
     [HttpGet("{productSizeId}")]
