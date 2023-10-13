@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XWear.Contracts\XWear.Contracts.csproj" />
     <ProjectReference Include="..\XWear.Domain\XWear.Domain.csproj" />
   </ItemGroup>
 

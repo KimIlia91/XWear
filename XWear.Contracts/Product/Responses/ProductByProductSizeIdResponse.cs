@@ -1,17 +1,22 @@
 ﻿namespace XWear.Contracts.Product.Responses;
 
-public sealed record ProductByIdResponse(
+public sealed record ProductByProductSizeIdResponse(
     Guid Id,
+    IEnumerable<ProductImageUrlResponse> Images,
     ProductCategoryResponse Category,
     ProductBrandResponse Brand,
     ProductModelResponse Model,
     ProductColorResponse Color,
     IEnumerable<ProductSizeResponse> ProductSizes);
 
+public sealed record ProductImageUrlResponse(
+    string ImageUrl);
+
 public sealed record ProductSizeResponse(
     Guid Id,
-    string Name,
-    decimal Price);
+    string Size,
+    decimal Price,
+    bool IsSelected);
 
 public sealed record ProductColorResponse(
     Guid Id,

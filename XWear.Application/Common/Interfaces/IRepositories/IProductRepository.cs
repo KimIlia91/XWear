@@ -1,9 +1,9 @@
-﻿using XWear.Domain.Entities.ColorEntity.ValueObjects;
-using XWear.Domain.Entities.ModelEntity.ValueObjects;
-using XWear.Domain.Entities.CategoryEntity.ValueObjects;
-using XWear.Domain.Entities.ProductEntity.ValueObjects;
+﻿using XWear.Application.Features.ProductContext.Common;
 using XWear.Application.Features.ProductContext.Queries.GetProductPage;
-using XWear.Application.Features.ProductContext.Common;
+using XWear.Domain.Entities.CategoryEntity.ValueObjects;
+using XWear.Domain.Entities.ColorEntity.ValueObjects;
+using XWear.Domain.Entities.ModelEntity.ValueObjects;
+using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
 
 namespace XWear.Application.Common.Interfaces.IRepositories;
 
@@ -18,7 +18,7 @@ public interface IProductRepository
         CategoryId categoryId,
         CancellationToken cancellationToken);
 
-    Task<ProductByIdResult?> GetProductByIdAsync(
-        ProductId productId, 
-        CancellationToken cancellationToken); 
+    Task<ProductByIdResult?> GetByProductSizeIdAsync(
+        ProductSizeId productId,
+        CancellationToken cancellationToken);
 }

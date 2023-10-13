@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XWear.Application\XWear.Application.csproj" />
+    <ProjectReference Include="..\XWear.Contracts\XWear.Contracts.csproj" />
     <ProjectReference Include="..\XWear.Infrastructure\XWear.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using XWear.Application.Features.ProductContext.Queries.GetProductById;
+using XWear.Application.Features.ProductContext.Queries.GetByProductSizeId;
 using XWear.Application.Features.ProductContext.Queries.GetProductPage;
 using XWear.Contracts.Catalog.Responses;
 using XWear.Contracts.Product.Responses;
@@ -21,7 +21,7 @@ public class ProductController : ApiController
     [AllowAnonymous]
     [ProducesResponseType(typeof(List<LastUpdatedProductsByCategoryResponse>), 
         StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetProductByIdAsync(
+    public async Task<IActionResult> GetProductsPageAsync(
         [FromQuery] GetProductPageQuery query)
     {
         //var query = new GetLastUpdatedProductsByCategoryQuery();
@@ -35,18 +35,17 @@ public class ProductController : ApiController
     /// Получить продукт по ID и по ID размера продукта
     /// </summary>
     /// <returns>Продукт по указанным ID</returns>
-    [HttpGet("{id}/{productSizeId}")]
+    [HttpGet("{productSizeId}")]
     [AllowAnonymous]
-    [ProducesResponseType(typeof(ProductByIdResponse), 
+    [ProducesResponseType(typeof(ProductByProductSizeIdResponse), 
         StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetProductsPageAsync(
-        Guid id,
+    public async Task<IActionResult> GetByProductSizeIdAsync(
         Guid productSizeId)
     {
-        var query = new GetProductByIdQuery(id, productSizeId);
+        var query = new GetByProductSizeIdQuery(productSizeId);
         var result = await Mediator.Send(query);
         return result.Match(
-            result => Ok(result),
+            result => Ok(Mapper.Map<ProductByProductSizeIdResponse>(result)),
             errors => Problem(errors));
     }
 }

@@ -7,38 +7,35 @@ using XWear.Application.Features.ProductContext.Common;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
 
-namespace XWear.Application.Features.ProductContext.Queries.GetProductById;
+namespace XWear.Application.Features.ProductContext.Queries.GetByProductSizeId;
 
-internal sealed class GetProductByIdQueryHandler 
-    : IRequestHandler<GetProductByIdQuery, ErrorOr<ProductByIdResult>>
+internal sealed class GetByProductSizeIdQueryHandler
+    : IRequestHandler<GetByProductSizeIdQuery, ErrorOr<ProductByIdResult>>
 {
     private readonly IProductRepository _productRepository;
-    private readonly IMapper _mapper;
 
-    public GetProductByIdQueryHandler(
-        IProductRepository productRepository,
-        IMapper mapper)
+    public GetByProductSizeIdQueryHandler(
+        IProductRepository productRepository)
     {
-        _mapper = mapper;
         _productRepository = productRepository;
     }
 
     public async Task<ErrorOr<ProductByIdResult>> Handle(
-        GetProductByIdQuery query, 
+        GetByProductSizeIdQuery query,
         CancellationToken cancellationToken)
     {
-        var productId = ProductId.Create(query.Id);
+        var productId = ProductSizeId.Create(query.ProductSizeId);
         var productResult = await _productRepository
-            .GetProductByIdAsync(productId, cancellationToken);
+            .GetByProductSizeIdAsync(productId, cancellationToken);
 
         if (productResult is null)
-            return Error.NotFound(nameof(ProductId), ErrorResources.NotFound);
+            return Error.NotFound(ErrorResources.NotFound, nameof(ProductId));
 
         foreach (var productSize in productResult.ProductSizes)
             productSize.IsSelected = productSize.Id == query.ProductSizeId;
 
         if (!productResult.ProductSizes.Any(ps => ps.IsSelected))
-            return Error.NotFound(nameof(ProductSizeId), ErrorResources.NotFound);
+            return Error.NotFound(ErrorResources.NotFound, nameof(ProductSizeId));
 
         return productResult;
     }

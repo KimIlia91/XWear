@@ -3,11 +3,11 @@ using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Features.ProductContext.Common;
-using XWear.Application.Features.ProductContext.Queries.GetProductPage;
 using XWear.Domain.Entities.CategoryEntity.ValueObjects;
 using XWear.Domain.Entities.ColorEntity.ValueObjects;
 using XWear.Domain.Entities.ModelEntity.ValueObjects;
-using XWear.Domain.Entities.ProductEntity.ValueObjects;
+using XWear.Domain.Entities.ProductSizeEntity.ValueObjects;
+using XWear.Application.Features.ProductContext.Queries.GetProductPage;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -24,12 +24,12 @@ internal class ProductRepository : IProductRepository
         _context = context;
     }
 
-    public async Task<ProductByIdResult?> GetProductByIdAsync(
-        ProductId productId, 
+    public async Task<ProductByIdResult?> GetByProductSizeIdAsync(
+        ProductSizeId productSizeId, 
         CancellationToken cancellationToken)
     {
         return await _context.Products
-            .Where(p => p.Id == productId)
+            .Where(p => p.ProductSizes.Any(ps => ps.Id == productSizeId))
             .ProjectToType<ProductByIdResult>(_mapper.Config)
             .FirstOrDefaultAsync(cancellationToken);
     }

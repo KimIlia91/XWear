@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using XWear.Contracts.Error;
 using XWear.WebApi.Common.Http;
 
 namespace XWear.WebApi.Controllers;
@@ -13,6 +14,10 @@ namespace XWear.WebApi.Controllers;
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
+[ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status409Conflict)]
+[ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
+[ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status404NotFound)]
+[ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
 public class ApiController : ControllerBase
 {
     private ISender _mediator;
@@ -29,10 +34,10 @@ public class ApiController : ControllerBase
     protected IMapper Mapper => _mapper ??= HttpContext.RequestServices.GetService<IMapper>()!;
 
     /// <summary>
-    /// Метод для обработки исключений
+    /// Метод для обработки исключений.
     /// </summary>
-    /// <param name="errors"></param>
-    /// <returns></returns>
+    /// <param name="errors">Список ошибок, которые необходимо обработать.</param>
+    /// <returns>Возвращает результат обработки ошибок в соответствии с типом ошибки или стандартный ответ ошибки.</returns>
     [Route("/error")]
     protected IActionResult Problem(List<Error> errors)
     {

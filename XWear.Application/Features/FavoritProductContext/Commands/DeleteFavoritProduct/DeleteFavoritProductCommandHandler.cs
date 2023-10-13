@@ -2,15 +2,15 @@
 using MediatR;
 using XWear.Domain.Common.Errors;
 using XWear.Domain.Entities.ProductEntity;
-using XWear.Contracts.FavoritProduct.Responses;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Domain.Entities.ProductEntity.ValueObjects;
 using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Features.FavoritProductContext.Common;
 
 namespace XWear.Application.Features.FavoritProductContext.Commands.DeleteFavoritProduct;
 
 internal sealed class DeleteFavoritProductCommandHandler
-    : IRequestHandler<DeleteFavoritProductCommand, ErrorOr<DeleteFavoritProductResponse>>
+    : IRequestHandler<DeleteFavoritProductCommand, ErrorOr<DeleteFavoritProductResult>>
 {
     private readonly IUserRepository _userRepository;
     private readonly ICurrentUserService _currentUser;
@@ -26,7 +26,7 @@ internal sealed class DeleteFavoritProductCommandHandler
         _baseRepository = baseRepository;
     }
 
-    public async Task<ErrorOr<DeleteFavoritProductResponse>> Handle(
+    public async Task<ErrorOr<DeleteFavoritProductResult>> Handle(
         DeleteFavoritProductCommand command, 
         CancellationToken cancellationToken)
     {
@@ -45,6 +45,6 @@ internal sealed class DeleteFavoritProductCommandHandler
 
         user.DeleteFromFavoriteProducts(product);
         await _baseRepository.SaveChangesAsync(cancellationToken);
-        return new DeleteFavoritProductResponse(product.Id.Value);
+        return new DeleteFavoritProductResult(product.Id.Value);
     }
 }
