@@ -8,16 +8,6 @@ public sealed record LastUpdatedProductsByCategoryResponse(
     IEnumerable<CategoryResponse> Categories);
 
 public sealed record CategoryResponse(
+    Guid Id,
     string Name,
     ProductResponse Product);
-
-public sealed record ProductResponse(
-    Guid Id,
-    string Name,
-    ProductPriceResponse ProductSize,
-    string ImgUrl,
-    bool IsFavorit);
-
-public sealed record ProductPriceResponse(
-    Guid Id,
-    decimal Price);

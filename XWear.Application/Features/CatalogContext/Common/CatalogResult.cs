@@ -1,4 +1,6 @@
-﻿namespace XWear.Application.Features.CatalogContext.Common;
+﻿using XWear.Application.Features.ProductContext.Common;
+
+namespace XWear.Application.Features.CatalogContext.Common;
 
 public sealed record CatalogResult(
     Guid Id,
@@ -6,16 +8,6 @@ public sealed record CatalogResult(
     IEnumerable<CategoryResult> Categories);
 
 public sealed record CategoryResult(
+    Guid Id,
     string Name,
     ProductResult? Product);
-
-public sealed record ProductResult(
-    Guid Id,
-    string Name,
-    ProductSizePriceResult ProductSize,
-    string ImgUrl,
-    bool IsFavorit);
-
-public sealed record ProductSizePriceResult(
-    Guid Id,
-    decimal Price);

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Common.Interfaces.IServices;
 using XWear.Application.Features.CatalogContext.Common;
+using XWear.Application.Features.ProductContext.Common;
 
 namespace XWear.Infrastructure.Persistence.Repositories;
 
@@ -40,6 +41,7 @@ public class CatalogRepository : ICatalogRepository
                 g.Id.Value,
                 g.Name,
                 g.Categories.Select(c => new CategoryResult(
+                    c.Id.Value,
                     c.Name,
                     c.Products.Where(p => c.Products.Any())
                         .OrderByDescending(p => p.UpdatedDateTime)

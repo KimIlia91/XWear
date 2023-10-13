@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using XWear.Application.Features.ProductContext.Queries.GetByProductSizeId;
 using XWear.Application.Features.ProductContext.Queries.GetProductPage;
+using XWear.Application.Features.ProductContext.Queries.GetProductsByCategorId;
 using XWear.Contracts.Catalog.Responses;
 using XWear.Contracts.Product.Responses;
 
@@ -35,7 +36,7 @@ public class ProductController : ApiController
     /// Получить продукт по ID размера продукта
     /// </summary>
     /// <returns>Продукт по указанным ID</returns>
-    [HttpGet("{productSizeId}")]
+    [HttpGet("productSize/{productSizeId}")]
     [AllowAnonymous]
     [ProducesResponseType(typeof(ProductByProductSizeIdResponse), 
         StatusCodes.Status200OK)]
@@ -46,6 +47,24 @@ public class ProductController : ApiController
         var result = await Mediator.Send(query);
         return result.Match(
             result => Ok(Mapper.Map<ProductByProductSizeIdResponse>(result)),
+            errors => Problem(errors));
+    }
+
+    /// <summary>
+    /// Получить продукты по ID категории
+    /// </summary>
+    /// <returns>Продукт по указанным ID</returns>
+    [HttpGet("category/{categoryId}")]
+    [AllowAnonymous]
+    [ProducesResponseType(typeof(ProductByProductSizeIdResponse),
+        StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetProductsByCategorIdAsync(
+        Guid categoryId)
+    {
+        var query = new GetProductsByCategorIdQuery(categoryId);
+        var result = await Mediator.Send(query);
+        return result.Match(
+            result => Ok(Mapper.Map<List<ProductResponse>>(result)),
             errors => Problem(errors));
     }
 }

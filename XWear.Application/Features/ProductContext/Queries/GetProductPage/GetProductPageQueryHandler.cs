@@ -1,6 +1,7 @@
 ﻿using ErrorOr;
 using MediatR;
 using XWear.Application.Common.Interfaces.IRepositories;
+using XWear.Application.Features.ProductContext.Common;
 
 namespace XWear.Application.Features.ProductContext.Queries.GetProductPage
 {

@@ -8,7 +8,7 @@ namespace XWear.Infrastructure.Persistence
         public static IServiceCollection AddApplicationDbContext(this IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlServer("DataBase"));
+               options.UseInMemoryDatabase("DataBase"));
             
             return services;
         }
