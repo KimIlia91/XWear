@@ -1,6 +1,5 @@
 ﻿using ErrorOr;
 using MediatR;
-using MapsterMapper;
 using XWear.Application.Common.Resources;
 using XWear.Application.Common.Interfaces.IRepositories;
 using XWear.Application.Features.ProductContext.Common;
