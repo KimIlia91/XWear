@@ -36,7 +36,8 @@ public sealed class CategoryConfigurations : IEntityTypeConfiguration<Category>
             .IsRequired();
 
         builder.HasMany(c => c.Products)
-            .WithOne(p => p.Category)
+            .WithOne()
+            .HasForeignKey(p => p.CategoryId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
     }

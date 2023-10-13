@@ -117,7 +117,7 @@ public static class ProductSeed
         var shoesSizes = new List<Size>() { thirtyEight, thirtyNine, forty, fortyOne, fortyTwo, fortyThree, fortyFour, fortyFive };
 
         //Одежда
-        var tie1 = Product.Create(tiesCloth!, brand1, tie1Model!, blue!);
+        var tie1 = Product.Create(tiesCloth!.Id, brand1.Id, tie1Model!.Id, blue!.Id);
         tie1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -126,7 +126,7 @@ public static class ProductSeed
 
         tie1.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtX3qsdbWZGNZBZN4RXdkz7ZxZ8T-tCm_1wx7hn-D0c76YtM85hE8LOrqRIFv4bnhBHfE&usqp=CAU");
 
-        var tie2 = Product.Create(tiesCloth!, brand1, tie1Model!, red!);
+        var tie2 = Product.Create(tiesCloth!.Id, brand1.Id, tie1Model!.Id, red!.Id);
         tie2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -135,7 +135,7 @@ public static class ProductSeed
 
         tie2.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU");
         
-        var tie3 = Product.Create(tiesCloth!, brand1, tie1Model!, green!);
+        var tie3 = Product.Create(tiesCloth!.Id, brand1.Id, tie1Model!.Id, green!.Id);
         tie3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -144,7 +144,7 @@ public static class ProductSeed
 
         tie3.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU");
 
-        var tie4 = Product.Create(tiesCloth!, brand1, tie1Model!, black!);
+        var tie4 = Product.Create(tiesCloth!.Id, brand1.Id, tie1Model!.Id, black!.Id);
         tie4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -153,7 +153,7 @@ public static class ProductSeed
 
         tie4.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdY52Jq9kK2H8LUYBOmxX-WWdjsfYs392iiU1omVYFHwVcvkjjkdbCPKr3HocP_a0zMRQ&usqp=CAU");
 
-        var tie5 = Product.Create(tiesCloth!, brand1, tie1Model!, orange!);
+        var tie5 = Product.Create(tiesCloth!.Id, brand1.Id, tie1Model!.Id, orange!.Id);
         tie5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         tie5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -168,7 +168,7 @@ public static class ProductSeed
         products.Add(tie4.Value);
         products.Add(tie5.Value);
 
-        var sleepwear1 = Product.Create(sleepwearCloth!, brand1, sleepwear1Model!, blue!);
+        var sleepwear1 = Product.Create(sleepwearCloth!.Id, brand1.Id, sleepwear1Model!.Id, blue!.Id);
         sleepwear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -177,7 +177,7 @@ public static class ProductSeed
 
         sleepwear1.Value.AddProductImage("https://assets.vogue.ru/photos/5eaadfb0166ba0cc6cf48eb8/2:3/w_2560%2Cc_limit/%25D0%25BF%25D0%25B81.jpg");
 
-        var sleepwear2 = Product.Create(sleepwearCloth!, brand1, sleepwear1Model!, red!);
+        var sleepwear2 = Product.Create(sleepwearCloth!.Id, brand1.Id, sleepwear1Model!.Id, red!.Id);
         sleepwear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -186,7 +186,7 @@ public static class ProductSeed
 
         sleepwear2.Value.AddProductImage("https://content.rozetka.com.ua/goods/images/big/330015520.jpg");
 
-        var sleepwear3 = Product.Create(sleepwearCloth!, brand1, sleepwear1Model!, green!);
+        var sleepwear3 = Product.Create(sleepwearCloth!.Id, brand1.Id, sleepwear1Model!.Id, green!.Id);
         sleepwear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -195,7 +195,7 @@ public static class ProductSeed
 
         sleepwear3.Value.AddProductImage("https://silkkiss.ua/images/detailed/12/2_3blm-98.jpg");
 
-        var sleepwear4 = Product.Create(sleepwearCloth!, brand1, sleepwear1Model!, black!);
+        var sleepwear4 = Product.Create(sleepwearCloth!.Id, brand1.Id, sleepwear1Model!.Id, black!.Id);
         sleepwear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -204,7 +204,7 @@ public static class ProductSeed
 
         sleepwear4.Value.AddProductImage("https://images.prom.ua/3397070730_satinovaya-pizhama-victorias.jpg");
 
-        var sleepwear5 = Product.Create(sleepwearCloth!, brand1, sleepwear1Model!, orange!);
+        var sleepwear5 = Product.Create(sleepwearCloth!.Id, brand1.Id, sleepwear1Model!.Id, orange!.Id);
         sleepwear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sleepwear5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -219,7 +219,7 @@ public static class ProductSeed
         products.Add(sleepwear4.Value);
         products.Add(sleepwear5.Value);
 
-        var swimwear1 = Product.Create(swimwearCloth!, brand1, swimwear1Model!, blue!);
+        var swimwear1 = Product.Create(swimwearCloth!.Id, brand1.Id, swimwear1Model!.Id, blue!.Id);
         swimwear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -228,7 +228,7 @@ public static class ProductSeed
 
         swimwear1.Value.AddProductImage("https://www.mimimood.ee/catalog/thumbnails/600x800/9/7/b/a/236a6c68-d0fd-4f17-a93a-1f5f0091914d-vCiV.jpg?v1360");
 
-        var swimwear2 = Product.Create(swimwearCloth!, brand1, swimwear1Model!, red!);
+        var swimwear2 = Product.Create(swimwearCloth!.Id, brand1.Id, swimwear1Model!.Id, red!.Id);
         swimwear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -237,7 +237,7 @@ public static class ProductSeed
 
         swimwear2.Value.AddProductImage("https://milashop.com.ua/image/cache/data/kupalniki/2304-0%20lorin-1000x1000.jpg");
 
-        var swimwear3 = Product.Create(swimwearCloth!, brand1, swimwear1Model!, green!);
+        var swimwear3 = Product.Create(swimwearCloth!.Id, brand1.Id, swimwear1Model!.Id, green!.Id);
         swimwear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -246,7 +246,7 @@ public static class ProductSeed
 
         swimwear3.Value.AddProductImage("https://silkkiss.ua/images/detailed/12/2_3blm-98.jpg");
 
-        var swimwear4 = Product.Create(swimwearCloth!, brand1, swimwear1Model!, black!);
+        var swimwear4 = Product.Create(swimwearCloth!.Id, brand1.Id, swimwear1Model!.Id, black!.Id);
         swimwear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -255,7 +255,7 @@ public static class ProductSeed
 
         swimwear4.Value.AddProductImage("https://images.prom.ua/3397070730_satinovaya-pizhama-victorias.jpg");
 
-        var swimwear5 = Product.Create(swimwearCloth!, brand1, swimwear1Model!, orange!);
+        var swimwear5 = Product.Create(swimwearCloth!.Id, brand1.Id, swimwear1Model!.Id, orange!.Id);
         swimwear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         swimwear5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -270,7 +270,7 @@ public static class ProductSeed
         products.Add(swimwear4.Value);
         products.Add(swimwear5.Value);
 
-        var scarve1 = Product.Create(scarvesCloth!, brand1, scarves1Model!, blue!);
+        var scarve1 = Product.Create(scarvesCloth!.Id, brand1.Id, scarves1Model!.Id, blue!.Id);
         scarve1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -279,7 +279,7 @@ public static class ProductSeed
 
         scarve1.Value.AddProductImage("https://renome-fashion.ru/pictures/product/big/8770_big.png");
 
-        var scarve2 = Product.Create(scarvesCloth!, brand1, scarves1Model!, red!);
+        var scarve2 = Product.Create(scarvesCloth!.Id, brand1.Id, scarves1Model!.Id, red!.Id);
         scarve2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -288,7 +288,7 @@ public static class ProductSeed
 
         scarve2.Value.AddProductImage("https://shop-cdn1-2.vigbo.tech/shops/173159/products/21021244/images/3-3262a56754684a5b228a30d8dbdf53d2.jpeg");
 
-        var scarve3 = Product.Create(scarvesCloth!, brand1, scarves1Model!, green!);
+        var scarve3 = Product.Create(scarvesCloth!.Id, brand1.Id, scarves1Model!.Id, green!.Id);
         scarve3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -297,7 +297,7 @@ public static class ProductSeed
 
         scarve3.Value.AddProductImage("https://inspireshop.ru/upload/resize_cache/webp/upload/iblock/abb/1ajb66lq5g71a521r091szyy83yan7rv.webp");
 
-        var scarve4 = Product.Create(scarvesCloth!, brand1, scarves1Model!, black!);
+        var scarve4 = Product.Create(scarvesCloth!.Id, brand1.Id, scarves1Model!.Id, black!.Id);
         scarve4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -306,7 +306,7 @@ public static class ProductSeed
 
         scarve4.Value.AddProductImage("https://shop-cdn1-2.vigbo.tech/shops/173159/products/21423559/images/2-19dbb21d6583cd28ac87434d9a5a8809.jpeg");
 
-        var scarve5 = Product.Create(scarvesCloth!, brand1, scarves1Model!, orange!);
+        var scarve5 = Product.Create(scarvesCloth!.Id, brand1.Id, scarves1Model!.Id, orange!.Id);
         scarve5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         scarve5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -321,7 +321,7 @@ public static class ProductSeed
         products.Add(scarve4.Value);
         products.Add(scarve5.Value);
 
-        var outerwear1 = Product.Create(outerwearCloth!, brand1, outwear1Model!, blue!);
+        var outerwear1 = Product.Create(outerwearCloth!.Id, brand1.Id, outwear1Model!.Id, blue!.Id);
         outerwear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -330,7 +330,7 @@ public static class ProductSeed
 
         outerwear1.Value.AddProductImage("https://cdn.sela.ru/wa-data/public/shop/products/52/77/137752/images/668200/668200.480x617.jpg");
 
-        var outerwear2 = Product.Create(outerwearCloth!, brand1, outwear1Model!, red!);
+        var outerwear2 = Product.Create(outerwearCloth!.Id, brand1.Id, outwear1Model!.Id, red!.Id);
         outerwear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -339,7 +339,7 @@ public static class ProductSeed
 
         outerwear2.Value.AddProductImage("https://n1s1.hsmedia.ru/33/e7/5c/33e75c9d88fb29910abde8e5b63f6a40/400x600_1_c3806be9a1ad213c9c76984f4ee6d3f1@1000x1500_0xac120003_19592896951664554049.jpg");
 
-        var outerwear3 = Product.Create(outerwearCloth!, brand1, outwear1Model!, green!);
+        var outerwear3 = Product.Create(outerwearCloth!.Id, brand1.Id, outwear1Model!.Id, green!.Id);
         outerwear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -348,7 +348,7 @@ public static class ProductSeed
 
         outerwear3.Value.AddProductImage("https://static.tildacdn.com/tild3838-3539-4539-a362-633661333234/ND6A1636.jpg");
 
-        var outerwear4 = Product.Create(outerwearCloth!, brand1, outwear1Model!, black!);
+        var outerwear4 = Product.Create(outerwearCloth!.Id, brand1.Id, outwear1Model!.Id, black!.Id);
         outerwear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -357,7 +357,7 @@ public static class ProductSeed
 
         outerwear4.Value.AddProductImage("https://static.insales-cdn.com/images/products/1/2759/746220231/Gate_31_08_0472.jpg");
 
-        var outerwear5 = Product.Create(outerwearCloth!, brand1, outwear1Model!, orange!);
+        var outerwear5 = Product.Create(outerwearCloth!.Id, brand1.Id, outwear1Model!.Id, orange!.Id);
         outerwear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         outerwear5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -372,7 +372,7 @@ public static class ProductSeed
         products.Add(outerwear4.Value);
         products.Add(outerwear5.Value);
 
-        var bottoms1 = Product.Create(bottomsCloth!, brand1, bottoms1Model!, blue!);
+        var bottoms1 = Product.Create(bottomsCloth!.Id, brand1.Id, bottoms1Model!.Id, blue!.Id);
         bottoms1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -381,7 +381,7 @@ public static class ProductSeed
 
         bottoms1.Value.AddProductImage("https://ae01.alicdn.com/kf/Hc0767cd72b444f05b8683a382f8d76dbq.jpg");
 
-        var bottoms2 = Product.Create(bottomsCloth!, brand1, bottoms1Model!, red!);
+        var bottoms2 = Product.Create(bottomsCloth!.Id, brand1.Id, bottoms1Model!.Id, red!.Id);
         bottoms2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -390,7 +390,7 @@ public static class ProductSeed
 
         bottoms2.Value.AddProductImage("https://idealbra.ru/wp-content/uploads/2021/12/selenared_kal_02-scaled.jpg");
 
-        var bottoms3 = Product.Create(bottomsCloth!, brand1, bottoms1Model!, green!);
+        var bottoms3 = Product.Create(bottomsCloth!.Id, brand1.Id, bottoms1Model!.Id, green!.Id);
         bottoms3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -399,7 +399,7 @@ public static class ProductSeed
 
         bottoms3.Value.AddProductImage("https://cdn.4stand.com/huge/d7/00/d700a06a5828df8a16591faba81f03d464225289.jpg");
 
-        var bottoms4 = Product.Create(bottomsCloth!, brand1, bottoms1Model!, black!);
+        var bottoms4 = Product.Create(bottomsCloth!.Id, brand1.Id, bottoms1Model!.Id, black!.Id);
         bottoms4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -408,7 +408,7 @@ public static class ProductSeed
 
         bottoms4.Value.AddProductImage("https://lulight.ru/wp-content/uploads/2021/11/img_0167.jpeg");
 
-        var bottoms5 = Product.Create(bottomsCloth!, brand1, bottoms1Model!, orange!);
+        var bottoms5 = Product.Create(bottomsCloth!.Id, brand1.Id, bottoms1Model!.Id, orange!.Id);
         bottoms5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         bottoms5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -423,7 +423,7 @@ public static class ProductSeed
         products.Add(bottoms4.Value);
         products.Add(bottoms5.Value);
 
-        var belts1 = Product.Create(beltsCloth!, brand1, belts1Model!, blue!);
+        var belts1 = Product.Create(beltsCloth!.Id, brand1.Id, belts1Model!.Id, blue!.Id);
         belts1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -432,7 +432,7 @@ public static class ProductSeed
 
         belts1.Value.AddProductImage("https://kanscraft.com/wp-content/uploads/2017/12/frame-36-701x701.jpg");
 
-        var belts2 = Product.Create(beltsCloth!, brand1, belts1Model!, red!);
+        var belts2 = Product.Create(beltsCloth!.Id, brand1.Id, belts1Model!.Id, red!.Id);
         belts2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -441,7 +441,7 @@ public static class ProductSeed
 
         belts2.Value.AddProductImage("https://kanscraft.com/wp-content/uploads/2022/12/frame-275-701x701.jpg");
 
-        var belts3 = Product.Create(beltsCloth!, brand1, belts1Model!, green!);
+        var belts3 = Product.Create(beltsCloth!.Id, brand1.Id, belts1Model!.Id, green!.Id);
         belts3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -450,7 +450,7 @@ public static class ProductSeed
 
         belts3.Value.AddProductImage("https://av-factory.ru/upload/iblock/b21/7rwfv5t3igls6g6mrcwxqq84jfv3azy4.jpg");
 
-        var belts4 = Product.Create(beltsCloth!, brand1, belts1Model!, black!);
+        var belts4 = Product.Create(beltsCloth!.Id, brand1.Id, belts1Model!.Id, black!.Id);
         belts4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -459,7 +459,7 @@ public static class ProductSeed
 
         belts4.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-m/c500/6249618298.jpg");
 
-        var belts5 = Product.Create(beltsCloth!, brand1, belts1Model!, orange!);
+        var belts5 = Product.Create(beltsCloth!.Id, brand1.Id, belts1Model!.Id, orange!.Id);
         belts5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         belts5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -474,7 +474,7 @@ public static class ProductSeed
         products.Add(belts4.Value);
         products.Add(belts5.Value);
 
-        var activewear1 = Product.Create(activewearCloth!, brand1, activewear1Model!, blue!);
+        var activewear1 = Product.Create(activewearCloth!.Id, brand1.Id, activewear1Model!.Id, blue!.Id);
         activewear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -483,7 +483,7 @@ public static class ProductSeed
 
         activewear1.Value.AddProductImage("https://stepup.kg/wp-content/uploads/2020/06/96.jpg");
 
-        var activewear2 = Product.Create(activewearCloth!, brand1, activewear1Model!, red!);
+        var activewear2 = Product.Create(activewearCloth!.Id, brand1.Id, activewear1Model!.Id, red!.Id);
         activewear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -492,7 +492,7 @@ public static class ProductSeed
 
         activewear2.Value.AddProductImage("https://www.dossodossi.com/images/thumbs/107/1073142_1800.jpeg");
 
-        var activewear3 = Product.Create(activewearCloth!, brand1, activewear1Model!, green!);
+        var activewear3 = Product.Create(activewearCloth!.Id, brand1.Id, activewear1Model!.Id, green!.Id);
         activewear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -501,7 +501,7 @@ public static class ProductSeed
 
         activewear3.Value.AddProductImage("https://img5.lalafo.com/i/posters/original/a6/ba/b3/customer-search-womens-clothing-mens-clothing-t-shirts-sportswear-svitshots-70269000_image-1668178385.jpeg");
 
-        var activewear4 = Product.Create(activewearCloth!, brand1, activewear1Model!, black!);
+        var activewear4 = Product.Create(activewearCloth!.Id, brand1.Id, activewear1Model!.Id, black!.Id);
         activewear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -510,7 +510,7 @@ public static class ProductSeed
 
         activewear4.Value.AddProductImage("https://i.pinimg.com/736x/3b/fb/56/3bfb56038bd0431d14bf7b7b8d62f742.jpg");
 
-        var activewear5 = Product.Create(activewearCloth!, brand1, activewear1Model!, orange!);
+        var activewear5 = Product.Create(activewearCloth!.Id, brand1.Id, activewear1Model!.Id, orange!.Id);
         activewear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         activewear5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -525,7 +525,7 @@ public static class ProductSeed
         products.Add(activewear4.Value);
         products.Add(activewear5.Value);
 
-        var dresses1 = Product.Create(dressesCloth!, brand1, dresses1Model!, blue!);
+        var dresses1 = Product.Create(dressesCloth!.Id, brand1.Id, dresses1Model!.Id, blue!.Id);
         dresses1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses1.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -534,7 +534,7 @@ public static class ProductSeed
 
         dresses1.Value.AddProductImage("https://modde.ru/wa-data/public/shop/products/62/14/1462/images/6001/6001.970.jpg");
 
-        var dresses2 = Product.Create(dressesCloth!, brand1, dresses1Model!, red!);
+        var dresses2 = Product.Create(dressesCloth!.Id, brand1.Id, dresses1Model!.Id, red!.Id);
         dresses2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses2.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -543,7 +543,7 @@ public static class ProductSeed
 
         dresses2.Value.AddProductImage("https://i.pinimg.com/736x/ae/bc/94/aebc94e419a825abb96e47064508650d.jpg");
 
-        var dresses3 = Product.Create(dressesCloth!, brand1, dresses1Model!, green!);
+        var dresses3 = Product.Create(dressesCloth!.Id, brand1.Id, dresses1Model!.Id, green!.Id);
         dresses3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses3.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -552,7 +552,7 @@ public static class ProductSeed
 
         dresses3.Value.AddProductImage("https://storydress.ru/wp-content/uploads/vechernee-platye-delicious-dress-green-01.jpg");
 
-        var dresses4 = Product.Create(dressesCloth!, brand1, dresses1Model!, black!);
+        var dresses4 = Product.Create(dressesCloth!.Id, brand1.Id, dresses1Model!.Id, black!.Id);
         dresses4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses4.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -561,7 +561,7 @@ public static class ProductSeed
 
         dresses4.Value.AddProductImage("https://www.interstyle-spb.ru/assets/images/products/3482/vechernee-plate-krista-329-03-black-alt2.jpg");
 
-        var dresses5 = Product.Create(dressesCloth!, brand1, dresses1Model!, orange!);
+        var dresses5 = Product.Create(dressesCloth!.Id, brand1.Id, dresses1Model!.Id, orange!.Id);
         dresses5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         dresses5.Value.AddProductSize(l.Id, 100.99m, 25);
@@ -577,7 +577,7 @@ public static class ProductSeed
         products.Add(dresses5.Value);
 
         //Обувь
-        var shoes1 = Product.Create(shoesShoes!, brand1, shoes1Model!, blue!);
+        var shoes1 = Product.Create(shoesShoes!.Id, brand1.Id, shoes1Model!.Id, blue!.Id);
         shoes1.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         shoes1.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         shoes1.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -589,7 +589,7 @@ public static class ProductSeed
 
         shoes1.Value.AddProductImage("https://img.kwinto-shoes.ru/img/600x600/0005450_600_600.jpg");
 
-        var shoes2 = Product.Create(shoesShoes!, brand1, shoes1Model!, red!);
+        var shoes2 = Product.Create(shoesShoes!.Id, brand1.Id, shoes1Model!.Id, red!.Id);
         shoes2.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         shoes2.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         shoes2.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -601,7 +601,7 @@ public static class ProductSeed
 
         shoes2.Value.AddProductImage("https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=99/7357/uploads/urunresimleri/buyuk/temka-hakiki-suet-deri-kadin-kirmizi-t-c7b2ed.jpg");
 
-        var shoes3 = Product.Create(shoesShoes!, brand1, shoes1Model!, green!);
+        var shoes3 = Product.Create(shoesShoes!.Id, brand1.Id, shoes1Model!.Id, green!.Id);
         shoes3.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         shoes3.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         shoes3.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -613,7 +613,7 @@ public static class ProductSeed
 
         shoes3.Value.AddProductImage("https://www.charuel.ru/upload/resize_cache/iblock/5cf/525_702_1/t0yddw8yjt7c625z95tk4ig4zngx1dh8.jpg");
 
-        var shoes4 = Product.Create(shoesShoes!, brand1, shoes1Model!, black!);
+        var shoes4 = Product.Create(shoesShoes!.Id, brand1.Id, shoes1Model!.Id, black!.Id);
         shoes4.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         shoes4.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         shoes4.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -625,7 +625,7 @@ public static class ProductSeed
 
         shoes4.Value.AddProductImage("https://cdn.ekonika.ru/resize/w1920/upload/iblock/e73/9nguj1w10x1h23pnlyuabb0o6325dyd5/PM00200CN_03_black_23L_1.jpg?2496b7de");
 
-        var shoes5 = Product.Create(shoesShoes!, brand1, shoes1Model!, orange!);
+        var shoes5 = Product.Create(shoesShoes!.Id, brand1.Id, shoes1Model!.Id, orange!.Id);
         shoes5.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         shoes5.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         shoes5.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -643,7 +643,7 @@ public static class ProductSeed
         products.Add(shoes4.Value);
         products.Add(shoes5.Value);
 
-        var loafers1 = Product.Create(loafersShoes!, brand1, loafers1Model!, blue!);
+        var loafers1 = Product.Create(loafersShoes!.Id, brand1.Id, loafers1Model!.Id, blue!.Id);
         loafers1.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         loafers1.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         loafers1.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -655,7 +655,7 @@ public static class ProductSeed
 
         loafers1.Value.AddProductImage("https://www.blacksides.ru/upload/resize_cache/iblock/62c/900_1200_1/62cd9ee82d57bb4adbf7a2ff62959ba9.jpg");
 
-        var loafers2 = Product.Create(loafersShoes!, brand1, loafers1Model!, red!);
+        var loafers2 = Product.Create(loafersShoes!.Id, brand1.Id, loafers1Model!.Id, red!.Id);
         loafers2.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         loafers2.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         loafers2.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -667,7 +667,7 @@ public static class ProductSeed
 
         loafers2.Value.AddProductImage("https://fridaywear.ru/upload/resize_cache/webp/upload/iblock/013/013904aec00a8ab7f88a61816170f76c.webp");
 
-        var loafers3 = Product.Create(loafersShoes!, brand1, loafers1Model!, green!);
+        var loafers3 = Product.Create(loafersShoes!.Id, brand1.Id, loafers1Model!.Id, green!.Id);
         loafers3.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         loafers3.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         loafers3.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -679,7 +679,7 @@ public static class ProductSeed
 
         loafers3.Value.AddProductImage("https://converse.org.ua/image/cache/catalog/easyphoto/677/kedy-converse-chuck-70-high-top-dark-green-168508c-3-1200x1200.jpg");
 
-        var loafers4 = Product.Create(loafersShoes!, brand1, loafers1Model!, black!);
+        var loafers4 = Product.Create(loafersShoes!.Id, brand1.Id, loafers1Model!.Id, black!.Id);
         loafers4.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         loafers4.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         loafers4.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -691,7 +691,7 @@ public static class ProductSeed
 
         loafers4.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-8/c1000/6724621736.jpg");
 
-        var loafers5 = Product.Create(loafersShoes!, brand1, loafers1Model!, orange!);
+        var loafers5 = Product.Create(loafersShoes!.Id, brand1.Id, loafers1Model!.Id, orange!.Id);
         loafers5.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         loafers5.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         loafers5.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -709,7 +709,7 @@ public static class ProductSeed
         products.Add(loafers4.Value);
         products.Add(loafers5.Value);
 
-        var sneakers1 = Product.Create(sneakersShoes!, brand1, sneakers1Model!, blue!);
+        var sneakers1 = Product.Create(sneakersShoes!.Id, brand1.Id, sneakers1Model!.Id, blue!.Id);
         sneakers1.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sneakers1.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sneakers1.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -721,7 +721,7 @@ public static class ProductSeed
 
         sneakers1.Value.AddProductImage("https://bruklin-store.ru/images/13.05.23/22.jpg");
 
-        var sneakers2 = Product.Create(sneakersShoes!, brand1, sneakers1Model!, red!);
+        var sneakers2 = Product.Create(sneakersShoes!.Id, brand1.Id, sneakers1Model!.Id, red!.Id);
         sneakers2.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sneakers2.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sneakers2.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -733,7 +733,7 @@ public static class ProductSeed
 
         sneakers2.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-g/c500/6623237164.jpg");
 
-        var sneakers3 = Product.Create(sneakersShoes!, brand1, sneakers1Model!, green!);
+        var sneakers3 = Product.Create(sneakersShoes!.Id, brand1.Id, sneakers1Model!.Id, green!.Id);
         sneakers3.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sneakers3.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sneakers3.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -745,7 +745,7 @@ public static class ProductSeed
 
         loafers3.Value.AddProductImage("https://myreact.ru/wp-content/uploads/2021/01/muzhskie-krossovki-jordan-air-jordan-1-low-white-black-mystic-green-0.jpg");
 
-        var sneakers4 = Product.Create(sneakersShoes!, brand1, sneakers1Model!, black!);
+        var sneakers4 = Product.Create(sneakersShoes!.Id, brand1.Id, sneakers1Model!.Id, black!.Id);
         sneakers4.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sneakers4.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sneakers4.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -757,7 +757,7 @@ public static class ProductSeed
 
         sneakers4.Value.AddProductImage("https://images.izi.ua/301485629");
 
-        var sneakers5 = Product.Create(sneakersShoes!, brand1, sneakers1Model!, orange!);
+        var sneakers5 = Product.Create(sneakersShoes!.Id, brand1.Id, sneakers1Model!.Id, orange!.Id);
         sneakers5.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sneakers5.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sneakers5.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -775,7 +775,7 @@ public static class ProductSeed
         products.Add(sneakers4.Value);
         products.Add(sneakers5.Value);
 
-        var flipFlops1 = Product.Create(flipFlopsShoes!, brand1, flipFlops1Model!, blue!);
+        var flipFlops1 = Product.Create(flipFlopsShoes!.Id, brand1.Id, flipFlops1Model!.Id, blue!.Id);
         flipFlops1.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         flipFlops1.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         flipFlops1.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -787,7 +787,7 @@ public static class ProductSeed
 
         flipFlops1.Value.AddProductImage("https://www.okabashi.com/cdn/shop/products/surf-mens-flip-flops-black-638716.jpg?v=1685995206");
 
-        var flipFlops2 = Product.Create(flipFlopsShoes!, brand1, flipFlops1Model!, red!);
+        var flipFlops2 = Product.Create(flipFlopsShoes!.Id, brand1.Id, flipFlops1Model!.Id, red!.Id);
         flipFlops2.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         flipFlops2.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         flipFlops2.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -799,7 +799,7 @@ public static class ProductSeed
 
         flipFlops2.Value.AddProductImage("https://www.artigianodelcuo.io/3722-thickbox_default/red-leather-thongs-sandals-for-men-handmade.jpg");
 
-        var flipFlops3 = Product.Create(flipFlopsShoes!, brand1, flipFlops1Model!, green!);
+        var flipFlops3 = Product.Create(flipFlopsShoes!.Id, brand1.Id, flipFlops1Model!.Id, green!.Id);
         flipFlops3.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         flipFlops3.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         flipFlops3.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -811,7 +811,7 @@ public static class ProductSeed
 
         flipFlops3.Value.AddProductImage("https://www.tradeinn.com/f/61/613459/havaianas-top-unisex-flip-flops.jpg");
 
-        var flipFlops4 = Product.Create(flipFlopsShoes!, brand1, flipFlops1Model!, black!);
+        var flipFlops4 = Product.Create(flipFlopsShoes!.Id, brand1.Id, flipFlops1Model!.Id, black!.Id);
         flipFlops4.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         flipFlops4.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         flipFlops4.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -823,7 +823,7 @@ public static class ProductSeed
 
         flipFlops4.Value.AddProductImage("https://contents.mediadecathlon.com/p1300008/e6bf2666e875012c89d6d5e73b83f5d0/p1300008.jpg?format=auto&quality=70&f=650x0?f=270x270&format=auto");
 
-        var flipFlops5 = Product.Create(flipFlopsShoes!, brand1, flipFlops1Model!, orange!);
+        var flipFlops5 = Product.Create(flipFlopsShoes!.Id, brand1.Id, flipFlops1Model!.Id, orange!.Id);
         flipFlops5.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         flipFlops5.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         flipFlops5.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -841,7 +841,7 @@ public static class ProductSeed
         products.Add(flipFlops4.Value);
         products.Add(flipFlops5.Value);
 
-        var sandals1 = Product.Create(sandalsShoes!, brand1, sandals1Model!, blue!);
+        var sandals1 = Product.Create(sandalsShoes!.Id, brand1.Id, sandals1Model!.Id, blue!.Id);
         sandals1.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sandals1.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sandals1.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -853,7 +853,7 @@ public static class ProductSeed
 
         sandals1.Value.AddProductImage("https://crocsone.com.ua/image/cache/catalog/products/Zhinochi-Crocs/Zhinochi-sandali-Crocs-LiteRide-360-Sandal-Women-NavyBlue-Grey-5-700x700.png");
 
-        var sandals2 = Product.Create(sandalsShoes!, brand1, sandals1Model!, red!);
+        var sandals2 = Product.Create(sandalsShoes!.Id, brand1.Id, sandals1Model!.Id, red!.Id);
         sandals2.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sandals2.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sandals2.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -865,7 +865,7 @@ public static class ProductSeed
 
         sandals2.Value.AddProductImage("https://forummultibrand.ru/upload/iblock/55d/L01A9497.JPG");
 
-        var sandals3 = Product.Create(sandalsShoes!, brand1, sandals1Model!, green!);
+        var sandals3 = Product.Create(sandalsShoes!.Id, brand1.Id, sandals1Model!.Id, green!.Id);
         sandals3.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sandals3.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sandals3.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -877,7 +877,7 @@ public static class ProductSeed
 
         sandals3.Value.AddProductImage("https://pompidou.ua/image/cache/catalog/!-3/1221/D3EF5281PIVC5002-1-800x900.jpg");
 
-        var sandals4 = Product.Create(sandalsShoes!, brand1, sandals1Model!, black!);
+        var sandals4 = Product.Create(sandalsShoes!.Id, brand1.Id, sandals1Model!.Id, black!.Id);
         sandals4.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sandals4.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sandals4.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -889,7 +889,7 @@ public static class ProductSeed
 
         sandals4.Value.AddProductImage("https://sportexpert.kg/wp-content/uploads/2021/05/Womens-Hiking-Black.jpg");
 
-        var sandals5 = Product.Create(sandalsShoes!, brand1, sandals1Model!, orange!);
+        var sandals5 = Product.Create(sandalsShoes!.Id, brand1.Id, sandals1Model!.Id, orange!.Id);
         sandals5.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sandals5.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sandals5.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -907,7 +907,7 @@ public static class ProductSeed
         products.Add(sandals4.Value);
         products.Add(sandals5.Value);
 
-        var gumshoes1 = Product.Create(gumshoesShoes!, brand1, gumshoes1Model!, blue!);
+        var gumshoes1 = Product.Create(gumshoesShoes!.Id, brand1.Id, gumshoes1Model!.Id, blue!.Id);
         sandals1.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         sandals1.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         sandals1.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -919,7 +919,7 @@ public static class ProductSeed
 
         sandals1.Value.AddProductImage("https://www.converse.com/dw/image/v2/BCZC_PRD/on/demandware.static/-/Sites-cnv-master-catalog/default/dwe88a9e6a/images/a_08/A06844C_A_08X1.jpg?sw=406");
 
-        var gumshoes2 = Product.Create(gumshoesShoes!, brand1, gumshoes1Model!, red!);
+        var gumshoes2 = Product.Create(gumshoesShoes!.Id, brand1.Id, gumshoes1Model!.Id, red!.Id);
         gumshoes2.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         gumshoes2.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         gumshoes2.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -931,7 +931,7 @@ public static class ProductSeed
 
         gumshoes2.Value.AddProductImage("https://st3.depositphotos.com/6198262/13775/v/450/depositphotos_137759476-stock-illustration-sneakers-chucks-gumshoes.jpg");
 
-        var gumshoes3 = Product.Create(gumshoesShoes!, brand1, gumshoes1Model!, green!);
+        var gumshoes3 = Product.Create(gumshoesShoes!.Id, brand1.Id, gumshoes1Model!.Id, green!.Id);
         gumshoes3.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         gumshoes3.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         gumshoes3.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -943,7 +943,7 @@ public static class ProductSeed
 
         gumshoes3.Value.AddProductImage("https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog-we/default/dw970b3b3c/images/a_08/A04544C_A_08X1.jpg");
 
-        var gumshoes4 = Product.Create(gumshoesShoes!, brand1, gumshoes1Model!, black!);
+        var gumshoes4 = Product.Create(gumshoesShoes!.Id, brand1.Id, gumshoes1Model!.Id, black!.Id);
         gumshoes4.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         gumshoes4.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         gumshoes4.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -955,7 +955,7 @@ public static class ProductSeed
 
         gumshoes4.Value.AddProductImage("https://cdna.lystit.com/photos/rubbersole/9d0687f3/converse-Black-Shoes-high-top-Trainers-Chuck-Taylor-All-Star-blackblackegret.jpeg");
 
-        var gumshoes5 = Product.Create(gumshoesShoes!, brand1, gumshoes1Model!, orange!);
+        var gumshoes5 = Product.Create(gumshoesShoes!.Id, brand1.Id, gumshoes1Model!.Id, orange!.Id);
         gumshoes5.Value.AddProductSize(thirtyEight.Id, 100.99m, 25);
         gumshoes5.Value.AddProductSize(thirtyNine.Id, 100.99m, 25);
         gumshoes5.Value.AddProductSize(forty.Id, 100.99m, 25);
@@ -973,7 +973,7 @@ public static class ProductSeed
         products.Add(gumshoes4.Value);
         products.Add(gumshoes5.Value);
 
-        var watches1 = Product.Create(watchesCategory!, brand1, watches1Model!, blue!);
+        var watches1 = Product.Create(watchesCategory!.Id, brand1.Id, watches1Model!.Id, blue!.Id);
         watches1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         watches1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         watches1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -982,7 +982,7 @@ public static class ProductSeed
 
         watches1.Value.AddProductImage("https://images.squarespace-cdn.com/content/v1/5c78138211f784469d4817df/02837c27-828a-4ad3-b0ed-574190f1abfe/IMG_7862.JPG");
 
-        var watches2 = Product.Create(watchesCategory!, brand1, watches1Model!, red!);
+        var watches2 = Product.Create(watchesCategory!.Id, brand1.Id, watches1Model!.Id, red!.Id);
         watches2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         watches2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         watches2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -991,7 +991,7 @@ public static class ProductSeed
 
         watches2.Value.AddProductImage("https://images.squarespace-cdn.com/content/v1/5c78138211f784469d4817df/1680446289649-AB807OAG84SOJYUWIUHP/E0AEC7FB-89D6-4CA0-A3A8-3439EACB6FF6.jpeg");
 
-        var watches3 = Product.Create(watchesCategory!, brand1, watches1Model!, green!);
+        var watches3 = Product.Create(watchesCategory!.Id, brand1.Id, watches1Model!.Id, green!.Id);
         watches3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         watches3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         watches3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1000,7 +1000,7 @@ public static class ProductSeed
 
         watches3.Value.AddProductImage("https://images.squarespace-cdn.com/content/v1/5c78138211f784469d4817df/b8cd1a5d-acdf-4c3f-b09a-762d76bbdf29/IMG_8630.JPG");
 
-        var watches4 = Product.Create(watchesCategory!, brand1, watches1Model!, black!);
+        var watches4 = Product.Create(watchesCategory!.Id, brand1.Id, watches1Model!.Id, black!.Id);
         watches4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         watches4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         watches4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1009,7 +1009,7 @@ public static class ProductSeed
 
         watches4.Value.AddProductImage("https://fossil.scene7.com/is/image/FossilPartners/FS5503_main?$sfcc_fos_hi-res$");
 
-        var watches5 = Product.Create(watchesCategory!, brand1, watches1Model!, orange!);
+        var watches5 = Product.Create(watchesCategory!.Id, brand1.Id, watches1Model!.Id, orange!.Id);
         watches5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         watches5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         watches5.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1024,7 +1024,7 @@ public static class ProductSeed
         products.Add(watches4.Value);
         products.Add(watches5.Value);
 
-        var wallets1 = Product.Create(walletsCategory!, brand1, wallets1Model!, blue!);
+        var wallets1 = Product.Create(walletsCategory!.Id, brand1.Id, wallets1Model!.Id, blue!.Id);
         wallets1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         wallets1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         wallets1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1033,7 +1033,7 @@ public static class ProductSeed
 
         wallets1.Value.AddProductImage("https://cdn1.ozone.ru/s3/multimedia-5/6493103489.jpg");
 
-        var wallets2 = Product.Create(walletsCategory!, brand1, wallets1Model!, red!);
+        var wallets2 = Product.Create(walletsCategory!.Id, brand1.Id, wallets1Model!.Id, red!.Id);
         wallets2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         wallets2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         wallets2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1042,7 +1042,7 @@ public static class ProductSeed
 
         wallets2.Value.AddProductImage("https://thingz4girlz.com/wp-content/uploads/2021/12/16-011-2.webp");
 
-        var wallets3 = Product.Create(walletsCategory!, brand1, wallets1Model!, green!);
+        var wallets3 = Product.Create(walletsCategory!.Id, brand1.Id, wallets1Model!.Id, green!.Id);
         wallets3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         wallets3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         wallets3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1051,7 +1051,7 @@ public static class ProductSeed
 
         wallets3.Value.AddProductImage("https://img.ssensemedia.com/images/222230F040010_1/comme-des-garcons-wallets-orange-and-green-fluo-squares-half-zip-wallet.jpg");
 
-        var wallets4 = Product.Create(walletsCategory!, brand1, wallets1Model!, black!);
+        var wallets4 = Product.Create(walletsCategory!.Id, brand1.Id, wallets1Model!.Id, black!.Id);
         wallets4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         wallets4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         wallets4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1060,7 +1060,7 @@ public static class ProductSeed
 
         wallets4.Value.AddProductImage("https://www.noonmar.com/sports-wallet-for-men-black-orange-16684-53-B.jpg");
 
-        var wallets5 = Product.Create(walletsCategory!, brand1, wallets1Model!, orange!);
+        var wallets5 = Product.Create(walletsCategory!.Id, brand1.Id, wallets1Model!.Id, orange!.Id);
         wallets5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         wallets5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         wallets5.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1075,7 +1075,7 @@ public static class ProductSeed
         products.Add(wallets4.Value);
         products.Add(wallets5.Value);
 
-        var jewelry1 = Product.Create(jewelryCategory!, brand1, jewelry1Model!, blue!);
+        var jewelry1 = Product.Create(jewelryCategory!.Id, brand1.Id, jewelry1Model!.Id, blue!.Id);
         jewelry1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         jewelry1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         jewelry1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1084,7 +1084,7 @@ public static class ProductSeed
 
         jewelry1.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSLh3jf2j1vjOqt-BDUIYQA1bL_y5yNEeRB4KvfGzFNjajDmlFq7md7_3PNUF_g4qtSm8&usqp=CAU");
 
-        var jewelry2 = Product.Create(jewelryCategory!, brand1, jewelry1Model!, red!);
+        var jewelry2 = Product.Create(jewelryCategory!.Id, brand1.Id, jewelry1Model!.Id, red!.Id);
         jewelry2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         jewelry2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         jewelry2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1093,7 +1093,7 @@ public static class ProductSeed
 
         jewelry2.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-9/c500/6735405573.jpg");
 
-        var jewelry3 = Product.Create(jewelryCategory!, brand1, jewelry1Model!, green!);
+        var jewelry3 = Product.Create(jewelryCategory!.Id, brand1.Id, jewelry1Model!.Id, green!.Id);
         jewelry3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         jewelry3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         jewelry3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1102,7 +1102,7 @@ public static class ProductSeed
 
         jewelry3.Value.AddProductImage("https://i.etsystatic.com/19155243/r/il/bd6273/2041659706/il_fullxfull.2041659706_d0fa.jpg");
 
-        var jewelry4 = Product.Create(jewelryCategory!, brand1, jewelry1Model!, black!);
+        var jewelry4 = Product.Create(jewelryCategory!.Id, brand1.Id, jewelry1Model!.Id, black!.Id);
         jewelry4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         jewelry4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         jewelry4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1111,7 +1111,7 @@ public static class ProductSeed
 
         jewelry4.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-k/c1000/6423374816.jpg");
 
-        var jewelry5 = Product.Create(jewelryCategory!, brand1, jewelry1Model!, orange!);
+        var jewelry5 = Product.Create(jewelryCategory!.Id, brand1.Id, jewelry1Model!.Id, orange!.Id);
         jewelry5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         jewelry5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         jewelry5.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1126,7 +1126,7 @@ public static class ProductSeed
         products.Add(jewelry4.Value);
         products.Add(jewelry5.Value);
 
-        var glovers1 = Product.Create(glovesCategory!, brand1, gloves1Model!, blue!);
+        var glovers1 = Product.Create(glovesCategory!.Id, brand1.Id, gloves1Model!.Id, blue!.Id);
         glovers1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         glovers1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         glovers1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1135,7 +1135,7 @@ public static class ProductSeed
 
         glovers1.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-x/c1000/6744818001.jpg");
 
-        var glovers2 = Product.Create(glovesCategory!, brand1, gloves1Model!, red!);
+        var glovers2 = Product.Create(glovesCategory!.Id, brand1.Id, gloves1Model!.Id, red!.Id);
         glovers2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         glovers2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         glovers2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1144,7 +1144,7 @@ public static class ProductSeed
 
         glovers2.Value.AddProductImage("https://cdn.27.ua/799/c6/ec/2606828_1.jpeg");
 
-        var glovers3 = Product.Create(glovesCategory!, brand1, gloves1Model!, green!);
+        var glovers3 = Product.Create(glovesCategory!.Id, brand1.Id, gloves1Model!.Id, green!.Id);
         glovers3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         glovers3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         glovers3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1153,7 +1153,7 @@ public static class ProductSeed
 
         glovers3.Value.AddProductImage("https://images.prom.ua/3276319920_w640_h640_perchatki-rezinovye-nitril.jpg");
 
-        var glovers4 = Product.Create(glovesCategory!, brand1, gloves1Model!, black!);
+        var glovers4 = Product.Create(glovesCategory!.Id, brand1.Id, gloves1Model!.Id, black!.Id);
         glovers4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         glovers4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         glovers4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1162,7 +1162,7 @@ public static class ProductSeed
 
         glovers4.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-c/c1000/6155793072.jpg");
 
-        var glovers5 = Product.Create(glovesCategory!, brand1, gloves1Model!, orange!);
+        var glovers5 = Product.Create(glovesCategory!.Id, brand1.Id, gloves1Model!.Id, orange!.Id);
         glovers5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         glovers5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         glovers5.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1177,7 +1177,7 @@ public static class ProductSeed
         products.Add(glovers4.Value);
         products.Add(glovers5.Value);
 
-        var sunglasses1 = Product.Create(sunglassesCategory!, brand1, sunglasses1Model!, blue!);
+        var sunglasses1 = Product.Create(sunglassesCategory!.Id, brand1.Id, sunglasses1Model!.Id, blue!.Id);
         sunglasses1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sunglasses1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         sunglasses1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1186,7 +1186,7 @@ public static class ProductSeed
 
         sunglasses1.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-8/c1000/6586165160.jpg");
 
-        var sunglasses2 = Product.Create(sunglassesCategory!, brand1, sunglasses1Model!, red!);
+        var sunglasses2 = Product.Create(sunglassesCategory!.Id, brand1.Id, sunglasses1Model!.Id, red!.Id);
         sunglasses2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sunglasses2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         sunglasses2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1195,7 +1195,7 @@ public static class ProductSeed
 
         sunglasses2.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-8/c1000/6586165160.jpg");
 
-        var sunglasses3 = Product.Create(sunglassesCategory!, brand1, sunglasses1Model!, green!);
+        var sunglasses3 = Product.Create(sunglassesCategory!.Id, brand1.Id, sunglasses1Model!.Id, green!.Id);
         sunglasses3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sunglasses3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         sunglasses3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1204,7 +1204,7 @@ public static class ProductSeed
 
         sunglasses3.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-8/c1000/6586165160.jpg");
 
-        var sunglasses4 = Product.Create(sunglassesCategory!, brand1, sunglasses1Model!, black!);
+        var sunglasses4 = Product.Create(sunglassesCategory!.Id, brand1.Id, sunglasses1Model!.Id, black!.Id);
         sunglasses4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sunglasses4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         sunglasses4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1213,7 +1213,7 @@ public static class ProductSeed
 
         sunglasses4.Value.AddProductImage("https://ir.ozone.ru/s3/multimedia-8/c1000/6586165160.jpg");
 
-        var sunglasses5 = Product.Create(sunglassesCategory!, brand1, sunglasses1Model!, orange!);
+        var sunglasses5 = Product.Create(sunglassesCategory!.Id, brand1.Id, sunglasses1Model!.Id, orange!.Id);
         sunglasses5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         sunglasses5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         sunglasses5.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1228,7 +1228,7 @@ public static class ProductSeed
         products.Add(sunglasses4.Value);
         products.Add(sunglasses5.Value);
 
-        var handbags1 = Product.Create(handbagsCategory!, brand1, handbags1Model!, blue!);
+        var handbags1 = Product.Create(handbagsCategory!.Id, brand1.Id, handbags1Model!.Id, blue!.Id);
         handbags1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         handbags1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         handbags1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1237,7 +1237,7 @@ public static class ProductSeed
 
         handbags1.Value.AddProductImage("https://m.media-amazon.com/images/I/81HWh26sZlL._AC_UF1000,1000_QL80_.jpg");
 
-        var handbags2 = Product.Create(handbagsCategory!, brand1, handbags1Model!, red!);
+        var handbags2 = Product.Create(handbagsCategory!.Id, brand1.Id, handbags1Model!.Id, red!.Id);
         handbags2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         handbags2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         handbags2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1246,7 +1246,7 @@ public static class ProductSeed
 
         handbags2.Value.AddProductImage("https://m.media-amazon.com/images/I/81HWh26sZlL._AC_UF1000,1000_QL80_.jpg");
 
-        var handbags3 = Product.Create(handbagsCategory!, brand1, handbags1Model!, green!);
+        var handbags3 = Product.Create(handbagsCategory!.Id, brand1.Id, handbags1Model!.Id, green!.Id);
         handbags3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         handbags3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         handbags3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1255,7 +1255,7 @@ public static class ProductSeed
 
         handbags3.Value.AddProductImage("https://m.media-amazon.com/images/I/81HWh26sZlL._AC_UF1000,1000_QL80_.jpg");
 
-        var handbags4 = Product.Create(handbagsCategory!, brand1, handbags1Model!, black!);
+        var handbags4 = Product.Create(handbagsCategory!.Id, brand1.Id, handbags1Model!.Id, black!.Id);
         handbags4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         handbags4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         handbags4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1264,7 +1264,7 @@ public static class ProductSeed
 
         handbags4.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrm68Snk6d435FlTUclw33hU21RfY2dZ_9g&usqp=CAU");
 
-        var handbags5 = Product.Create(handbagsCategory!, brand1, handbags1Model!, orange!);
+        var handbags5 = Product.Create(handbagsCategory!.Id, brand1.Id, handbags1Model!.Id, orange!.Id);
         handbags5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         handbags5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         handbags5.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1279,7 +1279,7 @@ public static class ProductSeed
         products.Add(handbags4.Value);
         products.Add(handbags5.Value);
 
-        var hats1 = Product.Create(hatsCategory!, brand1, hats1Model!, blue!);
+        var hats1 = Product.Create(hatsCategory!.Id, brand1.Id, hats1Model!.Id, blue!.Id);
         hats1.Value.AddProductSize(xxl.Id, 100.99m, 25);
         hats1.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         hats1.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1288,7 +1288,7 @@ public static class ProductSeed
 
         hats1.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GsvabZkGdI6nvi0fDihq1P6hXSw73jkxTA&usqp=CAU");
 
-        var hats2 = Product.Create(hatsCategory!, brand1, hats1Model!, red!);
+        var hats2 = Product.Create(hatsCategory!.Id, brand1.Id, hats1Model!.Id, red!.Id);
         hats2.Value.AddProductSize(xxl.Id, 100.99m, 25);
         hats2.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         hats2.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1297,7 +1297,7 @@ public static class ProductSeed
 
         hats2.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GsvabZkGdI6nvi0fDihq1P6hXSw73jkxTA&usqp=CAU");
 
-        var hats3 = Product.Create(hatsCategory!, brand1, hats1Model!, green!);
+        var hats3 = Product.Create(hatsCategory!.Id, brand1.Id, hats1Model!.Id, green!.Id);
         hats3.Value.AddProductSize(xxl.Id, 100.99m, 25);
         hats3.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         hats3.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1306,7 +1306,7 @@ public static class ProductSeed
 
         hats3.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GsvabZkGdI6nvi0fDihq1P6hXSw73jkxTA&usqp=CAU");
 
-        var hats4 = Product.Create(hatsCategory!, brand1, hats1Model!, black!);
+        var hats4 = Product.Create(hatsCategory!.Id, brand1.Id, hats1Model!.Id, black!.Id);
         hats4.Value.AddProductSize(xxl.Id, 100.99m, 25);
         hats4.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         hats4.Value.AddProductSize(m.Id, 100.99m, 25);
@@ -1315,7 +1315,7 @@ public static class ProductSeed
 
         hats4.Value.AddProductImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1GsvabZkGdI6nvi0fDihq1P6hXSw73jkxTA&usqp=CAU");
 
-        var hats5 = Product.Create(hatsCategory!, brand1, hats1Model!, orange!);
+        var hats5 = Product.Create(hatsCategory!.Id, brand1.Id, hats1Model!.Id, orange!.Id);
         hats5.Value.AddProductSize(xxl.Id, 100.99m, 25);
         hats5.Value.AddProductSize(xxxl.Id, 100.99m, 25);
         hats5.Value.AddProductSize(m.Id, 100.99m, 25);

@@ -20,24 +20,28 @@ public class ProductConfigurations : IEntityTypeConfiguration<Product>
                 id => id.Value,
                 value => ProductId.Create(value));
 
-        builder.HasOne(x => x.Model)
-            .WithMany(x => x.Products)
+        builder.HasOne(p => p.Model)
+            .WithMany(m => m.Products)
             .IsRequired()
+            .HasForeignKey(x => x.ModelId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasOne(x => x.Brand)
+        builder.HasOne(p => p.Brand)
             .WithMany(x => x.Products)
             .IsRequired()
+            .HasForeignKey(x => x.BrandId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasOne(x => x.Category)
+        builder.HasOne(p => p.Category)
             .WithMany(x => x.Products)
             .IsRequired()
+            .HasForeignKey(x => x.CategoryId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        builder.HasOne(x => x.Color)
+        builder.HasOne(p => p.Color)
             .WithMany(x => x.Products)
             .IsRequired()
+            .HasForeignKey(x => x.ColorId)
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasMany(x => x.Images)

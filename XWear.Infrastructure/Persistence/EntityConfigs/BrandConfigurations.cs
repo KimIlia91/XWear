@@ -30,7 +30,8 @@ public sealed class BrandConfigurations : IEntityTypeConfiguration<Brand>
             .IsUnique();
 
         builder.HasMany(b => b.Products)
-            .WithOne(p => p.Brand)
+            .WithOne()
+            .HasForeignKey(x => x.BrandId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
     }

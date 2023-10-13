@@ -31,7 +31,8 @@ public sealed class ModelConfigurations : IEntityTypeConfiguration<Model>
             .IsUnique();
 
         builder.HasMany(c => c.Products)
-            .WithOne(p => p.Model)
+            .WithOne()
+            .HasForeignKey(p => p.ModelId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
     }

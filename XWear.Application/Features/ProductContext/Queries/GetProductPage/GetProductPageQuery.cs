@@ -32,7 +32,7 @@ public sealed class PageDto<T>
 {
 }
 
-public sealed class ProductResult : IRegister
+public sealed class ProductResult //: IRegister
 {
     public Guid Id { get; set; }
 
@@ -44,9 +44,9 @@ public sealed class ProductResult : IRegister
 
     public bool IsFavorit { get; set; }
 
-    public void Register(TypeAdapterConfig config)
-    {
-        config.NewConfig<Product, ProductResult>()
-            .Map(dest => dest.Name, src => src.Model.Name);
-    }
+    //ublic void Register(TypeAdapterConfig config)
+    //
+    //   config.NewConfig<Product, ProductResult>()
+    //       .Map(dest => dest.Name, src => src.Model.Name);
+    //
 }

@@ -12,7 +12,7 @@ using XWear.Infrastructure.Persistence;
 namespace XWear.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231013114457_Init")]
+    [Migration("20231013202502_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -380,11 +380,13 @@ namespace XWear.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("XWear.Domain.Entities.SizeEntity.Size", null)
+                    b.HasOne("XWear.Domain.Entities.SizeEntity.Size", "Size")
                         .WithMany("ProductSizes")
                         .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("XWear.Domain.Entities.BrandEntity.Brand", b =>

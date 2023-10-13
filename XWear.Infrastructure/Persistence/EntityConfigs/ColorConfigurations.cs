@@ -37,7 +37,8 @@ namespace XWear.Infrastructure.Persistence.EntityConfigs
                 .HasMaxLength(EntityConstants.ColorNameLength);
 
             builder.HasMany(c => c.Products)
-                .WithOne(p => p.Color)
+                .WithOne()
+                .HasForeignKey(p => p.ColorId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
         }
